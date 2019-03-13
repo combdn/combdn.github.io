@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=cyrillic,cyrillic-ext,latin-ext,vietnamese');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,500,500i,600,600i,700,700i&subset=cyrillic,latin-ext');
 
 body {
   background-color: #4d4e4f;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
   color: white;
   line-height: 1.5em;
   //letter-spacing: 0.15em;
@@ -26,6 +27,7 @@ a {
   color: rgb(122, 186, 255);
   text-decoration: none;
   transition: all 0.3s ease-in-out;
+  white-space: nowrap;
   &:hover {
     color: #ff2dc0;
     //color: #67ffd9; //green

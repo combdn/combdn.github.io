@@ -19,7 +19,6 @@ export default class Portfolio extends Component {
     let works = [];
     for (const work of data) {
       console.log(work.file);
-      debugger; //
       works.push(<img alt="" src={images[work.file]} />);
     }
     return (
