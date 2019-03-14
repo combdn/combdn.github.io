@@ -23,19 +23,19 @@ export default class Portfolio extends Component {
       console.log(work.file);
       if (work.type === 'image') {
         works.push(
-          <div className={work.wrappeRclass + ' wrapper'}>
-            <img alt="" src={images[work.file]} />
+          <div className={work.wrapperClass + ' wrapper'}>
+            <img alt="" className={work.class} src={images[work.file]} />
           </div>
         );
       } else if (work.type === 'video') {
         works.push(
-          <div className={work.wrappeRclass + ' wrapper'}>
+          <div className={work.wrapperClass + ' wrapper'}>
             <video
-              autoplay=""
-              playsinline=""
-              muted=""
-              loop=""
-              class={work.class}
+              autoPlay
+              playsInline
+              muted={true}
+              loop
+              className={work.class}
               src={videos[work.file]}
             />
           </div>

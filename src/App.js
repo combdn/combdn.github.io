@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.scss';
 import Header from './components/header';
 import Portfolio from './components/portfolio';
+import Footer from './components/footer';
 
 class App extends Component {
   render() {
@@ -9,6 +10,7 @@ class App extends Component {
       <div>
         <Header />
         <Portfolio />
+        <Footer />
       </div>
     );
   }
