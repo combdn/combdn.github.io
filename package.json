@@ -12,6 +12,9 @@
     "react-dom": "^16.8.1",
     "react-scripts": "2.1.5"
   },
+  "prettier": {
+    "singleQuote": true
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
