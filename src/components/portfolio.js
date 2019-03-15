@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FilterButton from './filter-button';
 import WorkThumbnail from './work-thumbnail';
 import data from './data';
 import './portfolio.scss';
@@ -21,8 +22,20 @@ const images = importAll(
 const videos = importAll(require.context('../assets/', true, /\.(mp4|mov)$/));
 
 export default class Portfolio extends Component {
+  constructor(props) {
+    super(props);
+    this.filter = this.handleFilter.bind(this);
+  }
+
+  handleFilter(e) {
+    // TODO: Implement filter handler
+  }
+
   render() {
     let works = [];
+    let tags = new Set();
+    let filterButtons = [];
+    //debugger;
     for (const work of data) {
       works.push(
         <WorkThumbnail
@@ -32,27 +45,21 @@ export default class Portfolio extends Component {
           class={work.class}
         />
       );
-      // if (work.type === 'image') {
-      //   works.push(
-      //     <div className={work.wrapperClass + ' wrapper'}>
-      //       <img alt="" className={work.class} src={images[work.file]} />
-      //     </div>
-      //   );
-      // } else if (work.type === 'video') {
-      //   works.push(
-      //     <div className={work.wrapperClass + ' wrapper'}>
-      //       <video
-      //         autoPlay
-      //         playsInline
-      //         muted={true}
-      //         loop
-      //         className={work.class}
-      //         src={videos[work.file]}
-      //       />
-      //     </div>
-      //   );
-      // }
+
+      // Add work tags to the global tags set.
+      // Duplicates are eliminated by the nature of Set.
+      work.tags.forEach(tag => tags.add(tag));
     }
-    return <div className="grid">{works}</div>;
+
+    tags.forEach(tag =>
+      filterButtons.push(<FilterButton tag={tag} onClick={this.handleFilter} />)
+    );
+
+    return (
+      <div className="gallery">
+        <div className="filter">{filterButtons}</div>
+        <div className="grid">{works}</div>
+      </div>
+    );
   }
 }

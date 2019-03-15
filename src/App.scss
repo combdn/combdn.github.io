@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,500,500i,600,600i,700,700i&subset=cyrillic,latin-ext');
 
+@import 'variables';
+
 body {
   background-color: #4d4e4f;
   font-family: 'IBM Plex Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   color: white;
-  line-height: 1.5em;
+  line-height: 24px;
   //letter-spacing: 0.15em;
   padding: 24px;
   margin: 0;
@@ -29,7 +31,7 @@ a {
   transition: all 0.3s ease-in-out;
   white-space: nowrap;
   &:hover {
-    color: #ff2dc0;
+    color: $interactive;
     //color: #67ffd9; //green
     //color: rgb(255, 105, 210);
     // background: linear-gradient(to right, #30CFD0 0%, #e207a1 100%);
