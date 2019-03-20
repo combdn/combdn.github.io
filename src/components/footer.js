@@ -7,8 +7,11 @@ export default class Footer extends Component {
     return (
       <footer>
         <p>
-          If you ask designers for help, and they look at you like this → 😅,
-          it&nbsp;is the sign that it may be interesting&nbsp;for&nbsp;me.
+          If you ask designers for help, and they look at you like this →{' '}
+          <span role="img" aria-label="grinning face with a sweat drop">
+            😅
+          </span>
+          , it&nbsp;is the sign that it may be interesting&nbsp;for&nbsp;me.
         </p>
         <p>
           <a href="mailto:combdn@gmail.com">combdn@gmail.com </a>

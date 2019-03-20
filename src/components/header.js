@@ -7,7 +7,6 @@ class Header extends Component {
   // }
 
   render() {
-    console.log('fuck');
     return (
       <div className="header__intro">
         <p>

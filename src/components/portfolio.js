@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import uuid from 'uuid/v4';
 import FilterButton from './filter-button';
 import WorkThumbnail from './work-thumbnail';
 import data from './data';
@@ -29,16 +30,18 @@ export default class Portfolio extends Component {
 
   handleFilter(e) {
     // TODO: Implement filter handler
+    console.log('click');
   }
 
   render() {
     let works = [];
     let tags = new Set();
     let filterButtons = [];
-    //debugger;
+
     for (const work of data) {
       works.push(
         <WorkThumbnail
+          key={uuid()}
           wrapperClass={work.wrapperClass}
           type={work.type}
           file={work.type === 'image' ? images[work.file] : videos[work.file]}
@@ -52,7 +55,9 @@ export default class Portfolio extends Component {
     }
 
     tags.forEach(tag =>
-      filterButtons.push(<FilterButton tag={tag} onClick={this.handleFilter} />)
+      filterButtons.push(
+        <FilterButton key={uuid()} tag={tag} onClick={this.handleFilter} />
+      )
     );
 
     return (
