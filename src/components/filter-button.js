@@ -20,7 +20,8 @@ export default class FilterButton extends Component {
 
     return (
       <div role="button" className={classes} onClick={this.handleClick}>
-        {this.props.tag}
+        <div className="label">{this.props.tag}</div>
+        <div className="counter">{this.props.counter}</div>
       </div>
     );
   }

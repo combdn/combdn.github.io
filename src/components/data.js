@@ -57,7 +57,7 @@ export default [
     type: 'image',
     class: 'center',
     file: 'images/PW-navigator.svg',
-    tags: ['beauty', 'complex']
+    tags: ['beauty']
   },
   {
     wrapperClass: 'wide-big',

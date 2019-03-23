@@ -119,16 +119,21 @@ export default class Portfolio extends Component {
     );
 
     //Add the rest of the buttons
-    tags.forEach(tag =>
+    tags.forEach(tag => {
+      let counter = 0;
+      for (const item of this.state.dataToShow) {
+        if (item.tags.includes(tag)) counter++;
+      }
       filterButtons.push(
         <FilterButton
           key={uuid()}
           tag={tag}
           selected={this.state.selectedTags.includes(tag)}
           clickHandler={this.handleFilterClick}
+          counter={counter}
         />
-      )
-    );
+      );
+    });
     return (
       <div className="gallery">
         <div className="filter">{filterButtons}</div>

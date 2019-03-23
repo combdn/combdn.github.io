@@ -14,9 +14,20 @@
   &.selected {
     background-color: rgba(247, 77, 230, 1);
     border: none;
+
     &:hover {
       background-color: rgb(248, 98, 233);
     }
+  }
+
+  .label {
+    display: inline-block;
+    margin-right: 8px;
+  }
+
+  .counter {
+    display: inline-block;
+    opacity: 0.3;
   }
 
   &:hover {
