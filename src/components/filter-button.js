@@ -13,8 +13,13 @@ export default class FilterButton extends Component {
 
   render() {
     // TODO: Add counter. It should change as the gallery is being filtered.
+    let classes = '';
+    this.props.selected
+      ? (classes = 'filter-button' + ' ' + 'selected')
+      : (classes = 'filter-button');
+
     return (
-      <div role="button" className="filter-button" onClick={this.handleClick}>
+      <div role="button" className={classes} onClick={this.handleClick}>
         {this.props.tag}
       </div>
     );

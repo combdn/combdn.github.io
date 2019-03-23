@@ -13,6 +13,7 @@ export default class WorkThumbnail extends Component {
       return (
         <div className={this.props.wrapperClass + ' wrapper'}>
           <video
+            // FIXME: enable temporary disabled autoplay
             autoPlay
             playsInline
             muted={true}

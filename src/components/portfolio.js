@@ -30,25 +30,57 @@ export default class Portfolio extends Component {
     super(props);
     //debugger;
     this.handleFilterClick = this.handleFilterClick.bind(this);
-    this.state = { dataToShow: data };
+    this.state = { dataToShow: data, selectedTags: [] };
   }
 
   handleFilterClick(tag) {
-    // TODO: Implement filter handler
-    console.log(tag);
-    console.log(this.state.dataToShow);
+    let selectedTags = this.state.selectedTags;
 
-    // let dataToFilter = _.clone(this.state.dataToShow);
-    // dataToFilter.filter(element =>
-    //   element.tags.includes(tag)
-    // );
-    // console.log(dataToFilter);
+    if (tag === 'show all') {
+      selectedTags = [];
+      this.setState({ selectedTags: [] });
+    } else {
+      if (this.state.selectedTags.includes(tag)) {
+        selectedTags.splice(selectedTags.indexOf(tag), 1);
+        this.setState({
+          selectedTags: selectedTags
+        });
+      } else {
+        selectedTags.push(tag);
+        this.setState({ selectedTags: selectedTags });
+      }
+    }
 
-    this.setState({
-      dataToShow: this.state.dataToShow.filter(element =>
-        element.tags.includes(tag)
-      )
-    });
+    if (this.state.selectedTags.length === 0) {
+      this.setState({ dataToShow: data });
+    } else {
+      this.setState({
+        dataToShow: data.filter(element => {
+          for (const selectedTag of selectedTags) {
+            if (!element.tags.includes(selectedTag)) return false;
+          }
+          return true;
+        })
+      });
+    }
+
+    // if (tag === 'show all') {
+    //   this.setState({ dataToShow: data, selectedTags: [] });
+    // } else if (!this.state.selectedTags.includes(tag)) {
+    //   this.setState({
+    //     dataToShow: this.state.dataToShow.filter(element =>
+    //       element.tags.includes(tag)
+    //     ),
+    //     selectedTags: this.state.selectedTags.concat([tag])
+    //   });
+    // } else {
+    //   this.setState({
+    //     dataToShow: this.state.dataToShow.filter(element =>
+    //       element.tags.includes(tag)
+    //     ),
+    //     selectedTags: this.state.selectedTags.concat([tag])
+    //   });
+    // }
   }
 
   render() {
@@ -56,6 +88,7 @@ export default class Portfolio extends Component {
     let tags = new Set();
     let filterButtons = [];
 
+    // Create thumbnails array
     for (const work of this.state.dataToShow) {
       works.push(
         <WorkThumbnail
@@ -76,16 +109,26 @@ export default class Portfolio extends Component {
       work.tags.forEach(tag => tags.add(tag));
     }
 
+    //Add "Show all" button
+    filterButtons.push(
+      <FilterButton
+        key={uuid()}
+        tag={'show all'}
+        clickHandler={this.handleFilterClick}
+      />
+    );
+
+    //Add the rest of the buttons
     tags.forEach(tag =>
       filterButtons.push(
         <FilterButton
           key={uuid()}
           tag={tag}
+          selected={this.state.selectedTags.includes(tag)}
           clickHandler={this.handleFilterClick}
         />
       )
     );
-
     return (
       <div className="gallery">
         <div className="filter">{filterButtons}</div>

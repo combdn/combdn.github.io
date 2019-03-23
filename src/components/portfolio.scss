@@ -1,3 +1,8 @@
+.filter {
+  margin-bottom: 24px;
+}
+
+// FIXME: fix the grid for the case when a few items left
 .grid {
   display: grid;
   grid-gap: 24px;
