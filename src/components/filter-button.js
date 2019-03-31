@@ -24,7 +24,7 @@ export default class FilterButton extends Component {
       : (classes = 'filter-button');
 
     switch (this.props.tag) {
-      case 'beauty':
+      case 'look':
         icon = '💅🏻';
         break;
       case 'mobile':

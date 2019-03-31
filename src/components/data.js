@@ -5,13 +5,13 @@ export default [
     type: 'video',
     class: 'daily-motion',
     file: 'videos/daily-mail-concept.mp4',
-    tags: ['beauty', 'mobile', 'concept', 'typography']
+    tags: ['look', 'mobile', 'concept', 'typography']
   },
   {
     wrapperClass: 'wide-big',
     type: 'image',
     file: 'images/QiVisor-HR.png',
-    tags: ['beauty', 'data visualization', 'complex']
+    tags: ['look', 'data visualization', 'complex']
   },
   {
     wrapperClass: 'wide-big',
@@ -25,46 +25,46 @@ export default [
     type: 'image',
     class: 'center',
     file: 'images/PW-deploy-icon.svg',
-    tags: ['beauty']
+    tags: ['look']
   },
   {
     wrapperClass: 'tall-big',
     type: 'image',
     file: 'images/PW-properties.png',
-    tags: ['beauty', 'complex']
+    tags: ['look', 'complex']
   },
   {
     wrapperClass: 'wide-big',
     type: 'image',
     file: 'images/PW-nodes-types.png',
-    tags: ['beauty', 'complex']
+    tags: ['look', 'complex']
   },
   {
     wrapperClass: 'wide-big',
     type: 'image',
     file: 'images/PW-real-case.png',
-    tags: ['beauty', 'complex']
+    tags: ['look', 'complex']
   },
   {
     wrapperClass: 'wide-big',
     type: 'image',
     class: '',
     file: 'images/PW-signoff-cropped.png',
-    tags: ['beauty', 'complex']
+    tags: ['look', 'complex']
   },
   {
     wrapperClass: 'small',
     type: 'image',
     class: 'center',
     file: 'images/PW-navigator.svg',
-    tags: ['beauty']
+    tags: ['look']
   },
   {
     wrapperClass: 'wide-big',
     type: 'image',
     class: '',
     file: 'images/PW-job-editing-cropped.png',
-    tags: ['beauty', 'complex']
+    tags: ['look', 'complex']
   },
   {
     wrapperClass: 'wide-big',
@@ -110,26 +110,26 @@ export default [
     wrapperClass: 'wide',
     type: 'image',
     file: 'images/houdini-actinia.png',
-    tags: ['beauty', '3d']
+    tags: ['look', '3d']
   },
   {
     wrapperClass: 'wide',
     type: 'image',
     file: 'images/sound-to-music.png',
-    tags: ['beauty', '3d']
+    tags: ['look', '3d']
   },
   {
     wrapperClass: 'small',
     type: 'image',
     class: 'center',
     file: 'images/videos@3x.png',
-    tags: ['beauty']
+    tags: ['look']
   },
   {
     wrapperClass: 'wide',
     type: 'image',
     file: 'images/Agner-logo-big-perspective-2.png',
-    tags: ['beauty']
+    tags: ['look']
   },
   {
     wrapperClass: 'wide-big',
@@ -141,20 +141,20 @@ export default [
     wrapperClass: 'wide',
     type: 'image',
     file: 'images/keepa-logo-dribbble.png',
-    tags: ['beauty', 'lettering', 'typography', 'concept']
+    tags: ['look', 'lettering', 'typography', 'concept']
   },
   {
     wrapperClass: 'wide',
     type: 'image',
     file: 'images/Yawn-logo-blur-400-300.png',
-    tags: ['beauty', 'lettering', 'typography']
+    tags: ['look', 'lettering', 'typography']
   },
   {
     wrapperClass: 'small',
     type: 'image',
     class: 'center',
     file: 'images/3dLutCreator-Icon-no-bg.png',
-    tags: ['beauty', '3d']
+    tags: ['look', '3d']
   },
   {
     wrapperClass: 'wide-big latency',
@@ -173,26 +173,26 @@ export default [
     type: 'image',
     class: 'center',
     file: 'images/effect-doplera-cd-look.png',
-    tags: ['beauty', 'typography']
+    tags: ['look', 'typography']
   },
   {
     wrapperClass: 'small',
     type: 'image',
     class: 'center',
     file: 'images/VoiceAssistant-icon.png',
-    tags: ['beauty']
+    tags: ['look']
   },
   {
     wrapperClass: 'wide',
     type: 'image',
     file: 'images/tatubalin-logo.svg',
-    tags: ['beauty', 'lettering', 'typography']
+    tags: ['look', 'lettering', 'typography']
   },
   {
     wrapperClass: 'small',
     type: 'image',
     class: 'center',
     file: 'images/archmock-icon.png',
-    tags: ['beauty', '3d']
+    tags: ['look', '3d']
   }
 ];
