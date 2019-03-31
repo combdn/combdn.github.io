@@ -33,10 +33,10 @@ export default class Portfolio extends Component {
     this.state = { dataToShow: data, selectedTags: [] };
   }
 
-  handleFilterClick(tag) {
+  handleFilterClick(tag, type) {
     let selectedTags = this.state.selectedTags;
 
-    if (tag === 'show all') {
+    if (type === 'showAll') {
       selectedTags = [];
       this.setState({ selectedTags: [] });
     } else {
@@ -63,24 +63,6 @@ export default class Portfolio extends Component {
         })
       });
     }
-
-    // if (tag === 'show all') {
-    //   this.setState({ dataToShow: data, selectedTags: [] });
-    // } else if (!this.state.selectedTags.includes(tag)) {
-    //   this.setState({
-    //     dataToShow: this.state.dataToShow.filter(element =>
-    //       element.tags.includes(tag)
-    //     ),
-    //     selectedTags: this.state.selectedTags.concat([tag])
-    //   });
-    // } else {
-    //   this.setState({
-    //     dataToShow: this.state.dataToShow.filter(element =>
-    //       element.tags.includes(tag)
-    //     ),
-    //     selectedTags: this.state.selectedTags.concat([tag])
-    //   });
-    // }
   }
 
   render() {
@@ -113,12 +95,14 @@ export default class Portfolio extends Component {
     filterButtons.push(
       <FilterButton
         key={uuid()}
-        tag={'show all'}
+        type="showAll"
+        tag=""
         clickHandler={this.handleFilterClick}
       />
     );
 
     //Add the rest of the buttons
+
     tags.forEach(tag => {
       let counter = 0;
       for (const item of this.state.dataToShow) {
@@ -127,6 +111,7 @@ export default class Portfolio extends Component {
       filterButtons.push(
         <FilterButton
           key={uuid()}
+          type="filter"
           tag={tag}
           selected={this.state.selectedTags.includes(tag)}
           clickHandler={this.handleFilterClick}

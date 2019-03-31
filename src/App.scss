@@ -26,9 +26,9 @@ body {
 }
 
 a {
-  color: rgb(122, 186, 255);
+  color: $link-color;
   text-decoration: none;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.15s ease-in-out;
   white-space: nowrap;
   &:hover {
     color: $interactive;

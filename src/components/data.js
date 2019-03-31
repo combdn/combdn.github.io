@@ -5,7 +5,7 @@ export default [
     type: 'video',
     class: 'daily-motion',
     file: 'videos/daily-mail-concept.mp4',
-    tags: ['beauty', 'mobile', 'concept']
+    tags: ['beauty', 'mobile', 'concept', 'typography']
   },
   {
     wrapperClass: 'wide-big',
@@ -97,7 +97,7 @@ export default [
     wrapperClass: 'wide-big',
     type: 'image',
     file: 'images/cisco-risk-concept-v1.png',
-    tags: ['concept', 'data vizualization']
+    tags: ['concept', 'data visualization']
   },
   {
     wrapperClass: 'wide',
@@ -141,13 +141,13 @@ export default [
     wrapperClass: 'wide',
     type: 'image',
     file: 'images/keepa-logo-dribbble.png',
-    tags: ['beauty', 'lettering']
+    tags: ['beauty', 'lettering', 'typography', 'concept']
   },
   {
     wrapperClass: 'wide',
     type: 'image',
     file: 'images/Yawn-logo-blur-400-300.png',
-    tags: ['beauty', 'lettering']
+    tags: ['beauty', 'lettering', 'typography']
   },
   {
     wrapperClass: 'small',
@@ -160,20 +160,20 @@ export default [
     wrapperClass: 'wide-big latency',
     type: 'video',
     file: 'videos/cisco-latency-discovery.mp4',
-    tags: ['concept', 'data vizualization']
+    tags: ['concept', 'data visualization']
   },
   {
     wrapperClass: 'wide-big',
     type: 'image',
     file: 'images/patient-summary-cropped.png',
-    tags: ['data vizualization']
+    tags: ['data visualization']
   },
   {
     wrapperClass: 'medium',
     type: 'image',
     class: 'center',
     file: 'images/effect-doplera-cd-look.png',
-    tags: ['beauty']
+    tags: ['beauty', 'typography']
   },
   {
     wrapperClass: 'small',
@@ -186,7 +186,7 @@ export default [
     wrapperClass: 'wide',
     type: 'image',
     file: 'images/tatubalin-logo.svg',
-    tags: ['beauty', 'lettering']
+    tags: ['beauty', 'lettering', 'typography']
   },
   {
     wrapperClass: 'small',
