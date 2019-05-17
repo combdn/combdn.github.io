@@ -37,6 +37,7 @@ export default class Portfolio extends Component {
     let selectedTags = this.state.selectedTags;
 
     if (type === 'showAll') {
+      // TODO: do not reload when everything is already shown.
       selectedTags = [];
       this.setState({ selectedTags: [] });
     } else {

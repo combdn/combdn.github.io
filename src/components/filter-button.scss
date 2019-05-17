@@ -6,7 +6,7 @@
   //padding-bottom: 4px;
   margin: 0 8px 4px 0;
   line-height: 1;
-  margin-right: 16px;
+  margin: 0 16px 8px 0;
   color: $link-color;
   text-decoration: none;
   transition: all 0.15s ease-in-out;
@@ -19,12 +19,14 @@
 }
 
 .filter-button {
+  // TODO: add "close" button
   //height: 32px;
   display: flex;
   align-items: center;
   padding: 5px 16px 7px;
-  margin: 0 8px 4px 0;
-  border: 1px solid rgba($color: white, $alpha: 0.2);
+  margin: 0 8px 8px 0;
+  border: 1px solid rgba($color: white, $alpha: 0.15);
+  //background-color: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   cursor: pointer;
   user-select: none;
@@ -32,15 +34,20 @@
   transition: all 0.15s ease-in-out;
 
   &:hover {
-    background-color: rgba(247, 77, 230, 0.2);
+    //background-color: rgba(247, 77, 230, 0.2);
+    background-color: rgba($color: white, $alpha: 0.2);
   }
 
   &.selected {
-    background-color: rgba(247, 77, 230, 0.6);
+    //background-color: rgba(247, 77, 230, 0.6);
+    background-color: rgba($color: white, $alpha: 1);
+    color: #333;
+    font-weight: 400;
     border: 1px solid rgba($color: white, $alpha: 0);
 
     &:hover {
-      background-color: rgba(247, 77, 230, 0.8);
+      background-color: rgba(255, 255, 255, 1);
+      border: 1px solid rgba($color: white, $alpha: 0);
     }
 
     .counter {
