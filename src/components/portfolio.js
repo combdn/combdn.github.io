@@ -28,7 +28,6 @@ const videoFiles = importAll(
 export default class Portfolio extends Component {
   constructor(props) {
     super(props);
-    //debugger;
     this.handleFilterClick = this.handleFilterClick.bind(this);
     this.state = { dataToShow: data, selectedTags: [] };
   }
@@ -37,7 +36,9 @@ export default class Portfolio extends Component {
     let selectedTags = this.state.selectedTags;
 
     if (type === 'showAll') {
-      // TODO: do not reload when everything is already shown.
+      if (selectedTags.length === 0) {
+        return;
+      }
       selectedTags = [];
       this.setState({ selectedTags: [] });
     } else {
