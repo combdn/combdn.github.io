@@ -85,6 +85,8 @@ export default class Portfolio extends Component {
               : videoFiles[work.file]
           }
           class={work.class}
+          project={work.project}
+          clickHandler={this.props.navigator}
         />
       );
 

@@ -1,19 +1,31 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './App.scss';
-import Header from './components/header';
-import Portfolio from './components/portfolio';
-import Footer from './components/footer';
+import Home from './components/home';
+import CasePW from './components/case-pw';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Header />
-        <Portfolio />
-        <Footer />
-      </div>
-    );
+// TODO: Support browser navigation
+
+export default function App() {
+  const [location, setLocation] = useState('PW');
+  let componentToShow;
+
+  function navigator(destination) {
+    setLocation(destination);
   }
-}
 
-export default App;
+  switch (location) {
+    case 'home':
+      componentToShow = <Home navigator={navigator} />;
+      break;
+
+    case 'PW':
+      componentToShow = <CasePW navigator={navigator} />;
+      break;
+
+    default:
+      componentToShow = <Home navigator={navigator} />;
+      break;
+  }
+
+  return <div>{componentToShow}</div>;
+}

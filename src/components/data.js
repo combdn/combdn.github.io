@@ -18,6 +18,7 @@ export default [
     type: 'video',
     class: 'cover-video',
     file: 'videos/PW-concept.mp4',
+    project: 'PW',
     tags: ['concept', 'complex']
   },
   {
@@ -25,24 +26,28 @@ export default [
     type: 'image',
     class: 'center',
     file: 'images/PW-deploy-icon.svg',
+    project: 'PW',
     tags: ['look']
   },
   {
     wrapperClass: 'tall-big',
     type: 'image',
     file: 'images/PW-properties.png',
+    project: 'PW',
     tags: ['look', 'complex']
   },
   {
     wrapperClass: 'wide-big',
     type: 'image',
     file: 'images/PW-nodes-types.png',
+    project: 'PW',
     tags: ['look', 'complex']
   },
   {
     wrapperClass: 'wide-big',
     type: 'image',
     file: 'images/PW-real-case.png',
+    project: 'PW',
     tags: ['look', 'complex']
   },
   {
@@ -50,6 +55,7 @@ export default [
     type: 'image',
     class: '',
     file: 'images/PW-signoff-cropped.png',
+    project: 'PW',
     tags: ['look', 'complex']
   },
   {
@@ -57,6 +63,7 @@ export default [
     type: 'image',
     class: 'center',
     file: 'images/PW-navigator.svg',
+    project: 'PW',
     tags: ['look']
   },
   {
@@ -64,6 +71,7 @@ export default [
     type: 'image',
     class: '',
     file: 'images/PW-job-editing-cropped.png',
+    project: 'PW',
     tags: ['look', 'complex']
   },
   {

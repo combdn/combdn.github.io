@@ -1,28 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './work-thumbnail.scss';
 
-export default class WorkThumbnail extends Component {
-  render() {
-    if (this.props.type === 'image') {
-      return (
-        <div className={this.props.wrapperClass + ' wrapper'}>
-          <img alt="" className={this.props.class} src={this.props.file} />
-        </div>
-      );
-    } else if (this.props.type === 'video') {
-      return (
-        <div className={this.props.wrapperClass + ' wrapper'}>
-          <video
-            // FIXME: enable temporary disabled autoplay
-            //autoPlay
-            playsInline
-            muted={true}
-            loop
-            className={this.props.class}
-            src={this.props.file}
-          />
-        </div>
-      );
-    }
+export default function WorkThumbnail(props) {
+  if (props.type === 'image') {
+    return (
+      <div
+        className={props.wrapperClass + ' wrapper'}
+        onClick={e => props.clickHandler(props.project)}
+      >
+        <img alt="" className={props.class} src={props.file} />
+      </div>
+    );
+  } else if (props.type === 'video') {
+    return (
+      <div className={props.wrapperClass + ' wrapper'}>
+        <video
+          // FIXME: enable temporary disabled autoplay
+          //autoPlay
+          playsInline
+          muted={true}
+          loop
+          className={props.class}
+          src={props.file}
+        />
+      </div>
+    );
   }
 }
