@@ -1,0 +1,39 @@
+$line-height: 26px;
+$small-line-height: 24px;
+
+.case {
+  article {
+    font-size: 17px;
+    margin: $line-height * 4 auto;
+    line-height: $line-height;
+    max-width: 36em;
+
+    @media screen and (max-width: 370px) {
+      font-size: 16px;
+      line-height: $small-line-height;
+      margin: $small-line-height * 4 auto;
+    }
+  }
+
+  h1 {
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .goal {
+    display: flex;
+    font-size: 18px;
+    max-width: 25em;
+    margin: $line-height 0 $line-height * 1;
+  }
+
+  .first-word {
+    font-weight: 600;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+  }
+}

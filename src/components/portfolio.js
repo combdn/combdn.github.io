@@ -1,29 +1,12 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
 import uuid from 'uuid/v4';
 import FilterButton from './filter-button';
 import WorkThumbnail from './work-thumbnail';
 import data from './data';
 import './portfolio.scss';
+import useFiles from './useFiles';
 
-// Function to import files
-function importAll(context) {
-  let files = {};
-  context.keys().forEach(item => {
-    files[item.replace('./', '')] = context(item);
-  });
-  return files;
-}
-
-// Import images
-const imageFiles = importAll(
-  require.context('../assets/', true, /\.(png|jpe?g|svg)$/)
-);
-
-// Import videos
-const videoFiles = importAll(
-  require.context('../assets/', true, /\.(mp4|mov)$/)
-);
+const { images, videos } = useFiles();
 
 export default class Portfolio extends Component {
   constructor(props) {
@@ -79,11 +62,7 @@ export default class Portfolio extends Component {
           key={uuid()}
           wrapperClass={work.wrapperClass}
           type={work.type}
-          file={
-            work.type === 'image'
-              ? imageFiles[work.file]
-              : videoFiles[work.file]
-          }
+          file={work.type === 'image' ? images[work.file] : videos[work.file]}
           class={work.class}
           project={work.project}
           clickHandler={this.props.navigator}
