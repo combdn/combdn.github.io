@@ -15,9 +15,7 @@ class Header extends Component {
           literally have 321 items in my “Applications” folder right now.)
         </p>
         <p>
-          ↓These are some bits of my works.
-          <EmojiBlock icon="✅" />
-          Some are simple and obvious{' '}
+          ↓These are some bits of my works. Some are simple and obvious{' '}
           <span role="img" aria-label="piece of cake">
             🍰
           </span>

@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import './filter-button.scss';
 import EmojiBlock from './emoji-block';
-import { detect } from 'detect-browser';
-
-const browser = detect();
 
 export default class FilterButton extends Component {
   constructor(props) {
@@ -54,13 +51,6 @@ export default class FilterButton extends Component {
         break;
     }
 
-    let iconClass = '';
-    if (browser && browser.name === 'safari') {
-      iconClass = 'icon-safari';
-    } else {
-      iconClass = 'icon';
-    }
-
     switch (this.props.type) {
       case 'showAll':
         return (
@@ -71,14 +61,7 @@ export default class FilterButton extends Component {
       default:
         return (
           <div role="button" className={classes} onClick={this.handleClick}>
-            <div className="icon-container">
-              <div className={iconClass}>
-                <span role="img" aria-label="icon">
-                  {icon}
-                </span>
-              </div>
-            </div>
-            <EmojiBlock icon={icon} cssClass="icon-debug" />
+            <EmojiBlock icon={icon} cssClass="icon" />
             <div className="label">{this.props.tag}</div>
             <div className="counter">{this.props.counter}</div>
           </div>
