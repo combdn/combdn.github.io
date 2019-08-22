@@ -4,7 +4,7 @@ import twitterIcon from '../assets/images/icons/twitter-icon.svg';
 import './footer.scss';
 
 export default function Footer(props) {
-  if (props.variant == 'case') {
+  if (props.variant === 'case') {
     return (
       <footer>
         <Button label={'← Back'} clickHandler={props.navigator} />

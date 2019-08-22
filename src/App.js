@@ -6,7 +6,7 @@ import CasePW from './components/case-pw';
 // TODO: Support browser navigation
 
 export default function App() {
-  const [location, setLocation] = useState('PW');
+  const [location, setLocation] = useState('home');
   let componentToShow;
 
   function navigator(destination) {

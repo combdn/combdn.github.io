@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './filter-button.scss';
+import EmojiBlock from './emoji-block';
 import { detect } from 'detect-browser';
 
 const browser = detect();
-console.log(browser);
 
 export default class FilterButton extends Component {
   constructor(props) {
@@ -78,6 +78,7 @@ export default class FilterButton extends Component {
                 </span>
               </div>
             </div>
+            <EmojiBlock icon={icon} cssClass="icon-debug" />
             <div className="label">{this.props.tag}</div>
             <div className="counter">{this.props.counter}</div>
           </div>
