@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './header.scss';
-import EmojiBlock from './emoji-block';
 
 class Header extends Component {
   // constructor(props) {

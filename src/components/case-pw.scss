@@ -28,12 +28,30 @@ $small-line-height: 24px;
     margin: $line-height 0 $line-height * 1;
   }
 
+  .case__emoji {
+    display: inline-block;
+    margin-right: 0.5em;
+  }
+
   .first-word {
     font-weight: 600;
+  }
+
+  figure {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  figcaption {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: rgba($color: white, $alpha: 0.6);
   }
 
   img,
   video {
     max-width: 100%;
+    border-radius: 5px;
   }
 }

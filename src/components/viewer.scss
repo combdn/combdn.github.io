@@ -1,0 +1,15 @@
+.viewer {
+  position: fixed;
+  padding: 24px;
+  background: white;
+  border-radius: 16px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 5px 60px -15px rgba(0, 0, 0, 0.8);
+  outline: none;
+
+  img {
+    image-rendering: pixelated;
+  }
+}

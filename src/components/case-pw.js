@@ -1,19 +1,28 @@
 import React from 'react';
-import { detect } from 'detect-browser';
 import useFiles from './useFiles';
 import Button from './button';
 import Footer from './footer';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './case-pw.scss';
 
 export default function CasePW(props) {
-  const browser = detect();
   const { images, videos } = useFiles();
-  let iconClass = '';
-  if (browser && browser.name === 'safari') {
-    iconClass = 'icon-safari';
-  } else {
-    iconClass = 'icon';
-  }
+  let jobEditorImages = [
+    images['images/PW-deploy-icon.svg'],
+    images['images/PW-navigator.svg'],
+    images['images/PW-job-editing.png'],
+    images['images/PW-nodes-types.png'],
+    images['images/PW-properties.png']
+  ];
+
+  jobEditorImages = jobEditorImages.map(element => (
+    <div>
+      <img src={element} />
+      <p className="legend">Test</p>
+    </div>
+  ));
+  console.log(jobEditorImages);
 
   return (
     <div className="case">
@@ -21,7 +30,8 @@ export default function CasePW(props) {
       <article>
         <h1>Insurance Risk Simulation Applications</h1>
         <div className="goal">
-          <div className={iconClass}>
+          {/* <EmojiBlock icon="🎯" /> */}
+          <div className="case__emoji">
             <span role="img" aria-label="icon">
               🎯
             </span>
@@ -32,13 +42,17 @@ export default function CasePW(props) {
             jobs, the ohter — to intall and run them.
           </div>
         </div>
-        <p className="copy">
+        <Carousel>{jobEditorImages}</Carousel>
+        <p>
           After the first discussion with the team I came up with the concept
           that was based on how similar tasks (mostly one-direction data flow
           with some logic) was handled in VFX industry: i. e. boxes connected
           with wires.
         </p>
-        <video src={videos['videos/PW-concept.mp4']} />
+        <figure>
+          <video controls src={videos['videos/PW-concept.mp4']} />
+          <figcaption>↑ The first concept</figcaption>
+        </figure>
         <p>
           Some of the decisions were to be revisited, but overall concept was
           accepted by both the team and the client.
@@ -51,13 +65,19 @@ export default function CasePW(props) {
           chain them). There are also variables that allow to configure the job
           before running.
         </p>
-        <img src={images['images/PW-job-editing.png']} alt="Job editor" />
+        <figure>
+          <img src={images['images/PW-job-editing.png']} alt="Job editor" />
+          <figcaption>↑ Job Editor</figcaption>
+        </figure>
         <p>
           The other tool is dedicated to running the created jobs in HPC
           environment. It allows to install, to configure triggers, data
           sources, and variables, and to run the jobs and see their results.
         </p>
-        <img src={images['images/PW-signoff.png']} alt="Job running inter" />
+        <figure>
+          <img src={images['images/PW-signoff.png']} alt="Job running inter" />
+          <figcaption>↑ Job orchestrator and debugger</figcaption>
+        </figure>
         <p>
           There is also debugging functionality that allows to inspect the job
           execution step by step, and to see all of the intermediate results.
