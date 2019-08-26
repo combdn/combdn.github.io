@@ -1,31 +1,19 @@
 import React, { useState } from 'react';
+import { Router, Link } from '@reach/router';
 import './App.scss';
+import ScrollToTop from './components/scroll-to-top';
 import Home from './components/home';
-import CasePW from './components/case-pw';
-
-// TODO: Support browser navigation
+import Case from './components/case';
 
 export default function App() {
-  const [location, setLocation] = useState('home');
-  let componentToShow;
-
-  function navigator(destination) {
-    setLocation(destination);
-  }
-
-  switch (location) {
-    case 'home':
-      componentToShow = <Home navigator={navigator} />;
-      break;
-
-    case 'PW':
-      componentToShow = <CasePW navigator={navigator} />;
-      break;
-
-    default:
-      componentToShow = <Home navigator={navigator} />;
-      break;
-  }
-
-  return <div>{componentToShow}</div>;
+  return (
+    <div>
+      <Router>
+        <ScrollToTop path="/">
+          <Home path="/" />
+          <Case path="/case/:caseId" />
+        </ScrollToTop>
+      </Router>
+    </div>
+  );
 }

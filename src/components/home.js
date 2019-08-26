@@ -7,7 +7,7 @@ export default function Home(props) {
   return (
     <div>
       <Header />
-      <Portfolio navigator={props.navigator} />
+      <Portfolio />
       <Footer />
     </div>
   );

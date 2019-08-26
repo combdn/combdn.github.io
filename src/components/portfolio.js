@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { Router, Link } from '@reach/router';
 import uuid from 'uuid/v4';
 import FilterButton from './filter-button';
 import WorkThumbnail from './work-thumbnail';
@@ -8,105 +9,99 @@ import useFiles from './useFiles';
 
 const { images, videos } = useFiles();
 
-export default class Portfolio extends Component {
-  constructor(props) {
-    super(props);
-    this.handleFilterClick = this.handleFilterClick.bind(this);
-    this.state = { dataToShow: data, selectedTags: [] };
-  }
+export default function Portfolio(props) {
+  const [dataToShow, setDataToShow] = useState(data);
+  const [selectedTags, setSelectedTags] = useState([]);
 
-  handleFilterClick(tag, type) {
-    let selectedTags = this.state.selectedTags;
+  function handleFilterClick(tag, type) {
+    let currentSelectedTags = selectedTags;
 
     if (type === 'showAll') {
-      if (selectedTags.length === 0) {
+      if (currentSelectedTags.length === 0) {
         return;
       }
-      selectedTags = [];
-      this.setState({ selectedTags: [] });
+      currentSelectedTags = [];
+      setSelectedTags([]);
     } else {
-      if (this.state.selectedTags.includes(tag)) {
-        selectedTags.splice(selectedTags.indexOf(tag), 1);
-        this.setState({
-          selectedTags: selectedTags
-        });
+      if (selectedTags.includes(tag)) {
+        currentSelectedTags.splice(currentSelectedTags.indexOf(tag), 1);
+        setSelectedTags(currentSelectedTags);
       } else {
-        selectedTags.push(tag);
-        this.setState({ selectedTags: selectedTags });
+        currentSelectedTags.push(tag);
+        setSelectedTags(currentSelectedTags);
       }
     }
 
-    if (this.state.selectedTags.length === 0) {
-      this.setState({ dataToShow: data });
+    if (selectedTags.length === 0) {
+      setDataToShow(data);
     } else {
-      this.setState({
-        dataToShow: data.filter(element => {
-          for (const selectedTag of selectedTags) {
+      setDataToShow(
+        data.filter(element => {
+          for (const selectedTag of currentSelectedTags) {
             if (!element.tags.includes(selectedTag)) return false;
           }
           return true;
         })
-      });
+      );
     }
   }
 
-  render() {
-    let works = [];
-    let tags = new Set();
-    let filterButtons = [];
+  function handleHover() {}
 
-    // Create thumbnails array
-    for (const work of this.state.dataToShow) {
-      works.push(
-        <WorkThumbnail
-          key={uuid()}
-          wrapperClass={work.wrapperClass}
-          type={work.type}
-          file={work.type === 'image' ? images[work.file] : videos[work.file]}
-          class={work.class}
-          project={work.project}
-          clickHandler={this.props.navigator}
-        />
-      );
+  let works = [];
+  let tags = new Set();
+  let filterButtons = [];
 
-      // Add work tags to the global tags set.
-      // Duplicates are eliminated by the nature of Set.
-      work.tags.forEach(tag => tags.add(tag));
-    }
-
-    //Add "Show all" button
-    filterButtons.push(
-      <FilterButton
+  // Create thumbnails array
+  for (const work of dataToShow) {
+    works.push(
+      <WorkThumbnail
         key={uuid()}
-        type="showAll"
-        tag=""
-        clickHandler={this.handleFilterClick}
+        wrapperClass={work.wrapperClass}
+        type={work.type}
+        file={work.type === 'image' ? images[work.file] : videos[work.file]}
+        class={work.class}
+        project={work.project}
       />
     );
 
-    //Add the rest of the buttons
-
-    tags.forEach(tag => {
-      let counter = 0;
-      for (const item of this.state.dataToShow) {
-        if (item.tags.includes(tag)) counter++;
-      }
-      filterButtons.push(
-        <FilterButton
-          key={uuid()}
-          type="filter"
-          tag={tag}
-          selected={this.state.selectedTags.includes(tag)}
-          clickHandler={this.handleFilterClick}
-          counter={counter}
-        />
-      );
-    });
-    return (
-      <div className="gallery">
-        <div className="filter">{filterButtons}</div>
-        <div className="grid">{works}</div>
-      </div>
-    );
+    // Add work tags to the global tags set.
+    // Duplicates are eliminated by the nature of Set.
+    work.tags.forEach(tag => tags.add(tag));
   }
+
+  //Add "Show all" button
+  filterButtons.push(
+    <FilterButton
+      key={uuid()}
+      type="showAll"
+      tag=""
+      clickHandler={handleFilterClick}
+    />
+  );
+
+  //Add the rest of the buttons
+  tags.forEach(tag => {
+    let counter = 0;
+    for (const item of dataToShow) {
+      if (item.tags.includes(tag)) counter++;
+    }
+    filterButtons.push(
+      <FilterButton
+        key={uuid()}
+        type="filter"
+        tag={tag}
+        selected={selectedTags.includes(tag)}
+        clickHandler={handleFilterClick}
+        counter={counter}
+      />
+    );
+  });
+
+  return (
+    <div className="gallery">
+      <div className="filter">{filterButtons}</div>
+      <div className="grid">{works}</div>
+    </div>
+  );
 }
