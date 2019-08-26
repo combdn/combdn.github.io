@@ -12,6 +12,7 @@ const { images, videos } = useFiles();
 export default function Portfolio(props) {
   const [dataToShow, setDataToShow] = useState(data);
   const [selectedTags, setSelectedTags] = useState([]);
+  let thumbnailWrapperClasses = '';
 
   function handleFilterClick(tag, type) {
     let currentSelectedTags = selectedTags;
@@ -46,7 +47,9 @@ export default function Portfolio(props) {
     }
   }
 
-  function handleHover() {}
+  const handleHover = project => {
+    console.log(project + ' hover!');
+  };
 
   let works = [];
   let tags = new Set();
@@ -57,11 +60,12 @@ export default function Portfolio(props) {
     works.push(
       <WorkThumbnail
         key={uuid()}
-        wrapperClass={work.wrapperClass}
+        wrapperClass={thumbnailWrapperClasses + ' ' + work.wrapperClass}
         type={work.type}
         file={work.type === 'image' ? images[work.file] : videos[work.file]}
         class={work.class}
         project={work.project}
+        hoverHandler={handleHover}
       />
     );
 
