@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Router, Link } from '@reach/router';
 import uuid from 'uuid/v4';
+
 import FilterButton from './filter-button';
 import WorkThumbnail from './work-thumbnail';
+import WorkInfo from './work-info';
+
 import data from './data';
-import './portfolio.scss';
 import useFiles from './useFiles';
+
+import './portfolio.scss';
 
 const { images, videos } = useFiles();
 
 export default function Portfolio(props) {
   const [dataToShow, setDataToShow] = useState(data);
   const [selectedTags, setSelectedTags] = useState([]);
-  let thumbnailWrapperClasses = '';
+  const [projectUnderHover, setProjectUnderHover] = useState();
+  const [workInfo, setWorkInfo] = useState({});
 
   function handleFilterClick(tag, type) {
     let currentSelectedTags = selectedTags;
@@ -47,8 +52,19 @@ export default function Portfolio(props) {
     }
   }
 
-  const handleHover = project => {
+  const handleHover = (project, hoverIsOn) => {
     console.log(project + ' hover!');
+    hoverIsOn ? setProjectUnderHover(project) : setProjectUnderHover('');
+  };
+
+  const handleThumbnailClick = identificator => {
+    console.log(identificator);
+
+    let work = data.find(element => element.id === identificator);
+    console.log(work);
+
+    setWorkInfo(work.info);
+    console.log(work.info);
   };
 
   let works = [];
@@ -57,15 +73,20 @@ export default function Portfolio(props) {
 
   // Create thumbnails array
   for (const work of dataToShow) {
+    let thumbnailWrapperClasses = work.wrapperClass;
+
     works.push(
       <WorkThumbnail
         key={uuid()}
-        wrapperClass={thumbnailWrapperClasses + ' ' + work.wrapperClass}
+        identificator={work.id}
+        wrapperClass={thumbnailWrapperClasses}
         type={work.type}
         file={work.type === 'image' ? images[work.file] : videos[work.file]}
         class={work.class}
         project={work.project}
-        hoverHandler={handleHover}
+        projectUnderHover={projectUnderHover}
+        // hoverHandler={handleHover}
+        clickHandler={handleThumbnailClick}
       />
     );
 
@@ -106,6 +127,7 @@ export default function Portfolio(props) {
     <div className="gallery">
       <div className="filter">{filterButtons}</div>
       <div className="grid">{works}</div>
+      <WorkInfo info={workInfo} />
     </div>
   );
 }

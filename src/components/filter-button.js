@@ -8,7 +8,7 @@ export default class FilterButton extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(e) {
+  handleClick() {
     this.props.clickHandler(this.props.tag, this.props.type);
   }
 
