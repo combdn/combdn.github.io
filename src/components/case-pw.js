@@ -23,6 +23,7 @@ export default function CasePw(props) {
   ));
   console.log(jobEditorImages);
 
+  // TODO: add diagram from /Users/combdn/Dropbox/Work/eleks/Aon/Pathwise/Aon-PWOR-workflow-v002.ai
   return (
     <article>
       <h1>Insurance Risk Simulation Applications</h1>

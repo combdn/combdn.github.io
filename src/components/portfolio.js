@@ -58,18 +58,18 @@ export default function Portfolio(props) {
   };
 
   const handleThumbnailClick = identificator => {
-    console.log(identificator);
-
     let work = data.find(element => element.id === identificator);
-    console.log(work);
+    //console.log(work);
 
     setWorkInfo(work.info);
-    console.log(work.info);
+    //console.log(work.info);
   };
 
   let works = [];
   let tags = new Set();
   let filterButtons = [];
+
+  // TODO: add PDF comparison image?
 
   // Create thumbnails array
   for (const work of dataToShow) {

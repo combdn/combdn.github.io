@@ -1,41 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Router, Link, navigate } from '@reach/router';
 import './work-thumbnail.scss';
 
 export default function WorkThumbnail(props) {
-  let hoverClass = '';
+  const [selected, setSelected] = useState(false);
+  const [wrapperClasses, setWrapperClasses] = useState(
+    props.wrapperClass + ' wrapper'
+  );
 
+  // TODO: finish selected state handling
   const handleClick = () => {
-    props.clickHandler(props.identificator);
+    setSelected(current => {
+      if (current) {
+        console.log('selected == true');
+
+        setWrapperClasses(props.wrapperClass + ' wrapper');
+        return false;
+      } else {
+        console.log('selected == false');
+        setWrapperClasses(current => {
+          console.log('about to return wrapper + selected:');
+          console.log(current + ' selected');
+          return current + ' selected';
+        });
+        return true;
+      }
+    });
+    console.log('about to run props.clickHandler');
+    //props.clickHandler(props.identificator);
   };
 
-  if (props.project === props.projectUnderHover) {
-    hoverClass = 'work-thumbnail__project-highlight';
-  }
-
-  if (props.project && props.type === 'image') {
-    return (
-      <div
-        className={props.wrapperClass + ' wrapper' + ' ' + hoverClass}
-        // onClick={() => navigate('case/' + props.project.toLowerCase())}
-        onClick={handleClick}
-        // onPointerEnter={e => props.hoverHandler(props.project, true)}
-        // onPointerLeave={e => props.hoverHandler(props.project, false)}
-      >
-        <img alt="" className={props.class} src={props.file} />
-      </div>
-    );
-  }
-
+  // Return image
   if (props.type === 'image') {
     return (
-      <div className={props.wrapperClass + ' wrapper'} onClick={handleClick}>
+      <div className={wrapperClasses} onClick={handleClick}>
         <img alt="" className={props.class} src={props.file} />
       </div>
     );
-  } else if (props.type === 'video') {
+  }
+
+  // Return video
+  else if (props.type === 'video') {
     return (
-      <div className={props.wrapperClass + ' wrapper'} onClick={handleClick}>
+      <div className={wrapperClasses} onClick={handleClick}>
         <video
           // FIXME: enable temporary disabled autoplay
           //autoPlay
