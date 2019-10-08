@@ -33,7 +33,10 @@ export default function WorkThumbnail(props) {
   // Return image
   if (props.type === 'image') {
     return (
-      <div className={wrapperClasses} onClick={handleClick}>
+      <div
+        className={wrapperClasses}
+        onClick={() => props.clickHandler(props.identificator)}
+      >
         <img alt="" className={props.class} src={props.file} />
       </div>
     );

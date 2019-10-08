@@ -58,10 +58,13 @@ export default function Portfolio(props) {
   };
 
   const handleThumbnailClick = identificator => {
+    // console.log(data[0].info)
+    // debugger;
     let work = data.find(element => element.id === identificator);
-    //console.log(work);
-
-    setWorkInfo(work.info);
+    // console.log(data[0].info)
+    // console.log(work);
+    setWorkInfo({ info: work.info, project: work.project });
+    console.log({ info: work.info, project: work.project });
     //console.log(work.info);
   };
 
@@ -122,12 +125,12 @@ export default function Portfolio(props) {
       />
     );
   });
-
+  console.log({ ...workInfo });
   return (
     <div className="gallery">
       <div className="filter">{filterButtons}</div>
       <div className="grid">{works}</div>
-      <WorkInfo info={workInfo} />
+      <WorkInfo {...workInfo} />
     </div>
   );
 }
