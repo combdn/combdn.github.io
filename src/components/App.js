@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Router, Link } from '@reach/router';
 import './App.scss';
-import ScrollToTop from './components/scroll-to-top';
-import Home from './components/home';
-import Case from './components/case';
+import ScrollToTop from './scroll-to-top';
+import Home from './home';
+import Case from './case';
 
 export default function App() {
   return (
