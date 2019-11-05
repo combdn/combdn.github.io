@@ -4,12 +4,12 @@ import uuid from 'uuid/v4';
 
 import FilterButton from './filter-button';
 import WorkThumbnail from './work-thumbnail';
-import WorkInfo from './work-info';
+import WorkInfo from '../../components/work-info';
 
-import data from './data';
-import useFiles from './useFiles';
+import data from '../../components/data';
+import useFiles from '../../components/useFiles';
 
-import './portfolio.scss';
+import './gallery.scss';
 
 const { images, videos } = useFiles();
 
