@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Router, Link } from '@reach/router';
 import uuid from 'uuid/v4';
 
+//Redux components
+import Filter from './filter';
+
 import FilterButton from './filter-button';
 import WorkThumbnail from './work-thumbnail';
 import WorkInfo from '../../components/work-info';
@@ -128,6 +131,7 @@ export default function Portfolio(props) {
   console.log({ ...workInfo });
   return (
     <div className="gallery">
+      <Filter />
       <div className="filter">{filterButtons}</div>
       <div className="grid">{works}</div>
       <WorkInfo {...workInfo} />
