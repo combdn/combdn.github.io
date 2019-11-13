@@ -13,9 +13,6 @@ const Filter = ({
   showAll
 }) => {
   let filterButtons = [];
-  console.log('test');
-
-  console.log({ dataToShow, availableTags, selectedTags, toggleTag, showAll });
 
   // Add "Show All" button. (No tag, different type.)
   filterButtons.push(
@@ -36,7 +33,7 @@ const Filter = ({
         key={uuid()}
         type="filter"
         tag={tag}
-        selected={selectedTags.has(tag)}
+        selected={selectedTags.indexOf(tag) >= 0}
         clickHandler={() => toggleTag({ tag })}
         counter={counter}
       />
