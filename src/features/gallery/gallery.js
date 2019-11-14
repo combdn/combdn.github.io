@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Router, Link } from '@reach/router';
 import uuid from 'uuid/v4';
 
-//Redux components
+// Redux components
 import Filter from './filter';
 import WorkThumbnail from './work-thumbnail';
 import WorkInfo from '../../components/work-info';
@@ -39,7 +39,7 @@ function Gallery({ dataToShow }) {
   let tags = new Set();
   let filterButtons = [];
 
-  // TODO: add PDF comparison image?
+  // TODO: add PDF comparison work to the gallery?
 
   // Create thumbnails array
   for (const work of dataToShow) {
@@ -52,11 +52,8 @@ function Gallery({ dataToShow }) {
         wrapperClass={thumbnailWrapperClasses}
         type={work.type}
         file={work.type === 'image' ? images[work.file] : videos[work.file]}
-        class={work.class}
+        workClass={work.class}
         project={work.project}
-        projectUnderHover={projectUnderHover}
-        // hoverHandler={handleHover}
-        clickHandler={handleThumbnailClick}
       />
     );
 

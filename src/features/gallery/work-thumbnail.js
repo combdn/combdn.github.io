@@ -1,61 +1,65 @@
 import React, { useState, useEffect } from 'react';
+
+import { connect } from 'react-redux';
+import { toggleWorkSelection } from './gallerySlice';
+
 import { Router, Link, navigate } from '@reach/router';
 import './work-thumbnail.scss';
 
-export default function WorkThumbnail(props) {
-  const [selected, setSelected] = useState(false);
+function WorkThumbnail({
+  identificator,
+  wrapperClass,
+  type,
+  file,
+  workClass,
+  project,
+  selectedWorkId,
+  toggleWorkSelection
+}) {
   const [wrapperClasses, setWrapperClasses] = useState(
-    props.wrapperClass + ' wrapper'
+    wrapperClass + ' wrapper'
   );
 
-  // TODO: finish selected state handling
-  const handleClick = () => {
-    setSelected(current => {
-      if (current) {
-        console.log('selected == true');
-
-        setWrapperClasses(props.wrapperClass + ' wrapper');
-        return false;
-      } else {
-        console.log('selected == false');
-        setWrapperClasses(current => {
-          console.log('about to return wrapper + selected:');
-          console.log(current + ' selected');
-          return current + ' selected';
-        });
-        return true;
-      }
-    });
-    console.log('about to run props.clickHandler');
-    //props.clickHandler(props.identificator);
-  };
-
   // Return image
-  if (props.type === 'image') {
+  if (type === 'image') {
     return (
       <div
         className={wrapperClasses}
-        onClick={() => props.clickHandler(props.identificator)}
+        onClick={() => toggleWorkSelection({ id: identificator })}
       >
-        <img alt="" className={props.class} src={props.file} />
+        <img alt="" className={workClass} src={file} />
       </div>
     );
   }
 
   // Return video
-  else if (props.type === 'video') {
+  else if (type === 'video') {
     return (
-      <div className={wrapperClasses} onClick={handleClick}>
+      <div
+        className={wrapperClasses}
+        onClick={() => toggleWorkSelection({ id: identificator })}
+      >
         <video
           // FIXME: enable temporary disabled autoplay
           //autoPlay
           playsInline
           muted={true}
           loop
-          className={props.class}
-          src={props.file}
+          className={workClass}
+          src={file}
         />
       </div>
     );
   }
 }
+
+const mapStateToProps = (state, ownprops) => ({
+  selectedWorkId: state.gallery.selectedWorkId
+});
+
+const mapDispatchToProps = { toggleWorkSelection };
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(WorkThumbnail);

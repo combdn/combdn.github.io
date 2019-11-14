@@ -18,7 +18,8 @@ const gallerySlice = createSlice({
   initialState: {
     dataToShow: data,
     availableTags: computeAvailableTags(data),
-    selectedTags: []
+    selectedTags: [],
+    selectedWorkId: ''
   },
   reducers: {
     toggleTag: (state, action) => {
@@ -55,10 +56,17 @@ const gallerySlice = createSlice({
       state.dataToShow = data;
       state.selectedTags = [];
       state.availableTags = computeAvailableTags(data);
+    },
+    toggleWorkSelection: (state, action) => {
+      if (state.selectedWorkId === '') {
+        state.selectedWorkId = action.payload.id;
+      } else {
+        state.selectedWorkId = '';
+      }
     }
   }
 });
 
-export const { toggleTag, showAll } = gallerySlice.actions;
+export const { toggleTag, showAll, toggleWorkSelection } = gallerySlice.actions;
 
 export default gallerySlice.reducer;

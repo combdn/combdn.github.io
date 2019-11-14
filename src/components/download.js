@@ -1,3 +1,5 @@
+// This component is used to add id property to the gallery data
+
 import React, { useState, useEffect } from 'react';
 import uuid from 'uuid/v4';
 import data from './data';
@@ -17,6 +19,7 @@ export default function Download() {
     var file;
 
     var properties = { type: 'text/plain' }; // Specify the file's mime-type.
+
     try {
       // Specify the filename using the File constructor, but ...
       file = new File(downloadableData, 'file.json', properties);
