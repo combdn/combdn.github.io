@@ -13,10 +13,6 @@ const computeAvailableTags = data => {
   return [...availableTags];
 };
 
-// for (const work of data) {
-//   work.tags.forEach(tag => availableTags.add(tag));
-// }
-
 const gallerySlice = createSlice({
   slice: 'gallery',
   initialState: {

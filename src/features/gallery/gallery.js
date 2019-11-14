@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import { Router, Link } from '@reach/router';
 import uuid from 'uuid/v4';
 
 //Redux components
 import Filter from './filter';
-
-import FilterButton from './filter-button';
 import WorkThumbnail from './work-thumbnail';
 import WorkInfo from '../../components/work-info';
 
@@ -16,44 +15,9 @@ import './gallery.scss';
 
 const { images, videos } = useFiles();
 
-export default function Portfolio(props) {
-  const [dataToShow, setDataToShow] = useState(data);
-  const [selectedTags, setSelectedTags] = useState([]);
+function Gallery({ dataToShow }) {
   const [projectUnderHover, setProjectUnderHover] = useState();
   const [workInfo, setWorkInfo] = useState({});
-
-  function handleFilterClick(tag, type) {
-    let currentSelectedTags = selectedTags;
-
-    if (type === 'showAll') {
-      if (currentSelectedTags.length === 0) {
-        return;
-      }
-      currentSelectedTags = [];
-      setSelectedTags([]);
-    } else {
-      if (selectedTags.includes(tag)) {
-        currentSelectedTags.splice(currentSelectedTags.indexOf(tag), 1);
-        setSelectedTags(currentSelectedTags);
-      } else {
-        currentSelectedTags.push(tag);
-        setSelectedTags(currentSelectedTags);
-      }
-    }
-
-    if (selectedTags.length === 0) {
-      setDataToShow(data);
-    } else {
-      setDataToShow(
-        data.filter(element => {
-          for (const selectedTag of currentSelectedTags) {
-            if (!element.tags.includes(selectedTag)) return false;
-          }
-          return true;
-        })
-      );
-    }
-  }
 
   const handleHover = (project, hoverIsOn) => {
     console.log(project + ' hover!');
@@ -102,39 +66,19 @@ export default function Portfolio(props) {
   }
 
   //Add "Show all" button
-  filterButtons.push(
-    <FilterButton
-      key={uuid()}
-      type="showAll"
-      tag=""
-      clickHandler={handleFilterClick}
-    />
-  );
 
-  //Add the rest of the buttons
-  tags.forEach(tag => {
-    let counter = 0;
-    for (const item of dataToShow) {
-      if (item.tags.includes(tag)) counter++;
-    }
-    filterButtons.push(
-      <FilterButton
-        key={uuid()}
-        type="filter"
-        tag={tag}
-        selected={selectedTags.includes(tag)}
-        clickHandler={handleFilterClick}
-        counter={counter}
-      />
-    );
-  });
   console.log({ ...workInfo });
   return (
     <div className="gallery">
       <Filter />
-      <div className="filter">{filterButtons}</div>
       <div className="grid">{works}</div>
       <WorkInfo {...workInfo} />
     </div>
   );
 }
+
+const mapStateToProps = (state, ownProps) => ({
+  dataToShow: state.gallery.dataToShow
+});
+
+export default connect(mapStateToProps)(Gallery);

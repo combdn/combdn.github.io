@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from './header';
-import Portfolio from '../features/gallery/gallery';
+import Gallery from '../features/gallery/gallery';
 import Footer from './footer';
 
 export default function Home(props) {
   return (
     <div>
       <Header />
-      <Portfolio />
+      <Gallery />
       <Footer />
     </div>
   );
