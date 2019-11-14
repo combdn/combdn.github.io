@@ -16,9 +16,15 @@ function WorkThumbnail({
   selectedWorkId,
   toggleWorkSelection
 }) {
-  const [wrapperClasses, setWrapperClasses] = useState(
-    wrapperClass + ' wrapper'
-  );
+  // const [wrapperClasses, setWrapperClasses] = useState(
+  //   wrapperClass + ' wrapper'
+  // );
+
+  let wrapperClasses = wrapperClass + ' wrapper';
+
+  if (identificator === selectedWorkId) {
+    wrapperClasses = wrapperClass + ' wrapper selected';
+  }
 
   // Return image
   if (type === 'image') {
