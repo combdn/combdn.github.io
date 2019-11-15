@@ -19,7 +19,8 @@ const gallerySlice = createSlice({
     dataToShow: data,
     availableTags: computeAvailableTags(data),
     selectedTags: [],
-    selectedWorkId: ''
+    selectedWorkId: '',
+    selectedWorkProject: ''
   },
   reducers: {
     toggleTag: (state, action) => {
@@ -74,9 +75,11 @@ const gallerySlice = createSlice({
         state.selectedWorkId !== action.payload.id
       ) {
         state.selectedWorkId = action.payload.id;
+        state.selectedWorkProject = action.payload.project;
       } else {
         // If clicked on the same thumbnail twice
         state.selectedWorkId = '';
+        state.selectedWorkProject = '';
       }
     }
   }

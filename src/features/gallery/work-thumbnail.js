@@ -14,16 +14,20 @@ function WorkThumbnail({
   workClass,
   project,
   selectedWorkId,
-  toggleWorkSelection
+  toggleWorkSelection,
+  selectedWorkProject
 }) {
-  // const [wrapperClasses, setWrapperClasses] = useState(
-  //   wrapperClass + ' wrapper'
-  // );
-
   let wrapperClasses = wrapperClass + ' wrapper';
 
+  // Manage wrapper classes for the selected
+  // and matching to the selected project thumbnails
   if (identificator === selectedWorkId) {
     wrapperClasses = wrapperClass + ' wrapper selected';
+  } else if (
+    typeof project !== 'undefined' &&
+    project === selectedWorkProject
+  ) {
+    wrapperClasses = wrapperClass + ' wrapper same-project';
   }
 
   // Return image
@@ -31,7 +35,9 @@ function WorkThumbnail({
     return (
       <div
         className={wrapperClasses}
-        onClick={() => toggleWorkSelection({ id: identificator })}
+        onClick={() =>
+          toggleWorkSelection({ id: identificator, project: project })
+        }
       >
         <img alt="" className={workClass} src={file} />
       </div>
@@ -43,7 +49,9 @@ function WorkThumbnail({
     return (
       <div
         className={wrapperClasses}
-        onClick={() => toggleWorkSelection({ id: identificator })}
+        onClick={() =>
+          toggleWorkSelection({ id: identificator, project: project })
+        }
       >
         <video
           // FIXME: enable temporary disabled autoplay
@@ -60,7 +68,8 @@ function WorkThumbnail({
 }
 
 const mapStateToProps = (state, ownprops) => ({
-  selectedWorkId: state.gallery.selectedWorkId
+  selectedWorkId: state.gallery.selectedWorkId,
+  selectedWorkProject: state.gallery.selectedWorkProject
 });
 
 const mapDispatchToProps = { toggleWorkSelection };

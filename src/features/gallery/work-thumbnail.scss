@@ -11,6 +11,10 @@
     border: solid 1px red;
   }
 
+  & + .same-project {
+    border: dashed 1px red;
+  }
+
   img {
     width: 100%;
     height: 100%;
