@@ -62,9 +62,7 @@ function Gallery({ dataToShow }) {
     work.tags.forEach(tag => tags.add(tag));
   }
 
-  //Add "Show all" button
-
-  console.log({ ...workInfo });
+  // Add "Show all" button
   return (
     <div className="gallery">
       <Filter />

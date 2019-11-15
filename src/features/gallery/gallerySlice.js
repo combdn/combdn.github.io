@@ -51,6 +51,16 @@ const gallerySlice = createSlice({
       // Convert the set back to array to store in the state
       state.selectedTags = [...selectedTagsSet];
       state.availableTags = computeAvailableTags(state.dataToShow);
+
+      // If some thumbnail is selected and it will be invisible
+      // after filtering — discard selection
+      if (state.selectedWorkId !== '') {
+        if (
+          state.dataToShow.findIndex(work => work.id === state.selectedWorkId) <
+          0
+        )
+          state.selectedWorkId = '';
+      }
     },
     showAll: (state, action) => {
       state.dataToShow = data;
@@ -58,9 +68,14 @@ const gallerySlice = createSlice({
       state.availableTags = computeAvailableTags(data);
     },
     toggleWorkSelection: (state, action) => {
-      if (state.selectedWorkId === '') {
+      // If nothing is selected or click was on different thumbnail
+      if (
+        state.selectedWorkId === '' ||
+        state.selectedWorkId !== action.payload.id
+      ) {
         state.selectedWorkId = action.payload.id;
       } else {
+        // If clicked on the same thumbnail twice
         state.selectedWorkId = '';
       }
     }
