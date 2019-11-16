@@ -11,13 +11,13 @@
   & + .selected {
     border: 2px solid red;
     padding: 6px;
-    border-radius: 14px;
+    border-radius: 16px;
   }
 
   & + .same-project {
     border: 2px dashed red;
     padding: 6px;
-    border-radius: 14px;
+    border-radius: 16px;
   }
 
   img {
@@ -111,8 +111,18 @@
 }
 
 .latency {
-  background-color: white;
-  border-radius: 10px;
+  position: relative;
+  padding: 8px;
+
+  &:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    background-color: white;
+    border-radius: 10px;
+  }
 }
 
 .cover-video {
