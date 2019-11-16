@@ -9,13 +9,15 @@
   //animation: 0.1s ease-out 0s 1 appear;
 
   &.selected {
-    border: 2px solid red;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.1);
     padding: 6px;
     border-radius: 16px;
   }
 
   &.same-project {
-    border: 2px dashed red;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    //background: rgba(255, 255, 255, 0.1);
     padding: 6px;
     border-radius: 16px;
   }
