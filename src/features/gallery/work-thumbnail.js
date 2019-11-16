@@ -53,15 +53,19 @@ function WorkThumbnail({
           toggleWorkSelection({ id: identificator, project: project })
         }
       >
-        <video
-          // FIXME: enable temporary disabled autoplay
-          //autoPlay
-          playsInline
-          muted={true}
-          loop
-          className={workClass}
-          src={file}
-        />
+        {/* Need this wrapper to apply the shadow to the masked videos
+        without affecting the selection frame. */}
+        <div className="video-wrapper">
+          <video
+            // FIXME: enable temporary disabled autoplay
+            //autoPlay
+            playsInline
+            muted={true}
+            loop
+            className={workClass}
+            src={file}
+          />
+        </div>
       </div>
     );
   }
