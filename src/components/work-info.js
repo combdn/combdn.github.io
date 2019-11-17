@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import { Link } from '@reach/router';
 
 import './work-info.scss';
 
-export default function WorkInfo(props) {
+function WorkInfo({ dataToShow, selectedWorkId }) {
   // If object is empty return empty div
-  if (Object.entries(props).length === 0 && props.constructor === Object) {
+  if (selectedWorkId === '') {
     return <div />;
   }
 
-  const { info, project, tags } = props;
+  let work = dataToShow.find(element => element.id === selectedWorkId);
+
+  const { info, project, tags } = work;
+
+  if (info === undefined) {
+    return <div />;
+  }
 
   return (
     <div className="work-info__root">
@@ -22,3 +29,11 @@ export default function WorkInfo(props) {
     </div>
   );
 }
+
+const mapStateToProps = (state, ownProps) => ({
+  dataToShow: state.gallery.dataToShow,
+  selectedWorkId: state.gallery.selectedWorkId,
+  selectedWorkProject: state.gallery.selectedWorkProject
+});
+
+export default connect(mapStateToProps)(WorkInfo);

@@ -28,7 +28,7 @@ export default [
     type: 'video',
     class: 'cover-video',
     file: 'videos/PW-concept.mp4',
-    project: 'pw',
+    project: 'Risk Management Solution',
     tags: ['concept', 'complex'],
     info: {
       title: 'Insurance Risk Simulation',
@@ -41,7 +41,7 @@ export default [
     type: 'image',
     class: 'center',
     file: 'images/PW-deploy-icon.svg',
-    project: 'pw',
+    project: 'Risk Management Solution',
     tags: ['look'],
     info: {
       title: 'Insurance Risk Simulation',
@@ -53,7 +53,7 @@ export default [
     wrapperClass: 'tall-big',
     type: 'image',
     file: 'images/PW-properties.png',
-    project: 'pw',
+    project: 'Risk Management Solution',
     tags: ['look', 'complex'],
     id: '44512dd2-6e36-4f2c-950d-b1c6e6ae1a6f'
   },
@@ -61,7 +61,7 @@ export default [
     wrapperClass: 'wide-big',
     type: 'image',
     file: 'images/PW-nodes-types.png',
-    project: 'pw',
+    project: 'Risk Management Solution',
     tags: ['look', 'complex'],
     id: 'eb774acd-dc8c-4dc0-951a-9a133ac6870c'
   },
@@ -69,7 +69,7 @@ export default [
     wrapperClass: 'wide-big',
     type: 'image',
     file: 'images/PW-real-case.png',
-    project: 'pw',
+    project: 'Risk Management Solution',
     tags: ['look', 'complex'],
     id: '2496432a-7d42-4301-8487-ba9f076984e5'
   },
@@ -78,7 +78,7 @@ export default [
     type: 'image',
     class: '',
     file: 'images/PW-signoff-cropped.png',
-    project: 'pw',
+    project: 'Risk Management Solution',
     tags: ['look', 'complex'],
     id: '1bf2ba17-5f18-48ec-b160-b0d3050cca89'
   },
@@ -87,7 +87,7 @@ export default [
     type: 'image',
     class: 'center',
     file: 'images/PW-navigator.svg',
-    project: 'pw',
+    project: 'Risk Management Solution',
     tags: ['look'],
     id: 'b74db270-7964-4e1f-b0f2-4792081dd7d9'
   },
@@ -96,7 +96,7 @@ export default [
     type: 'image',
     class: '',
     file: 'images/PW-job-editing-cropped.png',
-    project: 'pw',
+    project: 'Risk Management Solution',
     tags: ['look', 'complex'],
     id: '9ec38bdf-5868-4626-b44b-9b027555768c'
   },
