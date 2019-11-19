@@ -8,32 +8,52 @@
   align-items: center;
   padding: 7px 16px 8px;
   margin: 0 8px 8px 0;
-  border: 1px solid rgba($color: white, $alpha: 0.15);
   border-radius: 16px;
   cursor: pointer;
   user-select: none;
   line-height: 1;
   transition: all 0.15s ease-in-out;
 
-  &:hover {
-    background-color: rgba($color: white, $alpha: 0.2);
-  }
-
-  &.selected {
-    background-color: rgba($color: white, $alpha: 1);
-    color: #333;
-    font-weight: 400;
-    border: 1px solid rgba($color: white, $alpha: 0);
-
+  &.light {
+    border: 1px solid rgba($color: white, $alpha: 0.15);
     &:hover {
-      background-color: rgba(255, 255, 255, 1);
-      border: 1px solid rgba($color: white, $alpha: 0);
+      background-color: rgba($color: white, $alpha: 0.2);
     }
 
+    &.selected {
+      background-color: rgba($color: white, $alpha: 1);
+      color: #333;
+      font-weight: 400;
+      border: 1px solid rgba($color: white, $alpha: 0);
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 1);
+        border: 1px solid rgba($color: white, $alpha: 0);
+      }
+    }
+  }
+
+  &.dark {
+    border: 1px solid rgba($color: #1485ff, $alpha: 0);
+    background-color: rgba($color: #1485ff, $alpha: 0.2);
     .label {
-      //display: inline-block;
-      text-transform: capitalize;
-      margin-right: 8px;
+      color: #1485ff;
+    }
+
+    &:hover {
+      background-color: rgba($color: #1485ff, $alpha: 0.2);
+    }
+
+    &.selected {
+      background-color: rgba($color: #1485ff, $alpha: 1);
+      color: #333;
+      font-weight: 400;
+      border: 1px solid rgba($color: #1485ff, $alpha: 0);
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 1);
+        border: 1px solid rgba($color: #1485ff, $alpha: 0);
+      }
     }
   }
 }

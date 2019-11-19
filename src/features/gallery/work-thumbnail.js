@@ -12,10 +12,10 @@ function WorkThumbnail({
   type,
   file,
   workClass,
-  project,
+  caseId,
   selectedWorkId,
   toggleWorkSelection,
-  selectedWorkProject
+  selectedWorkCaseId
 }) {
   let wrapperClasses = wrapperClass + ' wrapper';
 
@@ -23,10 +23,7 @@ function WorkThumbnail({
   // and matching to the selected project thumbnails
   if (identificator === selectedWorkId) {
     wrapperClasses = wrapperClass + ' wrapper selected';
-  } else if (
-    typeof project !== 'undefined' &&
-    project === selectedWorkProject
-  ) {
+  } else if (typeof caseId !== 'undefined' && caseId === selectedWorkCaseId) {
     wrapperClasses = wrapperClass + ' wrapper same-project';
   }
 
@@ -36,7 +33,7 @@ function WorkThumbnail({
       <div
         className={wrapperClasses}
         onClick={() =>
-          toggleWorkSelection({ id: identificator, project: project })
+          toggleWorkSelection({ id: identificator, caseId: caseId })
         }
       >
         <img alt="" className={workClass} src={file} />
@@ -50,7 +47,7 @@ function WorkThumbnail({
       <div
         className={wrapperClasses}
         onClick={() =>
-          toggleWorkSelection({ id: identificator, project: project })
+          toggleWorkSelection({ id: identificator, caseId: caseId })
         }
       >
         {/* Need this wrapper to apply the shadow to the masked videos
@@ -73,7 +70,7 @@ function WorkThumbnail({
 
 const mapStateToProps = (state, ownprops) => ({
   selectedWorkId: state.gallery.selectedWorkId,
-  selectedWorkProject: state.gallery.selectedWorkProject
+  selectedWorkCaseId: state.gallery.selectedWorkCaseId
 });
 
 const mapDispatchToProps = { toggleWorkSelection };

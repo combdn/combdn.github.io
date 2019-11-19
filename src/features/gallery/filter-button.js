@@ -58,6 +58,17 @@ export default class FilterButton extends Component {
             Show All
           </div>
         );
+      case 'infoTag':
+        return (
+          <div
+            role="button"
+            className={classes + ' info-tag'}
+            onClick={this.handleClick}
+          >
+            <EmojiBlock icon={icon} cssClass="icon" />
+            <div className="label">{this.props.tag}</div>
+          </div>
+        );
       default:
         return (
           <div role="button" className={classes} onClick={this.handleClick}>

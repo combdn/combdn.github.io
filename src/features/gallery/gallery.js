@@ -6,7 +6,7 @@ import uuid from 'uuid/v4';
 // Redux components
 import Filter from './filter';
 import WorkThumbnail from './work-thumbnail';
-import WorkInfo from '../../components/work-info';
+import WorkInfo from './work-info';
 
 import useFiles from '../../components/useFiles';
 
@@ -32,7 +32,7 @@ function Gallery({ dataToShow }) {
         type={work.type}
         file={work.type === 'image' ? images[work.file] : videos[work.file]}
         workClass={work.class}
-        project={work.project}
+        caseId={work.caseId}
       />
     );
 

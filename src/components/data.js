@@ -18,7 +18,8 @@ export default [
     file: 'images/QiVisor-HR.png',
     tags: ['look', 'data visualization', 'complex'],
     info: {
-      title: 'Industrial Monitoring Tool',
+      title: 'Employee Location Analysis',
+      project: 'Industrial Monitoring Tool',
       description: 'The screen shows the employee location analysis view.'
     },
     id: 'c3cbae8a-2656-4ac3-9fbb-1699a8356f76'
@@ -28,11 +29,13 @@ export default [
     type: 'video',
     class: 'cover-video',
     file: 'videos/PW-concept.mp4',
-    project: 'Risk Management Solution',
+    caseId: 'pw',
     tags: ['concept', 'complex'],
     info: {
-      title: 'Insurance Risk Simulation',
-      description: 'Demo of the initial concept.'
+      title: 'Insurance Risk Simulation IDE (Initial Concept)',
+      description:
+        'The demo of the initial concept that was created in two days after debriefing on the project goal.',
+      project: 'Risk Management Solution'
     },
     id: 'c9d09493-8171-4bd7-ad43-75941af72b35'
   },
@@ -41,11 +44,12 @@ export default [
     type: 'image',
     class: 'center',
     file: 'images/PW-deploy-icon.svg',
-    project: 'Risk Management Solution',
+    caseId: 'pw',
     tags: ['look'],
     info: {
-      title: 'Insurance Risk Simulation',
-      description: 'Deploy icon.'
+      title: 'Deploy Package Icon',
+      description: 'A nice thing to press when the work is done :)',
+      project: 'Risk Management Solution'
     },
     id: '8b1eb5d3-fb75-42ad-b9bc-ac5fec7a5ce8'
   },
@@ -53,7 +57,7 @@ export default [
     wrapperClass: 'tall-big',
     type: 'image',
     file: 'images/PW-properties.png',
-    project: 'Risk Management Solution',
+    caseId: 'pw',
     tags: ['look', 'complex'],
     id: '44512dd2-6e36-4f2c-950d-b1c6e6ae1a6f'
   },
@@ -61,7 +65,7 @@ export default [
     wrapperClass: 'wide-big',
     type: 'image',
     file: 'images/PW-nodes-types.png',
-    project: 'Risk Management Solution',
+    caseId: 'pw',
     tags: ['look', 'complex'],
     id: 'eb774acd-dc8c-4dc0-951a-9a133ac6870c'
   },
@@ -69,7 +73,7 @@ export default [
     wrapperClass: 'wide-big',
     type: 'image',
     file: 'images/PW-real-case.png',
-    project: 'Risk Management Solution',
+    caseId: 'pw',
     tags: ['look', 'complex'],
     id: '2496432a-7d42-4301-8487-ba9f076984e5'
   },
@@ -78,7 +82,7 @@ export default [
     type: 'image',
     class: '',
     file: 'images/PW-signoff-cropped.png',
-    project: 'Risk Management Solution',
+    caseId: 'pw',
     tags: ['look', 'complex'],
     id: '1bf2ba17-5f18-48ec-b160-b0d3050cca89'
   },
@@ -87,7 +91,7 @@ export default [
     type: 'image',
     class: 'center',
     file: 'images/PW-navigator.svg',
-    project: 'Risk Management Solution',
+    caseId: 'pw',
     tags: ['look'],
     id: 'b74db270-7964-4e1f-b0f2-4792081dd7d9'
   },
@@ -96,7 +100,7 @@ export default [
     type: 'image',
     class: '',
     file: 'images/PW-job-editing-cropped.png',
-    project: 'Risk Management Solution',
+    caseId: 'pw',
     tags: ['look', 'complex'],
     id: '9ec38bdf-5868-4626-b44b-9b027555768c'
   },
@@ -194,6 +198,11 @@ export default [
     type: 'image',
     file: 'images/Yawn-logo-blur-400-300.png',
     tags: ['look', 'lettering', 'typography'],
+    info: {
+      title: 'Yawn Logo',
+      description:
+        'The logo for the property search engine. The “Y” letter resembles the palatine uvula, which you may have a chance to observe in the mouth of a yawning person.'
+    },
     id: 'bde34985-2cf0-4cd1-a509-757bccb9f85d'
   },
   {
