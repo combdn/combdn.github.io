@@ -8,6 +8,7 @@ export default [
     tags: ['look', 'mobile', 'concept', 'typography'],
     info: {
       title: 'Daily Mail App Concept',
+      project: 'Presales',
       description: 'The goal was to show a possible improvements direction.'
     },
     id: '683dacd1-ea34-419c-9e18-5f78ffdd0456'
@@ -34,7 +35,7 @@ export default [
     info: {
       title: 'Insurance Risk Simulation IDE (Initial Concept)',
       description:
-        'The demo of the initial concept that was created in two days after debriefing on the project goal.',
+        'The demo of the initial concept that was created in two days after the briefing on the project goal.',
       project: 'Risk Management Solution'
     },
     id: 'c9d09493-8171-4bd7-ad43-75941af72b35'
@@ -59,6 +60,12 @@ export default [
     file: 'images/PW-properties.png',
     caseId: 'pw',
     tags: ['look', 'complex'],
+    info: {
+      title: 'Properties Panel',
+      project: 'Risk Management Solution',
+      description:
+        'Task function can have a large set of output parameters. This design is focused on their nesting structure and reordering.'
+    },
     id: '44512dd2-6e36-4f2c-950d-b1c6e6ae1a6f'
   },
   {
@@ -67,6 +74,12 @@ export default [
     file: 'images/PW-nodes-types.png',
     caseId: 'pw',
     tags: ['look', 'complex'],
+    info: {
+      title: 'Node Types',
+      project: 'Risk Management Solution',
+      description:
+        'Various node types: task functions, a data source, data destinations, an exit, and a note.'
+    },
     id: 'eb774acd-dc8c-4dc0-951a-9a133ac6870c'
   },
   {
@@ -75,6 +88,12 @@ export default [
     file: 'images/PW-real-case.png',
     caseId: 'pw',
     tags: ['look', 'complex'],
+    info: {
+      title: 'Real-World Case',
+      project: 'Risk Management Solution',
+      description:
+        'Simple but still real-world scenario to test the design desicions.'
+    },
     id: '2496432a-7d42-4301-8487-ba9f076984e5'
   },
   {
@@ -84,6 +103,12 @@ export default [
     file: 'images/PW-signoff-cropped.png',
     caseId: 'pw',
     tags: ['look', 'complex'],
+    info: {
+      title: 'Orchestrator',
+      project: 'Risk Management Solution',
+      description:
+        'The Windows app to install, run, and debug jobs on a full-fledged environments.'
+    },
     id: '1bf2ba17-5f18-48ec-b160-b0d3050cca89'
   },
   {
@@ -93,6 +118,12 @@ export default [
     file: 'images/PW-navigator.svg',
     caseId: 'pw',
     tags: ['look'],
+    info: {
+      title: 'Navigator Icon',
+      project: 'Risk Management Solution',
+      description:
+        'The ribbon button to turn on the navigation panel that shows the bird’s eye view on the job graph.'
+    },
     id: 'b74db270-7964-4e1f-b0f2-4792081dd7d9'
   },
   {
@@ -102,6 +133,12 @@ export default [
     file: 'images/PW-job-editing-cropped.png',
     caseId: 'pw',
     tags: ['look', 'complex'],
+    info: {
+      title: 'Job Editing Application',
+      project: 'Risk Management Solution',
+      description:
+        'Job editing IDE (Windows). Sidebar features all of the resources required to build a risk calculation job: script bundles, models, variables, and jobs themselves.'
+    },
     id: '9ec38bdf-5868-4626-b44b-9b027555768c'
   },
   {
@@ -109,7 +146,14 @@ export default [
     type: 'video',
     class: 'cover-video',
     file: 'videos/Lighting_POC_animation_preview.mov',
+    caseId: 'stage-automation',
     tags: ['concept', 'complex', '3d'],
+    info: {
+      title: 'Driving the Lights With Objects',
+      project: 'Stage Automation R&D',
+      description:
+        'Concept for light array driving with a meta-ball while controlling the fall-off function. (Made in Houdini.)'
+    },
     id: '61e34555-ff08-40df-a630-c79ab760fcc5'
   },
   {
@@ -117,7 +161,14 @@ export default [
     type: 'video',
     class: 'cover-video',
     file: 'videos/automation-fly-concept.mp4',
+    caseId: 'stage-automation',
     tags: ['concept', 'complex', '3d'],
+    info: {
+      title: 'The “Flight” Rig',
+      project: 'Stage Automation R&D',
+      description:
+        'The concept for the scenic “flight” design interface enabling the actor-centric approach. (Made in Houdini.)'
+    },
     id: '21dac5b9-84c6-443a-9b60-f8d7a13fd35b'
   },
   {
@@ -125,6 +176,12 @@ export default [
     type: 'image',
     file: 'images/Navarik-mockup-map-no-browser.png',
     tags: ['concept', 'complex'],
+    info: {
+      title: '“Oil on the Way” Visualization',
+      project: 'Presales',
+      description:
+        'The concept for the interface to allow brokers to analyze the crude oil transportation between the primary production and consumption points.'
+    },
     id: '1dd6b28c-fbb3-47a1-bf9f-3aceaa1c96d3'
   },
   {
@@ -132,6 +189,13 @@ export default [
     type: 'video',
     class: 'cover-video',
     file: 'videos/automation-assets-concept.mp4',
+    caseId: 'stage-automation',
+    info: {
+      title: 'Stage Automation Assets',
+      project: 'Stage Automation R&D',
+      description:
+        'The concept is demonstrating the parametric stage automation asset (i. e. sliding LED screens). The main idea is to allow a quick stage design and cueing with the help of reusable components. (Made in Houdini.)'
+    },
     tags: ['concept', 'complex', '3d'],
     id: '7cb7430f-2aa8-4fdc-94a1-81ebf35e21e7'
   },
