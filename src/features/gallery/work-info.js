@@ -7,10 +7,12 @@ import uuid from 'uuid/v4';
 import Button from '../../components/button';
 import FilterButton from './filter-button';
 
+import { toggleTag } from './gallerySlice';
+
 import './work-info.scss';
 import { format } from 'path';
 
-function WorkInfo({ dataToShow, selectedWorkId }) {
+function WorkInfo({ dataToShow, selectedWorkId, toggleTag }) {
   // If object is empty return the empty div
   if (selectedWorkId === '') {
     return <div />;
@@ -32,7 +34,7 @@ function WorkInfo({ dataToShow, selectedWorkId }) {
         key={uuid()}
         type="infoTag"
         tag={tag}
-        // clickHandler={() => toggleTag({ tag })}
+        clickHandler={() => toggleTag({ tag })}
       />
     )
   );
@@ -76,4 +78,9 @@ const mapStateToProps = (state, ownProps) => ({
   selectedWorkProject: state.gallery.selectedWorkProject
 });
 
-export default connect(mapStateToProps)(WorkInfo);
+const mapDispatchToProps = { toggleTag };
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(WorkInfo);

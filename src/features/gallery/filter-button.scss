@@ -78,10 +78,19 @@
 }
 
 .info-tag {
-  font-size: 15px;
-  padding-left: 0;
-  padding-right: 0;
-  margin-right: 16px;
+  font-size: 14px;
+  letter-spacing: 0.035em;
+  font-weight: 400;
+  color: #333;
+  height: 24px;
+  padding: 0px 8px 2px;
+  margin: 0px;
+  // margin-top: 4px;
+
+  &:hover {
+    background-color: rgba($color: #1485ff, $alpha: 0.12);
+    // border: 1px solid rgba($color: white, $alpha: 0);
+  }
 
   .label {
     margin: 0;

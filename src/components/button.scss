@@ -6,7 +6,7 @@
   display: inline-flex;
   font-size: 15px;
   align-items: center;
-  padding: 7px 16px 8px;
+  padding: 0 16px 0;
   margin: 0 8px 8px 0;
   border-radius: 16px;
   cursor: pointer;
@@ -14,7 +14,12 @@
   line-height: 1;
   transition: all 0.15s ease-in-out;
 
+  .label {
+    margin-top: -2px;
+  }
+
   &.light {
+    height: 30px;
     border: 1px solid rgba($color: white, $alpha: 0.15);
     &:hover {
       background-color: rgba($color: white, $alpha: 0.2);
@@ -34,10 +39,14 @@
   }
 
   &.dark {
-    border: 1px solid rgba($color: #1485ff, $alpha: 0);
-    background-color: rgba($color: #1485ff, $alpha: 0.2);
+    height: 32px;
+    // border: 1px solid rgba($color: #1485ff, $alpha: 0);
+    border: none;
+    background-color: rgba($color: #1485ff, $alpha: 0.12);
+
     .label {
       color: #1485ff;
+      font-weight: 400;
     }
 
     &:hover {

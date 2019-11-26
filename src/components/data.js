@@ -49,7 +49,7 @@ export default [
     tags: ['look'],
     info: {
       title: 'Deploy Package Icon',
-      description: 'A nice thing to press when the work is done :)',
+      description: 'A nice thing to press when the work is done 😎',
       project: 'Risk Management Solution'
     },
     id: '8b1eb5d3-fb75-42ad-b9bc-ac5fec7a5ce8'
