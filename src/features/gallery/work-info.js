@@ -27,6 +27,7 @@ function WorkInfo({ dataToShow, selectedWorkId, toggleTag }) {
     return <div />;
   }
 
+  //TODO: add the "Close" button.
   const infoTags = [];
   tags.forEach(tag =>
     infoTags.push(

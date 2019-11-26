@@ -59,6 +59,7 @@ export default class FilterButton extends Component {
           </div>
         );
       case 'infoTag':
+        //TODO: useEffect(() => window.scrollTo(0, 0)) scroll to top (or show the filter) after clicking the tag. Or disable the tag clicking.
         return (
           <div
             role="button"

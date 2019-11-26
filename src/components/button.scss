@@ -43,11 +43,8 @@
     // border: 1px solid rgba($color: #1485ff, $alpha: 0);
     border: none;
     background-color: rgba($color: #1485ff, $alpha: 0.12);
-
-    .label {
-      color: #1485ff;
-      font-weight: 400;
-    }
+    color: #1485ff;
+    font-weight: 400;
 
     &:hover {
       background-color: rgba($color: #1485ff, $alpha: 0.2);
@@ -63,6 +60,11 @@
         background-color: rgba(255, 255, 255, 1);
         border: 1px solid rgba($color: #1485ff, $alpha: 0);
       }
+    }
+    &:active {
+      background-color: rgba($color: #1485ff, $alpha: 1);
+      color: white;
+      font-weight: 400;
     }
   }
 }
