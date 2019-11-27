@@ -7,12 +7,17 @@ import uuid from 'uuid/v4';
 import Button from '../../components/button';
 import FilterButton from './filter-button';
 
-import { toggleTag } from './gallerySlice';
+import { toggleTag, toggleWorkSelection } from './gallerySlice';
 
 import './work-info.scss';
 import { format } from 'path';
 
-function WorkInfo({ dataToShow, selectedWorkId, toggleTag }) {
+function WorkInfo({
+  dataToShow,
+  selectedWorkId,
+  toggleTag,
+  toggleWorkSelection
+}) {
   // If object is empty return the empty div
   if (selectedWorkId === '') {
     return <div />;
@@ -27,7 +32,6 @@ function WorkInfo({ dataToShow, selectedWorkId, toggleTag }) {
     return <div />;
   }
 
-  //TODO: add the "Close" button.
   const infoTags = [];
   tags.forEach(tag =>
     infoTags.push(
@@ -40,10 +44,17 @@ function WorkInfo({ dataToShow, selectedWorkId, toggleTag }) {
     )
   );
 
+  //TODO: add the "Close" button.
+
+  // Don't include the Read the Case button if there is no caseId
   if (caseId === undefined) {
     return (
       <div className="work-info__root">
         <div className="work-info__background">
+          <Button
+            look={'close'}
+            clickHandler={() => toggleWorkSelection({ id: selectedWorkId })}
+          />
           <h3 className="title">{info.title}</h3>
           <p className="description">{info.description}</p>
           <p className="project">{info.project}</p>
@@ -56,6 +67,10 @@ function WorkInfo({ dataToShow, selectedWorkId, toggleTag }) {
   return (
     <div className="work-info__root">
       <div className="work-info__background">
+        <Button
+          look={'close'}
+          clickHandler={() => toggleWorkSelection({ id: selectedWorkId })}
+        />
         <h3 className="title">{info.title}</h3>
         <p className="description">{info.description}</p>
         <p className="project">{info.project}</p>
@@ -79,7 +94,7 @@ const mapStateToProps = (state, ownProps) => ({
   selectedWorkProject: state.gallery.selectedWorkProject
 });
 
-const mapDispatchToProps = { toggleTag };
+const mapDispatchToProps = { toggleTag, toggleWorkSelection };
 
 export default connect(
   mapStateToProps,
