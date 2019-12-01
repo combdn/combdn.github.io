@@ -44,8 +44,6 @@ function WorkInfo({
     )
   );
 
-  //TODO: add the "Close" button.
-
   // Don't include the Read the Case button if there is no caseId
   if (caseId === undefined) {
     return (

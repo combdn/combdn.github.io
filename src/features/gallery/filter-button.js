@@ -64,7 +64,7 @@ export default class FilterButton extends Component {
           <div
             role="button"
             className={classes + ' info-tag'}
-            onClick={this.handleClick}
+            // onClick={this.handleClick}
           >
             <EmojiBlock icon={icon} cssClass="icon" />
             <div className="label">{this.props.tag}</div>

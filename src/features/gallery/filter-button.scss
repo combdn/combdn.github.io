@@ -19,7 +19,6 @@
 }
 
 .filter-button {
-  // TODO: add "close" button?
   display: flex;
   align-items: center;
   padding: 5px 16px 7px;
@@ -85,12 +84,13 @@
   height: 24px;
   padding: 0px 8px 2px;
   margin: 0px;
+  cursor: default;
   // margin-top: 4px;
 
-  &:hover {
-    background-color: rgba($color: #1485ff, $alpha: 0.12);
-    // border: 1px solid rgba($color: white, $alpha: 0);
-  }
+  // &:hover {
+  //   background-color: rgba($color: #1485ff, $alpha: 0.12);
+  //   // border: 1px solid rgba($color: white, $alpha: 0);
+  // }
 
   .label {
     margin: 0;
