@@ -17,7 +17,7 @@ export default function Case(props) {
   }
 
   return (
-    <div className="case">
+    <div className="page-case">
       <Button label={'← Back'} clickHandler={() => navigate('/')} />
       {caseToShow}
       <Footer variant={'case'} navigator={props.navigator} />

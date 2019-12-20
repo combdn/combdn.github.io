@@ -7,28 +7,15 @@ $small-line-height: 24px;
   background: white;
   font-weight: 400;
 
-  .button {
-    position: absolute;
-  }
-
   .section-grid {
     display: grid;
-    column-gap: 36px;
-    grid-template-columns:
-      [full-start]
-      repeat(1, minmax(24px, 1fr))
-      [wide-start]
-      repeat(2, minmax(24px, 1fr))
-      [narrow-start]
-      repeat(6, minmax(24px, 1fr))
-      [narrow-end]
-      repeat(2, minmax(24px, 1fr))
-      [wide-end]
-      repeat(1, minmax(24px, 1fr))
-      [full-end];
+    column-gap: 24px;
+    grid-template-columns: repeat(12, minmax(24px, 1fr));
+    //grid-template-rows: auto;
     font-size: 17px;
     line-height: $line-height;
-    max-width: 62em;
+    max-width: 54em;
+    // grid-auto-rows: 56px;
 
     @media screen and (max-width: 370px) {
       font-size: 16px;
@@ -43,10 +30,11 @@ $small-line-height: 24px;
     margin-top: 0;
     margin-bottom: $line-height;
 
-    &.intro {
-      background: radial-gradient(50% 50% at 50% 50%, #f0f2f3, #d3d7db);
-      margin: -24px -24px 0;
-      padding: 24px 24px 0;
+    &.concept-video {
+      margin-left: -24px;
+      margin-right: -24px;
+      padding: 24px;
+      background: #e6e8ea;
     }
   }
 
@@ -77,8 +65,7 @@ $small-line-height: 24px;
   }
 
   p {
-    // grid-column: 3/11;
-    grid-column: narrow-start/narrow-end;
+    grid-column: 3/11;
 
     margin: 0;
     margin-bottom: $line-height / 2;
@@ -92,8 +79,7 @@ $small-line-height: 24px;
   }
 
   figure {
-    // grid-column: 1/13;
-    grid-column: wide-start/wide-end;
+    grid-column: 1/13;
     margin: 0 0 $line-height / 2;
   }
 
@@ -102,11 +88,6 @@ $small-line-height: 24px;
     line-height: 18px;
     font-weight: 400;
     letter-spacing: 0.015em;
-  }
-
-  .concept {
-    grid-column: wide-start/wide-end;
-    background: #e6e8ea;
   }
 
   img,

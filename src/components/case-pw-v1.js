@@ -3,7 +3,7 @@ import useFiles from './useFiles';
 import Button from './button';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import './case-pw.scss';
+import './case-pw-v1.scss';
 
 export default function CasePw(props) {
   const { images, videos } = useFiles();
@@ -14,9 +14,6 @@ export default function CasePw(props) {
     <article>
       <section className="intro">
         <div className="section-grid">
-          <figure style={{ marginBottom: 0 }}>
-            <img src={images['images/PW-job-editing.png']} alt="Job editor" />
-          </figure>
           <h1>Insurance Risk Simulation Applications</h1>
           <div className="goal">
             {/* <EmojiBlock icon="🎯" /> */}
@@ -31,28 +28,33 @@ export default function CasePw(props) {
               jobs, the other — to install and run them.
             </div>
           </div>
-        </div>
-      </section>
-      <section className="main">
-        <div className="section-grid">
           <p>
             After the first discussion with the team, I came up with the concept
             that was based on how similar tasks (mostly one-direction data flow
             with some logic) are handled in VFX industry: i. e. boxes connected
             with wires.
           </p>
-          <div className="concept">
-            <figure>
-              <video controls src={videos['videos/PW-concept.mp4']} />
-              <figcaption>↑ The first concept</figcaption>
-            </figure>
-            <p className="case-big">
-              The concept was created in the first two days. We had an XML file,
-              and I already had a good reference for the node-based systems
-              (SideFX Houdini).
-            </p>
-          </div>
-
+          <figure style={{ marginBottom: 0 }}>
+            <img src={images['images/PW-job-editing.png']} alt="Job editor" />
+            <figcaption>Job editor with a real-world example</figcaption>
+          </figure>
+        </div>
+      </section>
+      <section className="concept-video">
+        <div className="section-grid">
+          <figure>
+            <video controls src={videos['videos/PW-concept.mp4']} />
+            <figcaption>↑ The first concept</figcaption>
+          </figure>
+          <p className="case-big">
+            The concept was created in the first two days. We had an XML file,
+            and I already had a good reference for the node-based systems
+            (SideFX Houdini).
+          </p>
+        </div>
+      </section>
+      <section className="main">
+        <div className="section-grid">
           <figure
             className="grid-item"
             style={{ '--col': 'span 4', '--row': 'span 4' }}
