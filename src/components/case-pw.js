@@ -9,7 +9,10 @@ export default function CasePw(props) {
   const { images, videos } = useFiles();
   console.log(images);
 
-  // TODO: add diagram from /Users/combdn/Dropbox/Work/eleks/Aon/Pathwise/Aon-PWOR-workflow-v002.ai
+  // TODO: add the flow diagram
+
+  // TODO: add whiteboards
+
   return (
     <article>
       <section className="intro">
@@ -41,74 +44,90 @@ export default function CasePw(props) {
             with some logic) are handled in VFX industry: i. e. boxes connected
             with wires.
           </p>
+
           <div className="concept">
             <figure>
-              <video controls src={videos['videos/PW-concept.mp4']} />
-              <figcaption>↑ The first concept</figcaption>
+              <video
+                className="test"
+                controls
+                src={videos['videos/PW-concept.mp4']}
+              />
+              <div className="shadow" />
             </figure>
-            <p className="case-big">
+            <p className="big">
               The concept was created in the first two days. We had an XML file,
               and I already had a good reference for the node-based systems
               (SideFX Houdini).
             </p>
           </div>
 
-          <figure
-            className="grid-item"
-            style={{ '--col': 'span 4', '--row': 'span 4' }}
-          >
-            <img src={images['images/PW-properties.png']} alt="Job editor" />
-            <figcaption>Job editor with a real-world example.</figcaption>
+          <figure>
+            <img src={images['images/PW-workflow.png']} alt="Workflow Conept" />
+            <figcaption>
+              ↑ Initial workflow concept was created during the workshops with
+              the client and the project team, and was accepted as a high level
+              direction
+            </figcaption>
           </figure>
-          <p className="grid-item" style={{ '--col': 'span 8' }}>
+
+          <p>
             Some of the decisions were to be revisited, but the concept was
             accepted by both the team and the client.
           </p>
-          <figure className="grid-item" style={{ '--col': 'span 8' }}>
+
+          <figure>
             <img src={images['images/PW-nodes-types.png']} alt="Node types" />
-            <figcaption>All of the node types</figcaption>
-          </figure>
-          <div className="grid-item" style={{ '--col': 'span 6' }}>
-            <p>
-              Currently, the tool allows using decorated Python functions as
-              building blocks to perform ETL operations, to run models with
-              resulting data, and to save results of the models’ runs.
-            </p>
-            <p>
-              The data and execution flows are separated to ensure the exact
-              order of the computations and to enable error events handling.
-              There’s a special trigger node to configure the conditions for the
-              job start (and also chain them), and an exit node to handle the
-              various possible outcomes.
-            </p>
-            <p>
+            <figcaption className="big">
               There are also Data Source and Data Destination node types to work
               with databases and a filesystem.
-            </p>
-          </div>
-          <div className="grid-item ribbon-icons" style={{ '--col': 'span 2' }}>
+            </figcaption>
+          </figure>
+
+          <p>
+            Some of the decisions were to be revisited, but the concept was
+            accepted by both the team and the client.
+          </p>
+
+          <figure className="fig-properties">
+            <img
+              src={images['images/PW-properties-split.png']}
+              alt="Node types"
+            />
+            <figcaption>
+              Properties panel mirroring the i/o structure of the task function.
+              Items defined in the function’s decorator are read-only.
+            </figcaption>
+          </figure>
+
+          <figure className="fig-ribbon-icons">
             <img src={images['images/PW-deploy-icon.svg']} alt="" />
             <img src={images['images/PW-navigator.svg']} alt="" />
             <img src={images['images/PW-edit-task.svg']} alt="" />
+            <img src={images['images/PW-add-data-source.svg']} alt="" />
+            <img src={images['images/PW-add-new-item.svg']} alt="" />
             <figcaption>
-              ↑ Ribbon icons: Deploy, Navigator, Edit Function
+              ↑ Ribbon icons: Deploy, Navigator, Edit Function, Add Data Source,
+              and Add New Item
             </figcaption>
-          </div>
+          </figure>
+
           <p>
             The other tool is dedicated to running the created jobs in HPC (CUDA
             GPUs) environment. It allows to install, to configure triggers, data
             sources, and variables, and to run the jobs and see their results.
           </p>
-          <figure>
+
+          <figure className="fig-signoff">
             <img src={images['images/PW-signoff.png']} alt="Job orchestrator" />
             <figcaption>↑ Job orchestrator</figcaption>
           </figure>
-          <figure>
+
+          <figure className="fig-run-details">
+            <figcaption>↓ Job run details</figcaption>
             <img
               src={images['images/PW-run-details.png']}
               alt="Job run details"
             />
-            <figcaption>↑ Job run details</figcaption>
           </figure>
           <p>
             This tool includes debugging and introspection features that allow

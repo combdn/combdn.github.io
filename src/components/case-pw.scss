@@ -1,5 +1,7 @@
 $line-height: 26px;
 $small-line-height: 24px;
+$grid-gap: 36px;
+$grid-gap-small: $grid-gap / 1.5;
 
 .page-case {
   padding: 24px;
@@ -11,9 +13,11 @@ $small-line-height: 24px;
     position: absolute;
   }
 
+  // GRID
+
   .section-grid {
     display: grid;
-    column-gap: 36px;
+    column-gap: $grid-gap;
     grid-template-columns:
       [full-start]
       repeat(1, minmax(24px, 1fr))
@@ -28,7 +32,25 @@ $small-line-height: 24px;
       [full-end];
     font-size: 17px;
     line-height: $line-height;
-    max-width: 62em;
+    max-width: 80em;
+
+    @media screen and (max-width: 920px) {
+      column-gap: $grid-gap-small;
+      grid-template-columns:
+        [full-start]
+        repeat(1, minmax(24px, 1fr))
+        [wide-start]
+        repeat(1, minmax(24px, 1fr))
+        [narrow-start]
+        repeat(4, minmax(24px, 1fr))
+        [middle]
+        repeat(4, minmax(24px, 1fr))
+        [narrow-end]
+        repeat(1, minmax(24px, 1fr))
+        [wide-end]
+        repeat(1, minmax(24px, 1fr))
+        [full-end];
+    }
 
     @media screen and (max-width: 370px) {
       font-size: 16px;
@@ -50,17 +72,47 @@ $small-line-height: 24px;
     }
   }
 
+  // Text Styles
   h1 {
-    grid-column: 3/11;
-
+    // grid-column: 3/11;
+    grid-column: narrow-start/narrow-end;
     font-weight: 300;
     font-size: 36px;
     line-height: 42px;
     margin: 0;
   }
 
+  p {
+    // grid-column: 3/11;
+    grid-column: narrow-start/narrow-end;
+
+    margin: 0;
+    margin-bottom: $line-height / 2;
+    // max-width: 36em;
+  }
+
+  .big {
+    font-weight: 300;
+    font-size: 2.3vw;
+    line-height: 2.3vw * 1.5;
+
+    @media screen and (min-width: 1200px) {
+      font-size: 28px;
+      line-height: $line-height * 1.8;
+    }
+  }
+
+  // Images and videos
+  img,
+  video {
+    max-width: 100%;
+    border-radius: 5px;
+  }
+
+  // The goal.
   .goal {
-    grid-column: 3/11;
+    // grid-column: 3/11;
+    grid-column: narrow-start/narrow-end;
     display: flex;
     font-size: 18px;
     max-width: 25em;
@@ -76,21 +128,7 @@ $small-line-height: 24px;
     font-weight: 600;
   }
 
-  p {
-    // grid-column: 3/11;
-    grid-column: narrow-start/narrow-end;
-
-    margin: 0;
-    margin-bottom: $line-height / 2;
-    // max-width: 36em;
-  }
-
-  .case-big {
-    font-weight: 300;
-    font-size: 24px;
-    line-height: $line-height * 1.5;
-  }
-
+  // Figure
   figure {
     // grid-column: 1/13;
     grid-column: wide-start/wide-end;
@@ -104,19 +142,99 @@ $small-line-height: 24px;
     letter-spacing: 0.015em;
   }
 
+  // Custom
   .concept {
+    position: relative;
     grid-column: wide-start/wide-end;
+    column-gap: $grid-gap;
+    margin: -($grid-gap);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: $grid-gap-small;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
     background: #e6e8ea;
+
+    @media screen and (max-width: 920px) {
+      column-gap: $grid-gap-small;
+      margin-left: -($grid-gap-small);
+      margin-right: -($grid-gap-small);
+      padding: $grid-gap-small;
+    }
+
+    figure {
+      grid-column: 1 / 2;
+      display: block;
+      position: relative;
+      margin: 0;
+      border-radius: 8px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        box-shadow: inset 0 0 0 1px rgba($color: #000000, $alpha: 0.15);
+        pointer-events: none;
+      }
+    }
+
+    video {
+      display: block;
+      position: relative;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    p {
+      grid-column: 2 / 3;
+      // max-width: 18em;
+    }
   }
 
-  img,
-  video {
-    max-width: 100%;
-    border-radius: 5px;
+  .fig-properties {
+    grid-column: wide-start / 9;
+
+    img {
+      border-radius: 0;
+    }
   }
 
-  .pw-node-types {
-    grid-column: 5/13;
+  .fig-ribbon-icons {
+    grid-column: 9 / wide-end;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(24px, 1fr));
+    grid-gap: 20px;
+    align-content: start;
+    img {
+      border-radius: 0;
+    }
+
+    @media screen and (max-width: 920px) {
+      grid-gap: 10px;
+    }
+
+    figcaption {
+      grid-column-start: span 3;
+    }
+  }
+
+  .fig-signoff {
+    grid-column: wide-start / 9;
+    grid-row-start: 9;
+    grid-row-end: 14;
+    // grid-row: span 5;
+  }
+
+  .fig-run-details {
+    grid-column: 5 / wide-end;
+    grid-row-start: 12;
+    grid-row-end: 15;
   }
 
   .grid-item {
@@ -124,15 +242,5 @@ $small-line-height: 24px;
     --row: inherit;
     grid-column: var(--col);
     grid-row: var(--row);
-  }
-
-  .ribbon-icons {
-    display: grid;
-    row-gap: 24px;
-    justify-items: center;
-
-    img {
-      max-width: 70%;
-    }
   }
 }
