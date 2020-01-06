@@ -1,12 +1,14 @@
 import React from 'react';
 import Button from './button';
+import Gallery from '../features/gallery/gallery';
 import twitterIcon from '../assets/images/icons/twitter-icon.svg';
 import './footer.scss';
 
 export default function Footer(props) {
   if (props.variant === 'case') {
     return (
-      <footer>
+      <footer className="case-footer">
+        <Gallery />
         <Button label={'← Back'} clickHandler={props.navigator} />
         <p>
           <a className="social-icon" href="https://twitter.com/combdn">
@@ -17,7 +19,7 @@ export default function Footer(props) {
     );
   }
   return (
-    <footer>
+    <footer className="home-footer">
       <p>
         If you ask designers for help, and they look at you like this →{' '}
         <span role="img" aria-label="grinning face with a sweat drop">

@@ -1,3 +1,5 @@
+@import '../variables.scss';
+
 $line-height: 26px;
 $small-line-height: 24px;
 $grid-gap: 36px;
@@ -69,6 +71,33 @@ $grid-gap-small: $grid-gap / 1.5;
       background: radial-gradient(50% 50% at 50% 50%, #f0f2f3, #d3d7db);
       margin: -24px -24px 0;
       padding: 24px 24px 0;
+
+      // .wires-illustration {
+      //   margin: -24px -24px 0;
+      //   background: no-repeat url(../assets/images/illustrations/wires.svg);
+      //   background-size: 100%;
+      //   // background-position: center;
+      // }
+      .wires-illustration {
+        position: absolute;
+        width: 100%;
+        height: 35vw;
+        max-height: 451px;
+        top: calc(100px + 10vw);
+        z-index: 0;
+
+        @media screen and (min-width: 1400px) {
+          top: 240px;
+        }
+      }
+
+      .section-grid {
+        margin-top: 112px;
+      }
+
+      figure {
+        z-index: 1;
+      }
     }
   }
 
@@ -95,6 +124,7 @@ $grid-gap-small: $grid-gap / 1.5;
     font-weight: 300;
     font-size: 2.3vw;
     line-height: 2.3vw * 1.5;
+    color: $text-color-dark;
 
     @media screen and (min-width: 1200px) {
       font-size: 28px;
@@ -130,9 +160,11 @@ $grid-gap-small: $grid-gap / 1.5;
 
   // Figure
   figure {
-    // grid-column: 1/13;
     grid-column: wide-start/wide-end;
     margin: 0 0 $line-height / 2;
+
+    // Need that to make grid element size fit its content.
+    line-height: 0;
   }
 
   figcaption {
@@ -140,6 +172,7 @@ $grid-gap-small: $grid-gap / 1.5;
     line-height: 18px;
     font-weight: 400;
     letter-spacing: 0.015em;
+    color: rgba($text-color-dark, 0.75);
   }
 
   // Custom
@@ -226,15 +259,30 @@ $grid-gap-small: $grid-gap / 1.5;
 
   .fig-signoff {
     grid-column: wide-start / 9;
-    grid-row-start: 9;
-    grid-row-end: 14;
-    // grid-row: span 5;
+    grid-row: 9 / 13;
+    margin: 0;
+    border-radius: 0;
+  }
+  .fig-signoff-caption {
+    grid-column: 9 / wide-end;
+    grid-row: 10 / 11;
+    max-width: 16em;
   }
 
   .fig-run-details {
     grid-column: 5 / wide-end;
-    grid-row-start: 12;
-    grid-row-end: 15;
+    grid-row: 12 / 17;
+    margin: 0;
+    border-radius: 0;
+    // align-self: end;
+  }
+  .fig-run-details-caption {
+    grid-column: wide-start / 5;
+    grid-row: 14 / 16;
+    justify-self: end;
+    align-self: end;
+    max-width: 16em;
+    // text-align: right;
   }
 
   .grid-item {

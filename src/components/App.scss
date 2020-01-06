@@ -11,7 +11,7 @@
 // @import 'fonts/plex/scss/ibm-plex.scss';
 
 // Import IBM Plex from node_modules
-@import '../../node_modules/@ibm/plex/css/ibm-plex.min.css';
+@import '~@ibm/plex/css/ibm-plex.min.css';
 
 body {
   font-family: 'IBM Plex Sans', sans-serif;
@@ -19,6 +19,7 @@ body {
 
 ::selection {
   background-color: rgb(255, 122, 215);
+  // background-color: $interactive;
 }
 
 a {

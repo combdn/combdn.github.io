@@ -1,4 +1,4 @@
-footer {
+footer.home-footer {
   margin: 6em auto 4em;
   // margin-top: 6em;
   // margin-bottom: 7em;
@@ -11,6 +11,12 @@ footer {
   .button {
     margin-bottom: 4em;
   }
+}
+
+footer.case-footer {
+  background-color: #e6e8ea;
+  margin: 0 -24px -24px;
+  padding: 24px;
 }
 
 .social-icon {

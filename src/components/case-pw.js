@@ -35,6 +35,11 @@ export default function CasePw(props) {
             </div>
           </div>
         </div>
+        <img
+          className="wires-illustration"
+          src={images['images/illustrations/wires.svg']}
+          alt="Wires"
+        />
       </section>
       <section className="main">
         <div className="section-grid">
@@ -117,18 +122,25 @@ export default function CasePw(props) {
             sources, and variables, and to run the jobs and see their results.
           </p>
 
+          <figcaption className="fig-signoff-caption">
+            ← Job orchestrator features the pivotable table for the job runs,
+            the interface for the signoff, and the results viewer
+          </figcaption>
           <figure className="fig-signoff">
             <img src={images['images/PW-signoff.png']} alt="Job orchestrator" />
-            <figcaption>↑ Job orchestrator</figcaption>
           </figure>
 
+          <figcaption className="fig-run-details-caption">
+            → Job run details show both end results and the state of inputs and
+            outputs on each step
+          </figcaption>
           <figure className="fig-run-details">
-            <figcaption>↓ Job run details</figcaption>
             <img
               src={images['images/PW-run-details.png']}
               alt="Job run details"
             />
           </figure>
+
           <p>
             This tool includes debugging and introspection features that allow
             seeing the journal of execution for any job. Users can review each
