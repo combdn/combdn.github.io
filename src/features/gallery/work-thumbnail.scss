@@ -118,8 +118,12 @@
   position: relative;
   padding: 8px;
 
+  .video-wrapper {
+    z-index: 1;
+  }
+
   &:after {
-    z-index: -1;
+    z-index: 0;
     content: '';
     position: absolute;
     width: calc(100% - 16px);

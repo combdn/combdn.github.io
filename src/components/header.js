@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from '@reach/router';
+
 import './header.scss';
 
 class Header extends Component {
@@ -18,16 +20,17 @@ class Header extends Component {
           <span role="img" aria-label="piece of cake">
             🍰
           </span>
-          , and others are too complex even to create a case about them{' '}
+          , and others are complex{' '}
           <span role="img" aria-label="piece of cake">
             🤯
           </span>
-          . (Some of them are quick proofs of concepts{' '}
+          , some of them are quick proofs of concepts{' '}
           <span role="img" aria-label="piece of cake">
             ✏️
           </span>
-          .) If you are interested, we could discuss any of them further. Just{' '}
-          <a href="mailto:combdn@gmail.com">drop me a line.</a>
+          . I’ve only managed to write <Link to="/case/pw">one case</Link> so
+          far… But if you’re interested, we could discuss any of them further.
+          Just <a href="mailto:combdn@gmail.com">drop me a line.</a>
         </p>
       </div>
     );

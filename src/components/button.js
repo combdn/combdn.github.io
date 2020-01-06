@@ -19,6 +19,9 @@ export default function Button({
     case 'dark':
       buttonClasses += ' dark';
       break;
+    case 'dark-outline':
+      buttonClasses += ' dark dark-outline';
+      break;
     case 'close':
       buttonClasses += ' close';
       buttonContents = <img src={closeIcon} alt="Close" />;
@@ -28,7 +31,9 @@ export default function Button({
       break;
   }
 
-  buttonClasses += ` ${additionalClasses}`;
+  if (additionalClasses) {
+    buttonClasses += ` ${additionalClasses}`;
+  }
 
   return (
     <div role="button" className={buttonClasses} onClick={clickHandler}>

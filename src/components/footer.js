@@ -1,18 +1,26 @@
 import React from 'react';
+
 import Button from './button';
-import Gallery from '../features/gallery/gallery';
 import twitterIcon from '../assets/images/icons/twitter-icon.svg';
+import twitterIconBlue from '../assets/images/icons/twitter-icon-blue.svg';
+
 import './footer.scss';
 
 export default function Footer(props) {
   if (props.variant === 'case') {
     return (
       <footer className="case-footer">
-        <Gallery />
-        <Button label={'← Back'} clickHandler={props.navigator} />
+        <Button
+          label={'← Gallery'}
+          clickHandler={props.navigator}
+          look="dark-outline"
+        />
+        <p>
+          <a href="mailto:combdn@gmail.com">combdn@gmail.com </a>
+        </p>
         <p>
           <a className="social-icon" href="https://twitter.com/combdn">
-            <img src={twitterIcon} alt="Twitter" />
+            <img src={twitterIconBlue} alt="Twitter" />
           </a>
         </p>
       </footer>

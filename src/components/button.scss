@@ -40,29 +40,35 @@
 
   &.dark {
     height: 32px;
-    // border: 1px solid rgba($color: #1485ff, $alpha: 0);
+    // border: 1px solid rgba($color: $link-color-dark, $alpha: 0);
     border: none;
-    background-color: rgba($color: #1485ff, $alpha: 0.12);
-    color: #1485ff;
+    background-color: rgba($color: $link-color-dark, $alpha: 0.12);
+    color: $link-color-dark;
     font-weight: 400;
 
+    &.dark-outline {
+      height: 30px;
+      background: none;
+      border: 1px solid rgba($color: $link-color-dark, $alpha: 1);
+    }
+
     &:hover {
-      background-color: rgba($color: #1485ff, $alpha: 0.2);
+      background-color: rgba($color: $link-color-dark, $alpha: 0.2);
     }
 
     &.selected {
-      background-color: rgba($color: #1485ff, $alpha: 1);
+      background-color: rgba($color: $link-color-dark, $alpha: 1);
       color: #333;
       font-weight: 400;
-      border: 1px solid rgba($color: #1485ff, $alpha: 0);
+      border: 1px solid rgba($color: $link-color-dark, $alpha: 0);
 
       &:hover {
         background-color: rgba(255, 255, 255, 1);
-        border: 1px solid rgba($color: #1485ff, $alpha: 0);
+        border: 1px solid rgba($color: $link-color-dark, $alpha: 0);
       }
     }
     &:active {
-      background-color: rgba($color: #1485ff, $alpha: 1);
+      background-color: rgba($color: $link-color-dark, $alpha: 1);
       color: white;
       font-weight: 400;
     }

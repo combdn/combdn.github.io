@@ -1,8 +1,8 @@
 import React from 'react';
 import { Router, Link, navigate } from '@reach/router';
 import Button from './button';
-import Footer from './footer';
 import CasePw from './case-pw';
+import Footer from './footer';
 
 export default function Case(props) {
   let caseToShow = {};
@@ -18,7 +18,11 @@ export default function Case(props) {
 
   return (
     <div className="page-case">
-      <Button label={'← Back'} clickHandler={() => navigate('/')} />
+      <Button
+        label={'← Gallery'}
+        clickHandler={() => navigate('/')}
+        look="dark-outline"
+      />
       {caseToShow}
       <Footer
         variant={'case'}

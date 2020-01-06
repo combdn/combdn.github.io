@@ -103,7 +103,6 @@ $grid-gap-small: $grid-gap / 1.5;
 
   // Text Styles
   h1 {
-    // grid-column: 3/11;
     grid-column: narrow-start/narrow-end;
     font-weight: 300;
     font-size: 36px;
@@ -112,7 +111,6 @@ $grid-gap-small: $grid-gap / 1.5;
   }
 
   p {
-    // grid-column: 3/11;
     grid-column: narrow-start/narrow-end;
 
     margin: 0;
