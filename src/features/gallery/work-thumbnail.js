@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { toggleWorkSelection } from './gallerySlice';
 
-import { Router, Link, navigate } from '@reach/router';
+// import loader from '../../assets/images/icons/loader.svg';
+
 import './work-thumbnail.scss';
 
 function WorkThumbnail({
@@ -17,7 +18,15 @@ function WorkThumbnail({
   toggleWorkSelection,
   selectedWorkCaseId
 }) {
-  let wrapperClasses = wrapperClass + ' wrapper';
+  const [readyToShow, setReadyToShow] = useState(false);
+
+  let wrapperClasses = '';
+
+  if (readyToShow) {
+    wrapperClasses = wrapperClass + ' wrapper';
+  } else {
+    wrapperClasses = wrapperClass + ' wrapper loading';
+  }
 
   // Manage wrapper classes for the selected
   // and matching to the selected project thumbnails
@@ -26,6 +35,36 @@ function WorkThumbnail({
   } else if (typeof caseId !== 'undefined' && caseId === selectedWorkCaseId) {
     wrapperClasses = wrapperClass + ' wrapper same-project';
   }
+
+  // Loader SVG
+  let loader = (
+    <svg
+      width="50"
+      height="26"
+      viewBox="0 0 50 26"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        opacity="0.3"
+        d="M1 25V7C1 3.68629 3.68629 1 7 1V1C10.3137 1 13 3.68629 13 7V19C13 22.3137 15.6863 25 19 25V25C22.3137 25 25 22.3137 25 19V7C25 3.68629 27.6863 1 31 1V1C34.3137 1 37 3.68629 37 7V19C37 22.3137 39.6863 25 43 25V25C46.3137 25 49 22.3137 49 19V1"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-dasharray="100 4 4 4"
+        stroke-dashoffset="0"
+      >
+        <animate
+          attributeName="stroke-dashoffset"
+          from="112"
+          to="0"
+          dur="2s"
+          repeatCount="indefinite"
+        />
+      </path>
+    </svg>
+  );
 
   // Return image
   if (type === 'image') {
@@ -36,7 +75,16 @@ function WorkThumbnail({
           toggleWorkSelection({ id: identificator, caseId: caseId })
         }
       >
-        <img alt="" className={workClass} src={file} />
+        <div className="loader">{loader}</div>
+        <img
+          onLoad={() => {
+            setReadyToShow(true);
+            console.log(`Image ${identificator} is loaded`);
+          }}
+          alt=""
+          className={workClass}
+          src={file}
+        />
       </div>
     );
   }
@@ -50,12 +98,17 @@ function WorkThumbnail({
           toggleWorkSelection({ id: identificator, caseId: caseId })
         }
       >
+        <div className="loader">{loader}</div>
         {/* Need this wrapper to apply the shadow to the masked videos
         without affecting the selection frame. */}
         <div className="video-wrapper">
           <video
             // FIXME: enable temporary disabled autoplay
-            //autoPlay
+            // autoPlay
+            onCanPlayThrough={() => {
+              setReadyToShow(true);
+              console.log(`Video ${identificator} can play`);
+            }}
             playsInline
             muted={true}
             loop
