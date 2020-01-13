@@ -52,16 +52,16 @@ function WorkThumbnail({
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        stroke-dasharray="100 4 4 4"
-        stroke-dashoffset="0"
+        // stroke-dasharray="100 4 4 4"
+        // stroke-dashoffset="0"
       >
-        <animate
+        {/* <animate
           attributeName="stroke-dashoffset"
           from="112"
           to="0"
           dur="2s"
           repeatCount="indefinite"
-        />
+        /> */}
       </path>
     </svg>
   );
