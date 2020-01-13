@@ -61,6 +61,7 @@
     }
   }
 
+  // Selection states
   &.selected {
     border: 1px solid rgba(255, 255, 255, 0.2);
     background: rgba(255, 255, 255, 0.25);
@@ -68,14 +69,17 @@
     border-radius: 16px;
   }
 
-  &.same-project {
-    // border: 1px dashed rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.1);
-    padding: 8px;
-    border-radius: 16px;
-  }
+  // &.same-project {
+  //   // border: 1px dashed rgba(255, 255, 255, 0.3);
+  //   background: rgba(255, 255, 255, 0.1);
+  //   padding: 8px;
+  //   border-radius: 16px;
+  // }
 
-  // TODO: Make other thumbnails transparent while showing the same project
+  &.not-selected {
+    opacity: 0.5;
+    filter: blur(4px);
+  }
 
   .video-wrapper {
     grid-column: 1 / 2;

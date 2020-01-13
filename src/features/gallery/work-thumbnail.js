@@ -34,6 +34,11 @@ function WorkThumbnail({
     wrapperClasses = wrapperClass + ' wrapper selected';
   } else if (typeof caseId !== 'undefined' && caseId === selectedWorkCaseId) {
     wrapperClasses = wrapperClass + ' wrapper same-project';
+  } else if (
+    selectedWorkId !== '' &&
+    typeof selectedWorkCaseId !== 'undefined'
+  ) {
+    wrapperClasses = wrapperClass + ' wrapper not-selected';
   }
 
   // Loader SVG
@@ -52,17 +57,7 @@ function WorkThumbnail({
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        // stroke-dasharray="100 4 4 4"
-        // stroke-dashoffset="0"
-      >
-        {/* <animate
-          attributeName="stroke-dashoffset"
-          from="112"
-          to="0"
-          dur="2s"
-          repeatCount="indefinite"
-        /> */}
-      </path>
+      />
     </svg>
   );
 
