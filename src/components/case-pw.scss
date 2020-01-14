@@ -4,6 +4,11 @@ $line-height: 26px;
 $small-line-height: 24px;
 $grid-gap: 36px;
 $grid-gap-small: $grid-gap / 1.5;
+$grid-gap-smallest: $grid-gap / 2;
+
+body {
+  // background-color: white;
+}
 
 .page-case {
   padding: 24px;
@@ -20,6 +25,7 @@ $grid-gap-small: $grid-gap / 1.5;
   .section-grid {
     display: grid;
     column-gap: $grid-gap;
+    row-gap: $grid-gap;
     grid-template-columns:
       [full-start]
       repeat(1, minmax(24px, 1fr))
@@ -54,6 +60,29 @@ $grid-gap-small: $grid-gap / 1.5;
         [full-end];
     }
 
+    @media screen and (max-width: 670px) {
+      grid-template-columns:
+        [full-start wide-start]
+        repeat(1, minmax(24px, 1fr))
+        [narrow-start]
+        repeat(4, minmax(24px, 1fr))
+        [middle]
+        repeat(4, minmax(24px, 1fr))
+        [narrow-end]
+        repeat(1, minmax(24px, 1fr))
+        [full-end wide-end];
+    }
+
+    @media screen and (max-width: 505px) {
+      // row-gap: $grid-gap-small;
+      grid-template-columns:
+        [full-start wide-start narrow-start]
+        repeat(1, minmax(24px, 1fr))
+        [middle]
+        repeat(1, minmax(24px, 1fr))
+        [full-end wide-end narrow-end];
+    }
+
     @media screen and (max-width: 370px) {
       font-size: 16px;
       line-height: $small-line-height;
@@ -65,11 +94,11 @@ $grid-gap-small: $grid-gap / 1.5;
     display: flex;
     justify-content: center;
     margin-top: 0;
-    margin-bottom: $line-height;
+    margin-bottom: $grid-gap * 2;
 
     &.intro {
       background: radial-gradient(50% 50% at 50% 50%, #f0f2f3, #d3d7db);
-      margin: -24px -24px 0;
+      margin: -24px -24px $grid-gap;
       padding: 24px 24px 0;
 
       // .wires-illustration {
@@ -114,8 +143,16 @@ $grid-gap-small: $grid-gap / 1.5;
     grid-column: narrow-start/narrow-end;
 
     margin: 0;
-    margin-bottom: $line-height / 2;
+    // margin-bottom: $line-height / 2;
     // max-width: 36em;
+  }
+
+  .long-text {
+    grid-column: narrow-start/narrow-end;
+
+    & > p {
+      margin-bottom: $line-height / 2;
+    }
   }
 
   .big {
@@ -128,6 +165,11 @@ $grid-gap-small: $grid-gap / 1.5;
       font-size: 28px;
       line-height: $line-height * 1.8;
     }
+
+    @media screen and (max-width: 920px) {
+      font-size: 24px;
+      line-height: 24px * 1.5;
+    }
   }
 
   // Images and videos
@@ -135,6 +177,10 @@ $grid-gap-small: $grid-gap / 1.5;
   video {
     max-width: 100%;
     border-radius: 5px;
+
+    &[alt='Workflow Conept'] {
+      border-radius: 0;
+    }
   }
 
   // The goal.
@@ -144,7 +190,7 @@ $grid-gap-small: $grid-gap / 1.5;
     display: flex;
     font-size: 18px;
     max-width: 25em;
-    margin: $line-height 0 $line-height * 1;
+    margin: 0 0 $line-height * 2;
   }
 
   .case__emoji {
@@ -159,7 +205,8 @@ $grid-gap-small: $grid-gap / 1.5;
   // Figure
   figure {
     grid-column: wide-start/wide-end;
-    margin: 0 0 $line-height / 2;
+    // margin: 0 0 $line-height / 2;
+    margin: 0;
 
     // Need that to make grid element size fit its content.
     line-height: 0;
@@ -171,6 +218,14 @@ $grid-gap-small: $grid-gap / 1.5;
     font-weight: 400;
     letter-spacing: 0.015em;
     color: rgba($text-color-dark, 0.75);
+
+    &.big {
+      margin-top: $line-height / 2;
+    }
+  }
+
+  .figc-bottom {
+    margin-top: $line-height / 2;
   }
 
   // Custom
@@ -194,6 +249,10 @@ $grid-gap-small: $grid-gap / 1.5;
       padding: $grid-gap-small;
     }
 
+    @media screen and (max-width: 920px) {
+      grid-template-columns: 1fr;
+    }
+
     figure {
       grid-column: 1 / 2;
       display: block;
@@ -201,6 +260,11 @@ $grid-gap-small: $grid-gap / 1.5;
       margin: 0;
       border-radius: 8px;
 
+      @media screen and (max-width: 920px) {
+        grid-column: span 1;
+      }
+
+      // FIXME: because of the rounding errors the outline is sometimes off in Chrome...
       &:after {
         content: '';
         position: absolute;
@@ -225,11 +289,21 @@ $grid-gap-small: $grid-gap / 1.5;
     p {
       grid-column: 2 / 3;
       // max-width: 18em;
+
+      @media screen and (max-width: 920px) {
+        margin-top: $line-height / 2;
+        grid-column: span 1;
+      }
     }
   }
 
   .fig-properties {
-    grid-column: wide-start / 9;
+    grid-column-start: wide-start;
+    grid-column-end: span 7;
+
+    @media screen and (max-width: 505px) {
+      grid-column: span 2;
+    }
 
     img {
       border-radius: 0;
@@ -237,7 +311,7 @@ $grid-gap-small: $grid-gap / 1.5;
   }
 
   .fig-ribbon-icons {
-    grid-column: 9 / wide-end;
+    grid-column: span 3;
     display: grid;
     grid-template-columns: repeat(3, minmax(24px, 1fr));
     grid-gap: 20px;
@@ -250,37 +324,78 @@ $grid-gap-small: $grid-gap / 1.5;
       grid-gap: 10px;
     }
 
+    @media screen and (max-width: 505px) {
+      grid-column: span 2;
+      grid-gap: 5vw;
+    }
+
     figcaption {
       grid-column-start: span 3;
+
+      @media screen and (max-width: 505px) {
+        margin-top: 0;
+      }
     }
   }
 
   .fig-signoff {
     grid-column: wide-start / 9;
-    grid-row: 9 / 13;
+    grid-row: 10 / 15;
     margin: 0;
     border-radius: 0;
   }
-  .fig-signoff-caption {
+  .figc-signoff {
     grid-column: 9 / wide-end;
-    grid-row: 10 / 11;
+    grid-row: 11 / 12;
     max-width: 16em;
   }
 
   .fig-run-details {
     grid-column: 5 / wide-end;
-    grid-row: 12 / 17;
+    grid-row: 13 / 17;
     margin: 0;
     border-radius: 0;
-    // align-self: end;
   }
-  .fig-run-details-caption {
+  .figc-run-details {
     grid-column: wide-start / 5;
-    grid-row: 14 / 16;
+    grid-row: 15 / 16;
     justify-self: end;
     align-self: end;
     max-width: 16em;
     // text-align: right;
+  }
+
+  @media screen and (max-width: 670px) {
+    .fig-run-details {
+      grid-column: 4 / wide-end;
+    }
+
+    .figc-run-details {
+      grid-column: wide-start / 4;
+    }
+  }
+
+  @media screen and (min-width: 561px) {
+    .figc-signoff-small,
+    .figc-run-details-small {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 560px) {
+    .figc-signoff,
+    .figc-run-details {
+      display: none;
+    }
+
+    .fig-signoff,
+    .figc-signoff,
+    .fig-run-details,
+    .figc-run-details {
+      grid-column: wide-start / wide-end;
+      grid-row: auto;
+      max-width: 100%;
+    }
   }
 
   .grid-item {
