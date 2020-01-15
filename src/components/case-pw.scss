@@ -127,6 +127,10 @@ body {
         @media screen and (min-width: 1400px) {
           top: 240px;
         }
+
+        @media screen and (max-width: 670px) {
+          top: calc(130px + 10vw);
+        }
       }
 
       .section-grid {
