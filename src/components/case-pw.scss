@@ -273,7 +273,6 @@ body {
         grid-column: span 1;
       }
 
-      // FIXME: because of the rounding errors the outline is sometimes off in Chrome...
       &:after {
         content: '';
         position: absolute;

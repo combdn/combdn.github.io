@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Router, Link } from '@reach/router';
 import uuid from 'uuid/v4';
 
-// Redux components
+// Components
 import Filter from './filter';
 import WorkThumbnail from './work-thumbnail';
 import WorkInfo from './work-info';
@@ -19,6 +19,7 @@ function Gallery({ dataToShow }) {
   let tags = new Set();
 
   // TODO: add PDF comparison work to the gallery?
+  // TODO: add the "Red Ball"
 
   // Create thumbnails array
   for (const work of dataToShow) {

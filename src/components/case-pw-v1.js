@@ -9,7 +9,6 @@ export default function CasePw(props) {
   const { images, videos } = useFiles();
   console.log(images);
 
-  // TODO: add diagram from /Users/combdn/Dropbox/Work/eleks/Aon/Pathwise/Aon-PWOR-workflow-v002.ai
   return (
     <article>
       <section className="intro">

@@ -1,15 +1,11 @@
 import React from 'react';
 import useFiles from './useFiles';
-import Button from './button';
-import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './case-pw.scss';
 
 export default function CasePw(props) {
   const { images, videos } = useFiles();
   console.log(images);
-
-  // TODO: add whiteboards
 
   return (
     <article>
