@@ -5,12 +5,12 @@ export default [
     type: 'video',
     class: 'daily-motion',
     file: 'videos/daily-mail-concept.mp4',
-    tags: ['look', 'mobile', 'concept', 'typography'],
     info: {
       title: 'Daily Mail App Concept',
       project: 'Presales',
       description: 'The goal was to show a possible improvements direction.'
     },
+    tags: ['look', 'mobile', 'concept', 'typography'],
     id: '683dacd1-ea34-419c-9e18-5f78ffdd0456'
   },
   {
@@ -31,6 +31,7 @@ export default [
     class: 'cover-video',
     file: 'videos/PW-concept.mp4',
     caseId: 'pw',
+    caseReady: true,
     tags: ['concept', 'complex'],
     info: {
       title: 'Insurance Risk Simulation IDE (Initial Concept)',
@@ -46,6 +47,7 @@ export default [
     class: 'center',
     file: 'images/PW-deploy-icon.svg',
     caseId: 'pw',
+    caseReady: true,
     tags: ['look'],
     info: {
       title: 'Deploy Package Icon',
@@ -59,6 +61,7 @@ export default [
     type: 'image',
     file: 'images/PW-properties.png',
     caseId: 'pw',
+    caseReady: true,
     tags: ['look', 'complex'],
     info: {
       title: 'Properties Panel',
@@ -73,6 +76,7 @@ export default [
     type: 'image',
     file: 'images/PW-nodes-types.png',
     caseId: 'pw',
+    caseReady: true,
     tags: ['look', 'complex'],
     info: {
       title: 'Node Types',
@@ -87,6 +91,7 @@ export default [
     type: 'image',
     file: 'images/PW-real-case.png',
     caseId: 'pw',
+    caseReady: true,
     tags: ['look', 'complex'],
     info: {
       title: 'Real-World Case',
@@ -102,6 +107,7 @@ export default [
     class: '',
     file: 'images/PW-signoff-cropped.png',
     caseId: 'pw',
+    caseReady: true,
     tags: ['look', 'complex'],
     info: {
       title: 'Orchestrator',
@@ -117,6 +123,7 @@ export default [
     class: 'center',
     file: 'images/PW-navigator.svg',
     caseId: 'pw',
+    caseReady: true,
     tags: ['look'],
     info: {
       title: 'Navigator Icon',
@@ -132,6 +139,7 @@ export default [
     class: '',
     file: 'images/PW-job-editing-cropped.png',
     caseId: 'pw',
+    caseReady: true,
     tags: ['look', 'complex'],
     info: {
       title: 'Job Editing Application',
@@ -147,6 +155,7 @@ export default [
     class: 'cover-video',
     file: 'videos/Lighting_POC_animation_preview.mov',
     caseId: 'stage-automation',
+    caseReady: false,
     tags: ['concept', 'complex', '3d'],
     info: {
       title: 'Driving the Lights With Objects',
@@ -162,6 +171,7 @@ export default [
     class: 'cover-video',
     file: 'videos/automation-fly-concept.mp4',
     caseId: 'stage-automation',
+    caseReady: false,
     tags: ['concept', 'complex', '3d'],
     info: {
       title: 'The “Flight” Rig',
@@ -190,6 +200,7 @@ export default [
     class: 'cover-video',
     file: 'videos/automation-assets-concept.mp4',
     caseId: 'stage-automation',
+    caseReady: false,
     info: {
       title: 'Stage Automation Assets',
       project: 'Stage Automation R&D',
@@ -202,7 +213,13 @@ export default [
   {
     wrapperClass: 'wide-big',
     type: 'image',
-    file: 'images/cisco-risk-concept-v1.png',
+    file: 'images/supply-chain-risk-concept-v1.png',
+    info: {
+      title: 'Supply Chain Risks',
+      project: 'Presales',
+      description:
+        'The concept I made as a part of our sales pitch for the major network equipment supplier. Its intent was to find a new way to explicate the supply chain risk visually by showing how and where it forms.'
+    },
     tags: ['concept', 'data visualization'],
     id: '28ba4799-2370-4d2a-a154-c5d8b4aef8f6'
   },
@@ -211,6 +228,14 @@ export default [
     type: 'video',
     class: 'cover-video',
     file: 'videos/automation-light.mp4',
+    caseId: 'stage-automation',
+    caseReady: false,
+    info: {
+      title: 'Lights Attracted to the Object',
+      project: 'Stage Automation R&D',
+      description:
+        'Light driving concept demoing to activation of the lights array by positioning the object.'
+    },
     tags: ['concept', 'complex', '3d'],
     id: '231f8671-bc9a-4648-a734-6c11d4ba27b0'
   },
@@ -218,13 +243,22 @@ export default [
     wrapperClass: 'wide',
     type: 'image',
     file: 'images/houdini-actinia.png',
+    info: {
+      title: '“Actinia”',
+      description: 'Made while studying Houdini’s particle systems.'
+    },
     tags: ['look', '3d'],
     id: 'd1ec63de-6ad6-4366-be7e-3a9ed79ff273'
   },
   {
     wrapperClass: 'wide',
     type: 'image',
-    file: 'images/sound-to-music.png',
+    file: 'images/sound-to-geometry.png',
+    info: {
+      title: 'Sound and Video to Geometry',
+      description:
+        'A frame of the animation driven by the video (size and color) and sound (movement amplitude).'
+    },
     tags: ['look', '3d'],
     id: '69f6178a-10cc-4b9b-a294-d40775e4b7de'
   },
@@ -233,6 +267,12 @@ export default [
     type: 'image',
     class: 'center',
     file: 'images/videos@3x.png',
+    info: {
+      title: '“Videos” Icon',
+      project: 'Unreleased Social Network',
+      description:
+        'Made for the social network startup. Somewhat resembles the look of the YouTube player of that era.'
+    },
     tags: ['look'],
     id: '5717e219-86d6-4806-b6a5-94b80855cded'
   },
@@ -240,6 +280,12 @@ export default [
     wrapperClass: 'wide',
     type: 'image',
     file: 'images/Agner-logo-big-perspective-2.png',
+    info: {
+      title: 'AGNER Logo',
+      project: 'Erlang Package Manager',
+      description:
+        'AGNER is a shorthand for “A Giant Nebula of Erlang Repositories.” It also pays homage to the Danish statistician Agner Krarup Erlang. The logo reminds a nebula.'
+    },
     tags: ['look'],
     id: 'c4a55279-fa67-417c-b177-b8a199d039ac'
   },
@@ -247,6 +293,11 @@ export default [
     wrapperClass: 'wide-big',
     type: 'image',
     file: 'images/diving-concept.png',
+    info: {
+      title: 'Time-Tracking for the Industrial Divers',
+      description:
+        'The concept features the general workflow of the “layered” time-tracking. Managers are supposed to manage the divers’ contracts grouped by the vessel. The layered timeline shows the stacking pay-rates.'
+    },
     tags: ['concept'],
     id: '01994df2-819e-40f1-89b5-a081e23806a4'
   },
@@ -254,6 +305,11 @@ export default [
     wrapperClass: 'wide',
     type: 'image',
     file: 'images/keepa-logo-dribbble.png',
+    info: {
+      title: '“Keepa” Lettering',
+      description:
+        'The lettering for the Keepa design studio owned by my friends. Made for fun.'
+    },
     tags: ['look', 'lettering', 'typography', 'concept'],
     id: '7b60c362-3f8b-4ddf-897b-e4c0455a5f12'
   },
@@ -261,12 +317,12 @@ export default [
     wrapperClass: 'wide',
     type: 'image',
     file: 'images/Yawn-logo-blur-400-300.png',
-    tags: ['look', 'lettering', 'typography'],
     info: {
       title: 'Yawn Logo',
       description:
         'The logo for the property search engine. The “Y” letter resembles the palatine uvula, which you may have a chance to observe in the mouth of a yawning person.'
     },
+    tags: ['look', 'lettering', 'typography'],
     id: 'bde34985-2cf0-4cd1-a509-757bccb9f85d'
   },
   {
@@ -274,6 +330,11 @@ export default [
     type: 'image',
     class: 'center',
     file: 'images/3dLutCreator-Icon-no-bg.png',
+    info: {
+      title: '“3D Lut Creator” Logo Concept',
+      description:
+        'The concept resembles the 3D color space grid, which is one of the main features of the app.'
+    },
     tags: ['look', '3d'],
     id: 'df9551ce-1d24-44ee-9616-bd1721b83c0b'
   },
@@ -281,6 +342,12 @@ export default [
     wrapperClass: 'wide-big latency',
     type: 'video',
     file: 'videos/cisco-latency-discovery.mp4',
+    info: {
+      title: 'Latency Discovery',
+      project: 'Networking Latency Monitoring Tool',
+      description:
+        'This view allows looking through dozens of latency graphs and finding the anomalies.'
+    },
     tags: ['concept', 'data visualization'],
     id: '3c8a0d9e-0855-45d7-844c-324b430c4ce4'
   },
@@ -288,6 +355,12 @@ export default [
     wrapperClass: 'wide-big',
     type: 'image',
     file: 'images/patient-summary-cropped.png',
+    info: {
+      title: 'Patient’s Card',
+      project: 'Medical CRM',
+      description:
+        'The card shows all of the patient’s metrics history on one screen. Each graph is a variation on the Edward Tufte’s “sparkline” with the (most important) last five days expanded into the table.'
+    },
     tags: ['data visualization'],
     id: 'ca34cfe5-c33a-4fd8-92de-18b1116268fb'
   },
@@ -296,6 +369,11 @@ export default [
     type: 'image',
     class: 'center',
     file: 'images/effect-doplera-cd-look.png',
+    info: {
+      title: 'The Doppler Effect',
+      description:
+        'Cover for a collection of poems and short stories published to support the visually impaired. The works are read by authors and famous actors. Pro bono.'
+    },
     tags: ['look', 'typography'],
     id: 'd6405472-b63b-41b2-97b3-1895890e1e2c'
   },
@@ -304,6 +382,11 @@ export default [
     type: 'image',
     class: 'center',
     file: 'images/VoiceAssistant-icon.png',
+    info: {
+      title: 'Voice Assistant Icon',
+      project: '',
+      description: 'An icon for a proof of concept app.'
+    },
     tags: ['look'],
     id: 'a97b55b8-998f-4eb7-9ad0-20083f6d555a'
   },
@@ -311,6 +394,11 @@ export default [
     wrapperClass: 'wide',
     type: 'image',
     file: 'images/tatubalin-logo.svg',
+    info: {
+      title: 'Tatubalin Guitars Mark',
+      description:
+        'My friend builds guitars, so I decided to help him by making a mark. It was also to practice my lettering skills.'
+    },
     tags: ['look', 'lettering', 'typography'],
     id: 'ae4e9030-1ac5-4854-ad5b-efa5adcde0be'
   },
@@ -319,6 +407,11 @@ export default [
     type: 'image',
     class: 'center',
     file: 'images/archmock-icon.png',
+    info: {
+      title: 'Archmock Icon',
+      description:
+        'In times of trouble I needed an CHM reader for Mac. Archmock was the best I could find, but I didn’t like the icon. So here we are.'
+    },
     tags: ['look', '3d'],
     id: 'e93d04cd-2e0d-4824-a935-500905cc59f2'
   }

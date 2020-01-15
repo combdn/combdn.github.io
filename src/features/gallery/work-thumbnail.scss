@@ -201,6 +201,13 @@
   }
 }
 
+.selected.latency:after {
+  top: 7px;
+  left: 7px;
+  width: calc(100% - 14px);
+  height: calc(100% - 14px);
+}
+
 .cover-video {
   object-fit: cover !important;
 }

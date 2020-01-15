@@ -25,7 +25,7 @@ function WorkInfo({
 
   let work = dataToShow.find(element => element.id === selectedWorkId);
 
-  const { info, caseId, tags } = work;
+  const { info, caseId, caseReady, tags } = work;
 
   // Return the empty div if there is no info for the work
   if (info === undefined) {
@@ -45,7 +45,7 @@ function WorkInfo({
   );
 
   // Don't include the Read the Case button if there is no caseId
-  if (caseId === undefined) {
+  if (caseId === undefined || caseReady === false) {
     return (
       <div className="work-info__root">
         <div className="work-info__background">
