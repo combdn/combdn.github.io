@@ -13,10 +13,19 @@ const Filter = ({
   showAll
 }) => {
   let filterButtons = [];
+  let showAllActive = false;
 
   // Add "Show All" button. (No tag, different type.)
+  selectedTags.length === 0 ? (showAllActive = false) : (showAllActive = true);
+
   filterButtons.push(
-    <FilterButton key={uuid()} type="showAll" tag="" clickHandler={showAll} />
+    <FilterButton
+      key={uuid()}
+      type="showAll"
+      tag=""
+      clickHandler={showAll}
+      active={showAllActive}
+    />
   );
 
   //Add the rest of the buttons

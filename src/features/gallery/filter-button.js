@@ -15,6 +15,21 @@ export default class FilterButton extends Component {
   render() {
     let classes = '';
     let icon = '';
+    let showAll = <div />;
+
+    if (this.props.active) {
+      showAll = (
+        <div role="button" className="showAll" onClick={this.handleClick}>
+          Show All
+        </div>
+      );
+    } else {
+      showAll = (
+        <div role="button" className="showAll disabled">
+          Show All
+        </div>
+      );
+    }
 
     this.props.selected
       ? (classes = 'filter-button' + ' ' + 'selected')
@@ -53,11 +68,7 @@ export default class FilterButton extends Component {
 
     switch (this.props.type) {
       case 'showAll':
-        return (
-          <div role="button" className="showAll" onClick={this.handleClick}>
-            Show All
-          </div>
-        );
+        return showAll;
       case 'infoTag':
         return (
           <div

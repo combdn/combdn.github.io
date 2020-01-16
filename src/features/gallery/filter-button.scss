@@ -12,9 +12,18 @@
   transition: all 0.1s ease-in-out;
   white-space: nowrap;
   cursor: pointer;
+  user-select: none;
 
   &:hover {
     color: $interactive;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: default;
+    &:hover {
+      color: $link-color;
+    }
   }
 }
 
