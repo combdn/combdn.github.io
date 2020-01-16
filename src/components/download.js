@@ -12,7 +12,6 @@ export default function Download() {
       newWork.id = uuid();
       downloadableData.push(newWork);
     }
-    console.log(JSON.stringify(downloadableData));
 
     downloadableData = [JSON.stringify(downloadableData)];
 

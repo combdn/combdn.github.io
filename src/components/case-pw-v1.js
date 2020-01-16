@@ -7,7 +7,6 @@ import './case-pw-v1.scss';
 
 export default function CasePw(props) {
   const { images, videos } = useFiles();
-  console.log(images);
 
   return (
     <article>

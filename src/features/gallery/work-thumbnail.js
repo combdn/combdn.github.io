@@ -74,7 +74,6 @@ function WorkThumbnail({
         <img
           onLoad={() => {
             setReadyToShow(true);
-            console.log(`Image ${identificator} is loaded`);
           }}
           alt=""
           className={workClass}
@@ -102,7 +101,6 @@ function WorkThumbnail({
             // autoPlay
             onCanPlayThrough={() => {
               setReadyToShow(true);
-              console.log(`Video ${identificator} can play`);
             }}
             playsInline
             muted={true}

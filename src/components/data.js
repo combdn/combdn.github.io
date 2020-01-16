@@ -422,7 +422,7 @@ export default [
     info: {
       title: 'Red Ball',
       description:
-        'One of the experiments with grouping and primitives attributes in Houdini.'
+        'One of the experiments with grouping and primitives’ attributes in Houdini.'
     },
     tags: ['look', '3d'],
     id: 'a8ee2493-2cc9-4e8b-9b48-ab53101e8fc2'

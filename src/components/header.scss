@@ -1,18 +1,29 @@
 .header__intro {
+  display: flex;
+  flex-direction: column;
   font-size: 17px;
-  margin: 5em auto;
-  line-height: 1.529411765em;
-  max-width: 36em;
+  line-height: 26px;
 
   @media screen and (max-width: 370px) {
     font-size: 16px;
   }
-}
 
-.twemoji-container {
-  display: inline-block;
-}
+  .contacts {
+    align-self: flex-end;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 24px;
+  }
 
-.twemoji {
-  width: 1em;
+  .contact {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+  }
+
+  .intro {
+    margin: 91px auto;
+    max-width: 36em;
+  }
 }
