@@ -15,7 +15,7 @@ export default function Header() {
         </div>
         <div className="contact">
           <a
-            href={process.env.PUBLIC_URL + 'Valery-Sibikovsky-Resume-v001.pdf'}
+            href={process.env.PUBLIC_URL + 'Valery-Sibikovsky-Resume-v002.pdf'}
           >
             Résumé
           </a>

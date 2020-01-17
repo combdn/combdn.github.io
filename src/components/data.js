@@ -8,7 +8,7 @@ export default [
     info: {
       title: 'Daily Mail App Concept',
       project: 'Presales',
-      description: 'The goal was to show a possible improvements direction.'
+      description: 'The goal was to show a possible improvement direction.'
     },
     tags: ['look', 'mobile', 'concept', 'typography'],
     id: '10592916-c265-4302-ab29-76d78b2d7d26'
@@ -97,7 +97,7 @@ export default [
   //     title: 'Real-World Case',
   //     project: 'Risk Management Solution',
   //     description:
-  //       'Simple but still real-world scenario to test the design desicions.'
+  //       'Simple but still real-world scenario to test the design decisions.'
   //   },
   //   id: '9697fa40-1ce4-4835-8709-0ba17b31b794'
   // },
@@ -113,7 +113,7 @@ export default [
       title: 'Orchestrator',
       project: 'Risk Management Solution',
       description:
-        'The Windows app to install, run, and debug jobs on a full-fledged environments.'
+        'The Windows app to install, run, and debug jobs in full-fledged environments.'
     },
     id: '157fb8f5-3619-440b-8d76-9d7022acf240'
   },
@@ -161,7 +161,7 @@ export default [
       title: 'Driving the Lights With Objects',
       project: 'Stage Automation R&D',
       description:
-        'Concept for light array driving with a meta-ball while controlling the fall-off function. (Made in Houdini.)'
+        'The concept for light array driving with a meta-ball while controlling the fall-off function. (Made in Houdini.)'
     },
     id: 'd81be583-4bf9-4af8-9ba0-b26813b40541'
   },
@@ -410,7 +410,7 @@ export default [
     info: {
       title: 'Archmock Icon',
       description:
-        'In times of trouble I needed an CHM reader for Mac. Archmock was the best I could find, but I didn’t like the icon. So here we are.'
+        'In times of trouble, I needed a CHM reader for Mac. Archmock was the best I could find, but I didn’t like the icon. So here we are.'
     },
     tags: ['look', '3d'],
     id: 'ef891e0a-d030-4d2e-b6fc-85c1834d1c9b'

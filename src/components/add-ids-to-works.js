@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import uuid from 'uuid/v4';
 import data from './data';
 
-export default function Download() {
+export default function AddIdsToWorks() {
   useEffect(() => {
     let downloadableData = [];
     for (const work of data) {

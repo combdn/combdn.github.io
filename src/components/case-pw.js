@@ -77,7 +77,7 @@ export default function CasePw(props) {
           <div className="long-text">
             <p>
               Initial workflow concept was created during the workshops with the
-              client and the project team, and was accepted as a high level
+              client and the project team, and was accepted as a high-level
               direction.
             </p>
 
