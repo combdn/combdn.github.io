@@ -1,4 +1,11 @@
-//rename "concept" to "draft"?
+// Get the copy out of the Object:
+//
+// F: (.|\n)*?(.*info: \{(.|\n)*?\})(.|\n)*?
+// R: $2\n
+//
+// F: \{((.|\n)*?)\}
+// R: $1
+
 export default [
   {
     wrapperClass: 'tall-big-phone video-shadow',
