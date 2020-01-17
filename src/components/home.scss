@@ -1,0 +1,21 @@
+.page-home {
+  background-color: #4d4e4f;
+  //-webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-weight: 300;
+  color: white;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  padding: 24px;
+  padding-left: calc(24px + env(safe-area-inset-left));
+  padding-right: calc(24px + env(safe-area-inset-right));
+  margin: 0;
+
+  @media screen and (max-width: 530px) {
+    padding: 18px;
+  }
+
+  @media screen and (max-width: 370px) {
+    font-size: 14px;
+  }
+}

@@ -1,83 +1,175 @@
 import React from 'react';
 import useFiles from './useFiles';
-import Button from './button';
-import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './case-pw.scss';
 
 export default function CasePw(props) {
   const { images, videos } = useFiles();
-  let jobEditorImages = [
-    images['images/PW-deploy-icon.svg'],
-    images['images/PW-navigator.svg'],
-    images['images/PW-job-editing.png'],
-    images['images/PW-nodes-types.png'],
-    images['images/PW-properties.png']
-  ];
 
-  jobEditorImages = jobEditorImages.map(element => (
-    <div>
-      <img src={element} />
-      <p className="legend">Test</p>
-    </div>
-  ));
-  console.log(jobEditorImages);
-
-  // TODO: add diagram from /Users/combdn/Dropbox/Work/eleks/Aon/Pathwise/Aon-PWOR-workflow-v002.ai
   return (
     <article>
-      <h1>Insurance Risk Simulation Applications</h1>
-      <div className="goal">
-        {/* <EmojiBlock icon="🎯" /> */}
-        <div className="case__emoji">
-          <span role="img" aria-label="icon">
-            🎯
-          </span>
+      <section className="intro">
+        <div className="section-grid">
+          <figure style={{ marginBottom: 0 }}>
+            <img src={images['images/PW-job-editing.png']} alt="Job editor" />
+          </figure>
+          <h1>Insurance Risk Simulation Applications</h1>
+          <div className="goal">
+            {/* <EmojiBlock icon="🎯" /> */}
+            <div className="case__emoji">
+              <span role="img" aria-label="icon">
+                🎯
+              </span>
+            </div>
+            <div>
+              <span className="first-word">Goal:</span> add two applications to
+              the insurance simulation suite. One — to visually build simulation
+              jobs, the other — to install and run them.
+            </div>
+          </div>
         </div>
-        <div>
-          <span className="first-word">Goal:</span> add two applications to the
-          insurance simulation suite. One — to visually build simulation jobs,
-          the ohter — to intall and run them.
+
+        <img
+          className="wires-illustration"
+          src={images['images/illustrations/wires.svg']}
+          alt="Wires"
+        />
+      </section>
+
+      <section className="main">
+        <div className="section-grid">
+          <p>
+            After the first discussion with the team, I came up with the concept
+            that was based on how similar tasks (mostly one-direction data flow
+            with some logic) are handled in VFX industry: i. e. boxes connected
+            with wires.
+          </p>
+
+          <div className="concept">
+            <figure>
+              <video
+                className="test"
+                controls
+                src={videos['videos/PW-concept.mp4']}
+              />
+              <div className="shadow" />
+            </figure>
+            <p className="big">
+              This concept was created in the first two days. We had an XML
+              file, and I already had a good reference for the node-based
+              systems (SideFX Houdini).
+            </p>
+          </div>
+
+          <p>
+            Some of the decisions were to be revisited, but the concept was
+            accepted by both the team and the client.
+          </p>
+
+          <figure>
+            <img src={images['images/PW-workflow.png']} alt="Workflow Conept" />
+            <figcaption className="figc-bottom">
+              ↑ Initial workflow concept
+            </figcaption>
+          </figure>
+
+          <div className="long-text">
+            <p>
+              Initial workflow concept was created during the workshops with the
+              client and the project team, and was accepted as a high-level
+              direction.
+            </p>
+
+            <p>
+              Currently, the tool allows using decorated Python functions as
+              building blocks to perform ETL operations, to run models with
+              resulting data, and to save results of the models’ runs.
+            </p>
+          </div>
+
+          <figure>
+            <img src={images['images/PW-nodes-types.png']} alt="Node types" />
+            <figcaption className="big">
+              Node types: task function, data sources, publisher, notes, exits.
+              Input values are visible right away. Variables can be placed to
+              inputs by dragging and dropping.
+            </figcaption>
+          </figure>
+
+          <p>
+            The data and execution flows are separated to ensure the exact order
+            of the computations and to enable error events handling. There’s a
+            special trigger node to configure the conditions for the job start
+            (and also chain them), and an exit node to handle the various
+            possible outcomes. There are also Data Source and Data Destination
+            node types to work with databases and a filesystem.
+          </p>
+
+          <figure className="fig-properties">
+            <img
+              src={images['images/PW-properties-split.png']}
+              alt="Node types"
+            />
+            <figcaption className="figc-bottom">
+              ↑ Properties panel mirroring the i/o structure of the task
+              function. Items defined in the function’s decorator are read-only.
+            </figcaption>
+          </figure>
+
+          <figure className="fig-ribbon-icons">
+            <img src={images['images/PW-deploy-icon.svg']} alt="" />
+            <img src={images['images/PW-navigator.svg']} alt="" />
+            <img src={images['images/PW-edit-task.svg']} alt="" />
+            <img src={images['images/PW-add-data-source.svg']} alt="" />
+            <img src={images['images/PW-add-new-item.svg']} alt="" />
+            <figcaption className="figc-bottom">
+              ↑ Ribbon icons: Deploy, Navigator, Edit Function, Add Data Source,
+              and Add New Item
+            </figcaption>
+          </figure>
+
+          <p>
+            The other tool is dedicated to running the created jobs in HPC (CUDA
+            GPUs) environment. It allows to install, to configure triggers, data
+            sources, and variables, and to run the jobs and see their results.
+          </p>
+
+          <figure className="fig-signoff">
+            <img src={images['images/PW-signoff.png']} alt="Job orchestrator" />
+            <figcaption className="figc-signoff-small figc-bottom">
+              ↑ Job orchestrator features the pivotable table for the job runs,
+              the interface for the signoff, and the results viewer
+            </figcaption>
+          </figure>
+
+          <figcaption className="figc-signoff">
+            ← Job orchestrator features the pivotable table for the job runs,
+            the interface for the signoff, and the results viewer
+          </figcaption>
+
+          <figure className="fig-run-details">
+            <img
+              src={images['images/PW-run-details.png']}
+              alt="Job run details"
+            />
+            <figcaption className="figc-run-details-small figc-bottom">
+              ↑ Job run details show both end results and the state of inputs
+              and outputs on each step
+            </figcaption>
+          </figure>
+          <figcaption className="figc-run-details">
+            → Job run details show both end results and the state of inputs and
+            outputs on each step
+          </figcaption>
+
+          <p>
+            This tool includes debugging and introspection features that allow
+            seeing the journal of execution for any job. Users can review each
+            step’s input and output values and track the execution on the graph
+            view.
+          </p>
         </div>
-      </div>
-      <Carousel>{jobEditorImages}</Carousel>
-      <p>
-        After the first discussion with the team I came up with the concept that
-        was based on how similar tasks (mostly one-direction data flow with some
-        logic) was handled in VFX industry: i. e. boxes connected with wires.
-      </p>
-      <figure>
-        <video controls src={videos['videos/PW-concept.mp4']} />
-        <figcaption>↑ The first concept</figcaption>
-      </figure>
-      <p>
-        Some of the decisions were to be revisited, but overall concept was
-        accepted by both the team and the client.
-      </p>
-      <p>
-        Currently the tool allows to use decorated Python functions as building
-        blocks to perform ETL operations, to run models with resulting data and
-        to save results. There’s also special trigger node to configure the
-        conditions for the job execution start (and also chain them). There are
-        also variables that allow to configure the job before running.
-      </p>
-      <figure>
-        <img src={images['images/PW-job-editing.png']} alt="Job editor" />
-        <figcaption>↑ Job Editor</figcaption>
-      </figure>
-      <p>
-        The other tool is dedicated to running the created jobs in HPC
-        environment. It allows to install, to configure triggers, data sources,
-        and variables, and to run the jobs and see their results.
-      </p>
-      <figure>
-        <img src={images['images/PW-signoff.png']} alt="Job running inter" />
-        <figcaption>↑ Job orchestrator and debugger</figcaption>
-      </figure>
-      <p>
-        There is also debugging functionality that allows to inspect the job
-        execution step by step, and to see all of the intermediate results.
-      </p>
+      </section>
     </article>
   );
 }

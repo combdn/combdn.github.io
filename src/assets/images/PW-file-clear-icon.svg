@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
+    <title>file-clear-32</title>
+    <desc>Created with Sketch.</desc>
+    <g id="file-clear-32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M26.000696,17.8698432 L26,27 L7,27 L7.00002953,21.506449 C7.32582514,21.2493095 7.65942231,21.0016165 8.00040776,20.7637834 L8,26 L25,26 L25.0006076,17.5990398 C25.3372248,17.6812666 25.6706606,17.7716073 26.000696,17.8698432 Z M26,3 L26.0006041,9.62156785 C25.6692574,9.55185394 25.3358276,9.48779662 25.0004203,9.42950162 L25,4 L8,4 L8.0001445,11.5913846 C7.66287556,11.7448823 7.32906361,11.904651 6.9988576,12.0705418 L7,3 L26,3 Z" id="Combined-Shape" fill="#B2B2B2" fill-rule="nonzero"></path>
+        <path d="M20,17 C21.7232259,17 23.3979738,17.2075587 25.0006076,17.5990398 L25,26 L8,26 L7.99871524,20.7649641 C11.4004588,18.3917948 15.5376938,17 20,17 Z M25,4 L25.0004203,9.42950162 C23.375993,9.1471702 21.7051832,9 20,9 C15.7199211,9 11.6564052,9.92721692 7.99936293,11.5917403 L8,4 L25,4 Z" id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+        <rect id="Rectangle-Copy" fill="#000000" opacity="0.200000003" x="20" y="8" width="8" height="11" rx="2"></rect>
+        <rect id="Rectangle" stroke="#F09BAB" fill="#FFCDD4" x="20.5" y="7.5" width="7" height="10" rx="2"></rect>
+    </g>
+</svg>

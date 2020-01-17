@@ -1,0 +1,34 @@
+// @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,500,500i,600,600i,700,700i&subset=cyrillic,latin-ext&text=%E2%86%90%E2%86%92');
+
+// @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,500,500i,600,600i,700,700i&subset=cyrillic,latin-ext&text=%E2%86%90%E2%86%92');
+
+@import '../variables.scss';
+
+@import '../../node_modules/react-responsive-carousel/lib/styles/carousel.min.css';
+
+// Import IBM Plex from src
+// $font-prefix: './fonts/plex';
+// @import 'fonts/plex/scss/ibm-plex.scss';
+
+// Import IBM Plex from node_modules
+@import '~@ibm/plex/css/ibm-plex.min.css';
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+::selection {
+  background-color: rgb(255, 122, 215);
+  // background-color: $interactive;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  transition: all 0.15s ease-in-out;
+  white-space: nowrap;
+  &:hover {
+    // color: $interactive;
+    text-decoration: underline;
+  }
+}

@@ -1,31 +1,204 @@
+@import '../variables.scss';
+
 $line-height: 26px;
 $small-line-height: 24px;
+$grid-gap: 36px;
+$grid-gap-small: $grid-gap / 1.5;
+$grid-gap-smallest: $grid-gap / 2;
 
-.case {
-  article {
+.page-case {
+  padding: 24px;
+  color: #333;
+  background: white;
+  font-weight: 400;
+
+  .button {
+    position: absolute;
+    left: calc(24px + env(safe-area-inset-left));
+    // left: 24px;
+  }
+
+  // GRID
+
+  .section-grid {
+    display: grid;
+    column-gap: $grid-gap;
+    row-gap: $grid-gap;
+    grid-template-columns:
+      [full-start]
+      repeat(1, minmax(24px, 1fr))
+      [wide-start]
+      repeat(2, minmax(24px, 1fr))
+      [narrow-start]
+      repeat(6, minmax(24px, 1fr))
+      [narrow-end]
+      repeat(2, minmax(24px, 1fr))
+      [wide-end]
+      repeat(1, minmax(24px, 1fr))
+      [full-end];
     font-size: 17px;
-    margin: $line-height * 4 auto;
     line-height: $line-height;
-    max-width: 36em;
+    max-width: 80em;
+
+    @media screen and (max-width: 920px) {
+      column-gap: $grid-gap-small;
+      grid-template-columns:
+        [full-start]
+        repeat(1, minmax(24px, 1fr))
+        [wide-start]
+        repeat(1, minmax(24px, 1fr))
+        [narrow-start]
+        repeat(4, minmax(24px, 1fr))
+        [middle]
+        repeat(4, minmax(24px, 1fr))
+        [narrow-end]
+        repeat(1, minmax(24px, 1fr))
+        [wide-end]
+        repeat(1, minmax(24px, 1fr))
+        [full-end];
+    }
+
+    @media screen and (max-width: 670px) {
+      grid-template-columns:
+        [full-start wide-start]
+        repeat(1, minmax(24px, 1fr))
+        [narrow-start]
+        repeat(4, minmax(24px, 1fr))
+        [middle]
+        repeat(4, minmax(24px, 1fr))
+        [narrow-end]
+        repeat(1, minmax(24px, 1fr))
+        [full-end wide-end];
+    }
+
+    @media screen and (max-width: 505px) {
+      // row-gap: $grid-gap-small;
+      grid-template-columns:
+        [full-start wide-start narrow-start]
+        repeat(1, minmax(24px, 1fr))
+        [middle]
+        repeat(1, minmax(24px, 1fr))
+        [full-end wide-end narrow-end];
+    }
 
     @media screen and (max-width: 370px) {
       font-size: 16px;
       line-height: $small-line-height;
-      margin: $small-line-height * 4 auto;
+      margin: $small-line-height auto;
     }
   }
 
+  section {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: $grid-gap * 2;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+
+    &.intro {
+      background: radial-gradient(50% 50% at 50% 50%, #f0f2f3, #d3d7db);
+      margin: -24px -24px $grid-gap;
+      padding: 24px 24px 0;
+      padding-left: calc(24px + env(safe-area-inset-left));
+      padding-right: calc(24px + env(safe-area-inset-right));
+
+      // .wires-illustration {
+      //   margin: -24px -24px 0;
+      //   background: no-repeat url(../assets/images/illustrations/wires.svg);
+      //   background-size: 100%;
+      //   // background-position: center;
+      // }
+
+      .wires-illustration {
+        position: absolute;
+        width: 100%;
+        height: 35vw;
+        max-height: 451px;
+        top: calc(100px + 10vw);
+        border-radius: 0;
+        z-index: 0;
+
+        @media screen and (min-width: 1400px) {
+          top: 240px;
+        }
+
+        @media screen and (max-width: 670px) {
+          top: calc(130px + 10vw);
+        }
+      }
+
+      .section-grid {
+        margin-top: 112px;
+      }
+
+      figure {
+        z-index: 1;
+      }
+    }
+  }
+
+  // Text Styles
   h1 {
+    grid-column: narrow-start/narrow-end;
     font-weight: 300;
     font-size: 36px;
     line-height: 42px;
+    margin: 0;
   }
 
+  p {
+    grid-column: narrow-start/narrow-end;
+
+    margin: 0;
+    // margin-bottom: $line-height / 2;
+    // max-width: 36em;
+  }
+
+  .long-text {
+    grid-column: narrow-start/narrow-end;
+
+    & > p {
+      margin-bottom: $line-height / 2;
+    }
+  }
+
+  .big {
+    font-weight: 300;
+    font-size: 2.3vw;
+    line-height: 2.3vw * 1.5;
+    color: $text-color-dark;
+
+    @media screen and (min-width: 1200px) {
+      font-size: 28px;
+      line-height: $line-height * 1.8;
+    }
+
+    @media screen and (max-width: 920px) {
+      font-size: 24px;
+      line-height: 24px * 1.5;
+    }
+  }
+
+  // Images and videos
+  img,
+  video {
+    max-width: 100%;
+    border-radius: 5px;
+
+    &[alt='Workflow Conept'] {
+      border-radius: 0;
+    }
+  }
+
+  // The goal.
   .goal {
+    // grid-column: 3/11;
+    grid-column: narrow-start/narrow-end;
     display: flex;
     font-size: 18px;
     max-width: 25em;
-    margin: $line-height 0 $line-height * 1;
+    margin: 0 0 $line-height * 2;
   }
 
   .case__emoji {
@@ -37,21 +210,206 @@ $small-line-height: 24px;
     font-weight: 600;
   }
 
+  // Figure
   figure {
-    margin-left: 0;
-    margin-right: 0;
+    grid-column: wide-start/wide-end;
+    // margin: 0 0 $line-height / 2;
+    margin: 0;
+
+    // Need that to make grid element size fit its content.
+    line-height: 0;
   }
 
   figcaption {
     font-size: 14px;
+    line-height: 18px;
     font-weight: 400;
-    letter-spacing: 0.05em;
-    color: rgba($color: white, $alpha: 0.6);
+    letter-spacing: 0.015em;
+    color: rgba($text-color-dark, 0.75);
+
+    &.big {
+      margin-top: $line-height / 2;
+    }
   }
 
-  img,
-  video {
-    max-width: 100%;
-    border-radius: 5px;
+  .figc-bottom {
+    margin-top: $line-height / 2;
+  }
+
+  // Custom
+  .concept {
+    position: relative;
+    grid-column: wide-start/wide-end;
+    column-gap: $grid-gap;
+    margin: -($grid-gap);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: $grid-gap-small;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background: #e6e8ea;
+
+    @media screen and (max-width: 920px) {
+      column-gap: $grid-gap-small;
+      margin-left: -($grid-gap-small);
+      margin-right: -($grid-gap-small);
+      padding: $grid-gap-small;
+    }
+
+    @media screen and (max-width: 920px) {
+      grid-template-columns: 1fr;
+    }
+
+    figure {
+      grid-column: 1 / 2;
+      display: block;
+      position: relative;
+      margin: 0;
+      border-radius: 8px;
+
+      @media screen and (max-width: 920px) {
+        grid-column: span 1;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        box-shadow: inset 0 0 0 1px rgba($color: #000000, $alpha: 0.15);
+        pointer-events: none;
+      }
+    }
+
+    video {
+      display: block;
+      position: relative;
+      border-radius: 8px;
+      outline: none;
+      background: white;
+    }
+
+    p {
+      grid-column: 2 / 3;
+      // max-width: 18em;
+
+      @media screen and (max-width: 920px) {
+        margin-top: $line-height / 2;
+        grid-column: span 1;
+      }
+    }
+  }
+
+  .fig-properties {
+    grid-column-start: wide-start;
+    grid-column-end: span 7;
+
+    @media screen and (max-width: 505px) {
+      grid-column: span 2;
+    }
+
+    img {
+      border-radius: 0;
+    }
+  }
+
+  .fig-ribbon-icons {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(24px, 1fr));
+    grid-gap: 20px;
+    align-content: start;
+    img {
+      border-radius: 0;
+    }
+
+    @media screen and (max-width: 920px) {
+      grid-gap: 10px;
+    }
+
+    @media screen and (max-width: 505px) {
+      grid-column: span 2;
+      grid-gap: 5vw;
+    }
+
+    figcaption {
+      grid-column-start: span 3;
+
+      @media screen and (max-width: 505px) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .fig-signoff {
+    grid-column: wide-start / 9;
+    grid-row: 10 / 15;
+    margin: 0;
+    border-radius: 0;
+  }
+  .figc-signoff {
+    grid-column: 9 / wide-end;
+    grid-row: 11 / 12;
+    max-width: 16em;
+  }
+
+  .fig-run-details {
+    grid-column: 5 / wide-end;
+    grid-row: 13 / 17;
+    margin: 0;
+    border-radius: 0;
+  }
+  .figc-run-details {
+    grid-column: wide-start / 5;
+    grid-row: 15 / 16;
+    justify-self: end;
+    align-self: end;
+    max-width: 16em;
+    // text-align: right;
+  }
+
+  @media screen and (max-width: 670px) {
+    .fig-run-details {
+      grid-column: 4 / wide-end;
+    }
+
+    .figc-run-details {
+      grid-column: wide-start / 4;
+    }
+  }
+
+  @media screen and (min-width: 561px) {
+    .figc-signoff-small,
+    .figc-run-details-small {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 560px) {
+    .figc-signoff,
+    .figc-run-details {
+      display: none;
+    }
+
+    .fig-signoff,
+    .figc-signoff,
+    .fig-run-details,
+    .figc-run-details {
+      grid-column: wide-start / wide-end;
+      grid-row: auto;
+      max-width: 100%;
+    }
+  }
+
+  .grid-item {
+    --col: inherit;
+    --row: inherit;
+    grid-column: var(--col);
+    grid-row: var(--row);
   }
 }

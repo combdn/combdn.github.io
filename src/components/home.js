@@ -1,13 +1,15 @@
 import React from 'react';
 import Header from './header';
-import Portfolio from './portfolio';
+import Gallery from '../features/gallery/gallery';
 import Footer from './footer';
+
+import './home.scss';
 
 export default function Home(props) {
   return (
-    <div>
+    <div className="page-home">
       <Header />
-      <Portfolio />
+      <Gallery />
       <Footer />
     </div>
   );

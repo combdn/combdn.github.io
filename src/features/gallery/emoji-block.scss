@@ -1,0 +1,50 @@
+@import '../../variables';
+
+$safari-zoom: 0.785714286;
+$safari-size: 1em / $safari-zoom;
+$emoji-line-height-safari: 1 / $safari-zoom;
+
+.emoji-block__container {
+  display: block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
+    'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+.emoji-block__browser-all {
+  display: flex;
+  width: 1em;
+  height: 1em;
+  justify-content: center;
+  align-items: center;
+  //line-height: 1.2;
+
+  span {
+    display: block;
+    width: 1em;
+    height: 1em;
+  }
+}
+
+.emoji-block__browser-safari {
+  display: flex;
+  width: 1em;
+  height: 1em;
+  line-height: $emoji-line-height-safari;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    //zoom: $safari-zoom;
+    font-size: 1em * $safari-zoom;
+    display: block;
+    position: relative;
+    left: -0.176470588em;
+    //bottom: 0.1em;
+    // bottom: -.147058824em;
+    width: 1em;
+    height: 1em;
+  }
+}

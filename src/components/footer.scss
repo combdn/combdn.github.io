@@ -1,15 +1,50 @@
-footer {
+@import '../variables.scss';
+
+footer.home-footer {
   margin: 6em auto 4em;
   // margin-top: 6em;
   // margin-bottom: 7em;
   text-align: center;
   max-width: 36em;
 
-  p {
-    // max-width: 36em;
+  a {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
   }
   .button {
     margin-bottom: 4em;
+  }
+}
+
+footer.case-footer {
+  display: grid;
+  row-gap: 36px;
+  grid-template-columns: 1fr;
+  grid-auto-flow: row;
+  justify-items: center;
+  background-color: #e6e8ea;
+  margin: 0 -24px -24px;
+  padding: 48px 24px;
+
+  * {
+    grid-column: 1 / 2 !important;
+    margin: 0 !important;
+  }
+
+  .button {
+    position: relative;
+    left: 0;
+  }
+
+  a {
+    color: $link-color-dark;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
   }
 }
 

@@ -1,0 +1,89 @@
+@import '../../variables.scss';
+
+.work-info__root {
+  position: fixed;
+  bottom: 32px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+
+  @media screen and (max-width: 660px) {
+    bottom: 0;
+  }
+
+  .work-info__background {
+    position: relative;
+    width: 100%;
+    max-width: 36em;
+    padding: 20px 24px 10px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    color: $text-color-dark;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 9px -7px rgba(0, 0, 0, 0.2),
+      0 12px 24px -12px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.05);
+
+    @media screen and (max-width: 660px) {
+      max-width: none;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      padding-bottom: 12px;
+    }
+  }
+
+  .title {
+    font-size: 19px;
+    margin: 0;
+    margin-bottom: 8px;
+    line-height: 24px;
+  }
+
+  .description {
+    margin: 0;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+  }
+
+  .project {
+    margin: 0;
+    margin-bottom: 6px;
+    color: rgba(0, 0, 0, 0.35);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    line-height: 18px;
+  }
+
+  .tags-and-button {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-bottom: 4px;
+  }
+
+  .case-button {
+    margin-right: 20px;
+    margin-bottom: 12px;
+    margin-top: 6px;
+  }
+
+  .info-tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -8px;
+    margin-bottom: 13px;
+    // height: 32px;
+  }
+  .close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    margin: 0;
+  }
+}

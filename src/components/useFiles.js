@@ -1,6 +1,4 @@
-import React from 'react';
-
-// Get static pathes for all of the files in the 'assets' folder
+// Get static paths for all of the files in the 'assets' folder
 // with 'require.context' webpack method
 export default function useFiles() {
   // Function to import files
