@@ -51,6 +51,8 @@ export default function CasePw(props) {
                 className="test"
                 controls
                 src={videos['videos/PW-concept.mp4']}
+                type="video/mp4"
+                playsInline
               />
               <div className="shadow" />
             </figure>
