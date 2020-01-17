@@ -86,21 +86,21 @@ export default [
     },
     id: '93143382-0eca-4477-aa13-866a39e1f18e'
   },
-  {
-    wrapperClass: 'wide-big',
-    type: 'image',
-    file: 'images/PW-real-case.png',
-    caseId: 'pw',
-    caseReady: true,
-    tags: ['look', 'complex'],
-    info: {
-      title: 'Real-World Case',
-      project: 'Risk Management Solution',
-      description:
-        'Simple but still real-world scenario to test the design desicions.'
-    },
-    id: '9697fa40-1ce4-4835-8709-0ba17b31b794'
-  },
+  // {
+  //   wrapperClass: 'wide-big',
+  //   type: 'image',
+  //   file: 'images/PW-real-case.png',
+  //   caseId: 'pw',
+  //   caseReady: true,
+  //   tags: ['look', 'complex'],
+  //   info: {
+  //     title: 'Real-World Case',
+  //     project: 'Risk Management Solution',
+  //     description:
+  //       'Simple but still real-world scenario to test the design desicions.'
+  //   },
+  //   id: '9697fa40-1ce4-4835-8709-0ba17b31b794'
+  // },
   {
     wrapperClass: 'wide-big',
     type: 'image',

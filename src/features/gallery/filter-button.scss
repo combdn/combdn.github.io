@@ -15,7 +15,8 @@
   user-select: none;
 
   &:hover {
-    color: $interactive;
+    // color: $interactive;
+    text-decoration: underline;
   }
 
   &.disabled {
@@ -23,6 +24,7 @@
     cursor: default;
     &:hover {
       color: $link-color;
+      text-decoration: none;
     }
   }
 }
@@ -37,7 +39,7 @@
   cursor: pointer;
   user-select: none;
   line-height: 1;
-  transition: all 0.15s ease-in-out;
+  transition: all 0.1s ease-in-out;
 
   &:hover {
     background-color: rgba($color: white, $alpha: 0.2);

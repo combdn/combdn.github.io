@@ -28,10 +28,7 @@ a {
   transition: all 0.15s ease-in-out;
   white-space: nowrap;
   &:hover {
-    color: $interactive;
-    //color: #67ffd9; //green
-    //color: rgb(255, 105, 210);
-    // background: linear-gradient(to right, #30CFD0 0%, #e207a1 100%);
-    // background-clip: text;
+    // color: $interactive;
+    text-decoration: underline;
   }
 }
