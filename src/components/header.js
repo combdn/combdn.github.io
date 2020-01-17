@@ -1,10 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from '@reach/router';
 
-import DownloadLink from './download-link';
-
 import './header.scss';
-import cv from '../assets/Valery-Sibikovsky-Resume.pdf';
 
 export default function Header() {
   return (

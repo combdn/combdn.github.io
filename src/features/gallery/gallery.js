@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { Router, Link } from '@reach/router';
 import uuid from 'uuid/v4';
 
 // Components
@@ -17,9 +16,6 @@ const { images, videos } = useFiles();
 function Gallery({ dataToShow }) {
   let works = [];
   let tags = new Set();
-
-  // TODO: add PDF comparison work to the gallery?
-  // TODO: add the "Red Ball"
 
   // Create thumbnails array
   for (const work of dataToShow) {

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Router, Link, globalHistory } from '@reach/router';
+import React from 'react';
+import { Router, globalHistory } from '@reach/router';
 import './App.scss';
 import ScrollToTop from './scroll-to-top';
 import Home from './home';

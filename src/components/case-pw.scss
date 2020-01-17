@@ -6,10 +6,6 @@ $grid-gap: 36px;
 $grid-gap-small: $grid-gap / 1.5;
 $grid-gap-smallest: $grid-gap / 2;
 
-body {
-  // background-color: white;
-}
-
 .page-case {
   padding: 24px;
   color: #333;
@@ -114,7 +110,6 @@ body {
       //   // background-position: center;
       // }
 
-      // FIXME: Check the vertical position on small screens
       .wires-illustration {
         position: absolute;
         width: 100%;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { connect } from 'react-redux';
 import { toggleWorkSelection } from './gallerySlice';
@@ -98,7 +98,7 @@ function WorkThumbnail({
         <div className="video-wrapper">
           <video
             // FIXME: enable temporary disabled autoplay
-            // autoPlay
+            autoPlay
             onCanPlayThrough={() => {
               setReadyToShow(true);
             }}

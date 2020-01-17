@@ -29,7 +29,6 @@ export default function CasePw(props) {
           </div>
         </div>
 
-        {/* FIXME: may be illustration should be long and clipped by the viewport. This way it could be made more interesting for big screens. */}
         <img
           className="wires-illustration"
           src={images['images/illustrations/wires.svg']}
