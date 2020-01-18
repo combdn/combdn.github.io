@@ -11,7 +11,9 @@
 // @import 'fonts/plex/scss/ibm-plex.scss';
 
 // Import IBM Plex from node_modules
-@import '~@ibm/plex/css/ibm-plex.min.css';
+// @import '~@ibm/plex/css/ibm-plex.min.css';
+$font-prefix: '~@ibm/plex';
+@import '~@ibm/plex/scss/sans/_index.scss';
 
 body {
   font-family: 'IBM Plex Sans', sans-serif;
