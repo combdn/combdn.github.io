@@ -25,21 +25,27 @@ export default function Header() {
           literally have 321 items in my “Applications” folder right now.)
         </p>
         <p>
-          ↓These are some bits of my works. Some are simple and obvious{' '}
+          ↓These are some bits of my works. Some are simple and obvious{' '}
           <span role="img" aria-label="piece of cake">
             🍰
           </span>
-          , and others are complex{' '}
+          , and others are complex{' '}
           <span role="img" aria-label="piece of cake">
             🤯
           </span>
-          , some of them are quick proofs of concepts{' '}
+          , some of them are quick proofs of concepts{' '}
           <span role="img" aria-label="piece of cake">
             ✏️
           </span>
-          . I’ve only managed to write <Link to="/case/pw">one case</Link> so
-          far… But if you’re interested, we could discuss any of them further.
-          Just <a href="mailto:combdn@gmail.com">drop me a line.</a>
+          .
+        </p>
+        <p>
+          <span className="highlight">
+            I’ve only managed to write <Link to="/case/pw">one case</Link> so
+            far…
+          </span>{' '}
+          But if you’re interested, we could discuss any of them further. Just{' '}
+          <a href="mailto:combdn@gmail.com">drop me a line.</a>
         </p>
       </div>
     </div>

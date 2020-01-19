@@ -1,3 +1,5 @@
+@import '../variables.scss';
+
 .header__intro {
   display: flex;
   flex-direction: column;
@@ -25,5 +27,34 @@
   .intro {
     margin: 91px auto;
     max-width: 36em;
+  }
+
+  // .highlight {
+  //   position: relative;
+  //   z-index: 1;
+  //   display: inline-block;
+
+  //   a {
+  //     // color: $link-color-dark;
+  //   }
+
+  //   &:before {
+  //     position: absolute;
+  //     content: '';
+  //     width: 100%;
+  //     height: calc(100% - 4px);
+  //     border-bottom: 4px solid #1aff006b;
+  //     left: 0;
+  //     top: 0;
+  //     // background: rgba($color: #ffee00, $alpha: 0.1);
+  //     z-index: -1;
+  //   }
+  // }
+
+  .highlight {
+    position: relative;
+    $underline-color: rgba(255, 255, 255, 0.363);
+    background: linear-gradient($underline-color, $underline-color) /* Color */
+      left 0 bottom 0/ /* Position */ 100% 1px /* Size (width height)*/ no-repeat;
   }
 }
