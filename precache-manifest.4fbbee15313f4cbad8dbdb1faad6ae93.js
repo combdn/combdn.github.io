@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f186f8d2e4c4693a6266cc84dc6ab841",
+    "revision": "28b76aa23433fc3d63c0c651630a2067",
     "url": "/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.95aac512.chunk.css"
   },
   {
-    "revision": "026170dc0278b2d6b5fc",
-    "url": "/static/css/main.dacdb029.chunk.css"
+    "revision": "71a61a0d08e8b9c93208",
+    "url": "/static/css/main.c401ab24.chunk.css"
   },
   {
     "revision": "fa848690322efda39c06",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.e1ef3e14.chunk.js.LICENSE"
   },
   {
-    "revision": "026170dc0278b2d6b5fc",
-    "url": "/static/js/main.eae8e34c.chunk.js"
+    "revision": "71a61a0d08e8b9c93208",
+    "url": "/static/js/main.63d4f79d.chunk.js"
   },
   {
     "revision": "149b54320754c52ee69e",
@@ -553,7 +553,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "fb1fd8b2d33f2f32a7d2fdb9159b5610",
-    "url": "/static/media/Lighting_POC_animation_preview.fb1fd8b2.mp4"
+    "url": "/static/media/Lighting-POC-animation.fb1fd8b2.mp4"
   },
   {
     "revision": "88784501b87b773f51f89eba13b8e04e",
@@ -676,10 +676,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/automation-light.d12c9c6e.mp4"
   },
   {
-    "revision": "3d651faa25c30f25b5195cfe7f3bf8b5",
-    "url": "/static/media/cisco-latency-discovery.3d651faa.mp4"
-  },
-  {
     "revision": "83d9cc574ad174cc69191e3efc8c73cb",
     "url": "/static/media/close.83d9cc57.svg"
   },
@@ -702,6 +698,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "16a80346c8944bcbe9a3578270e8aee1",
     "url": "/static/media/keepa-logo-dribbble.16a80346.png"
+  },
+  {
+    "revision": "3d651faa25c30f25b5195cfe7f3bf8b5",
+    "url": "/static/media/latency-discovery.3d651faa.mp4"
   },
   {
     "revision": "8f2411f8ad3443fd9dd7156d033013cd",
