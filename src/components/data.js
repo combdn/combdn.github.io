@@ -1,3 +1,5 @@
+import React from 'react';
+
 // Get the copy out of the Object:
 //
 // F: (.|\n)*?(.*info: \{(.|\n)*?\})(.|\n)*?
@@ -160,7 +162,7 @@ export default [
     wrapperClass: 'wide-big',
     type: 'video',
     class: 'cover-video',
-    file: 'videos/Lighting_POC_animation_preview.mp4',
+    file: 'videos/Lighting-POC-animation.mp4',
     caseId: 'stage-automation',
     caseReady: false,
     tags: ['concept', 'complex', '3d'],
@@ -348,7 +350,7 @@ export default [
   {
     wrapperClass: 'wide-big latency',
     type: 'video',
-    file: 'videos/cisco-latency-discovery.mp4',
+    file: 'videos/latency-discovery.mp4',
     info: {
       title: 'Latency Discovery',
       project: 'Networking Latency Monitoring Tool',
@@ -365,8 +367,17 @@ export default [
     info: {
       title: 'Patient’s Card',
       project: 'Medical CRM',
-      description:
-        'The card shows all of the patient’s metrics history on one screen. Each graph is a variation on the Edward Tufte’s “sparkline” with the (most important) last five days expanded into the table.'
+      description: (
+        <span>
+          The card shows all of the patient’s metrics history on one screen.
+          Each graph is a variation on the Edward Tufte’s “sparkline” with the
+          (most important) last five days expanded into the table. (Thanks to{' '}
+          <a href="https://www.linkedin.com/in/victor-hotskivskyy-848876a3">
+            Victor Hotskivskyy
+          </a>{' '}
+          for beautifully implementing my ideas.)
+        </span>
+      )
     },
     tags: ['data visualization'],
     id: '3c52b1b5-41eb-45ac-b681-187b4e704d8b'
