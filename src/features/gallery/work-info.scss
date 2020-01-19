@@ -8,12 +8,18 @@
   display: flex;
   justify-content: center;
   z-index: 10;
+  pointer-events: none;
+
+  a {
+    color: $link-color-dark;
+  }
 
   @media screen and (max-width: 660px) {
     bottom: 0;
   }
 
   .work-info__background {
+    pointer-events: all;
     position: relative;
     width: 100%;
     max-width: 36em;
