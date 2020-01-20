@@ -241,7 +241,7 @@ $grid-gap-smallest: $grid-gap / 2;
     position: relative;
     grid-column: wide-start/wide-end;
     column-gap: $grid-gap;
-    margin: -($grid-gap);
+    margin: -($grid-gap-small);
     margin-top: 0;
     margin-bottom: 0;
     padding: $grid-gap-small;
