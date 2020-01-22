@@ -1,14 +1,21 @@
 import React from 'react';
 import { Router, Link, navigate } from '@reach/router';
 import Button from './button';
-import CasePw from './case-pw';
 import Footer from './footer';
+
+// Import cases
+import CasePw from './case-pw';
+import CaseAutomation from './case-automation';
 
 export default function Case(props) {
   let caseToShow = {};
   switch (props.caseId) {
     case 'pw':
       caseToShow = <CasePw />;
+      break;
+
+    case 'automation':
+      caseToShow = <CaseAutomation />;
       break;
 
     default:
