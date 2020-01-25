@@ -1,0 +1,13 @@
+.gif-loop {
+  &.stop {
+    .gif {
+      display: none;
+    }
+  }
+
+  &.play {
+    .png {
+      display: none;
+    }
+  }
+}

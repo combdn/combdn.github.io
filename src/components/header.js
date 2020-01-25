@@ -41,11 +41,13 @@ export default function Header() {
         </p>
         <p>
           <span className="highlight">
-            I’ve only managed to write <Link to="/case/pw">one case</Link> so
-            far…
+            I’ve managed to write cases about{' '}
+            <Link to="/case/pw"> the risk calculation tool</Link> , and{' '}
+            <Link to="/case/automation">reinventing the stage automation</Link>{' '}
+            so far.
           </span>{' '}
-          But if you’re interested, we could discuss any of them further. Just{' '}
-          <a href="mailto:combdn@gmail.com">drop me a line.</a>
+          But if you want to know more, we could discuss any of my works
+          further. Just <a href="mailto:combdn@gmail.com">drop me a line.</a>
         </p>
       </div>
     </div>

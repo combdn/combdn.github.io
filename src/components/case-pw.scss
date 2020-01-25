@@ -1,6 +1,9 @@
 @import './case.scss';
 
-.page-case {
+// Common styles are defined in the case.scss
+// These are only related to the specific case styling
+
+.page-case.case-pw {
   section.intro {
     background: radial-gradient(50% 50% at 50% 50%, #f0f2f3, #d3d7db);
 

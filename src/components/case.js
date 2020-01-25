@@ -9,22 +9,27 @@ import CaseAutomation from './case-automation';
 
 export default function Case(props) {
   let caseToShow = {};
+  let wrapperClass = ' case-';
+
   switch (props.caseId) {
     case 'pw':
       caseToShow = <CasePw />;
+      wrapperClass += 'pw';
       break;
 
     case 'automation':
       caseToShow = <CaseAutomation />;
+      wrapperClass += 'automation';
       break;
 
     default:
       caseToShow = 'Oops, there’s no such case…';
+      wrapperClass += 'none';
       break;
   }
 
   return (
-    <div className="page-case">
+    <div className={'page-case' + wrapperClass}>
       <Button
         label={'← Gallery'}
         clickHandler={() => navigate('/')}

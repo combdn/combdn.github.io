@@ -45,10 +45,9 @@ export default function CasePw(props) {
             with wires.
           </p>
 
-          <div className="concept">
+          <div className="feature feature-grey">
             <figure>
               <video
-                className="test"
                 controls
                 src={videos['videos/PW-concept.mp4']}
                 type="video/mp4"
@@ -56,11 +55,11 @@ export default function CasePw(props) {
               />
               <div className="shadow" />
             </figure>
-            <p className="big">
+            <figcaption className="big">
               This concept was created in the first two days. We had an XML
               file, and I already had a good reference for the node-based
               systems (SideFX Houdini).
-            </p>
+            </figcaption>
           </div>
 
           <p>

@@ -1,39 +1,75 @@
 import React from 'react';
+import uuid from 'uuid/v4';
 import useFiles from './useFiles';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import AutomationGif from './automation-gif';
+
 import './case-automation.scss';
 
 export default function CasePw(props) {
   const { images, videos } = useFiles();
 
+  // Find the gif keys in automation-gifs/ path.
+  let gifKeys = Object.keys(images).filter(
+    value => value.indexOf('.gif') >= 0 && value.indexOf('automation-gifs') >= 0
+  );
+
+  let gifPngPairs = [];
+
+  // Create GIF/PNG pairs
+  // We assume that there's the 'cover' PNG with the same name.
+  gifKeys.forEach(key => {
+    let pngKey = key.replace(/\.gif/, '.png');
+    gifPngPairs.push({ gif: images[key], png: images[pngKey] });
+  });
+
+  let gifSources = Object.keys(images)
+    .filter(value => value.indexOf('automation-gifs') >= 0)
+    .reduce((result, value) => {
+      // [0] element is a string, then we create an Array
+      if (typeof result === 'string') {
+        return [images[result], images[value]];
+      } else {
+        result.push(images[value]);
+        return result;
+      }
+    });
+
+  let gifs = [];
+
+  let numberOfPairs = gifPngPairs.length;
+  gifPngPairs.forEach((pair, index) => {
+    gifs.push(
+      <AutomationGif
+        className="automation-gif"
+        gif={pair.gif}
+        png={pair.png}
+        key={uuid()}
+        style={{ zIndex: `${numberOfPairs - index}` }}
+      />
+    );
+  });
+
   return (
     <article>
       <section className="intro">
         <div className="section-grid">
-          <figure style={{ marginBottom: 0 }}>
-            <img src={images['images/PW-job-editing.png']} alt="Job editor" />
-          </figure>
-          <h1>Insurance Risk Simulation Applications</h1>
-          <div className="goal">
-            {/* <EmojiBlock icon="🎯" /> */}
-            <div className="case__emoji">
-              <span role="img" aria-label="icon">
-                🎯
-              </span>
-            </div>
-            <div>
-              <span className="first-word">Goal:</span> add two applications to
-              the insurance simulation suite. One — to visually build simulation
-              jobs, the other — to install and run them.
+          <div className="intro-on-black">
+            <h1>New Paradigm for the Stage Automation Software</h1>
+            <div className="goal">
+              {/* <EmojiBlock icon="🎯" /> */}
+              <div className="case__emoji">
+                <span role="img" aria-label="icon">
+                  🎯
+                </span>
+              </div>
+              <div>
+                <span className="first-word">Goal:</span> add two applications
+                to the insurance simulation suite. One — to visually build
+                simulation jobs, the other — to install and run them.
+              </div>
             </div>
           </div>
         </div>
-
-        <img
-          className="wires-illustration"
-          src={images['images/illustrations/wires.svg']}
-          alt="Wires"
-        />
       </section>
 
       <section className="main">
@@ -45,22 +81,46 @@ export default function CasePw(props) {
             with wires.
           </p>
 
-          <div className="concept">
-            <figure>
-              <video
-                className="test"
-                controls
-                src={videos['videos/PW-concept.mp4']}
-                type="video/mp4"
-                playsInline
-              />
-              <div className="shadow" />
+          <figure>
+            <img
+              src={images['images/automation-save-file-on-the-console.png']}
+              alt="Saving file on the console"
+            />
+            <figcaption className="big">
+              It looks like a space shuttle dashboard but it’s an interface for
+              saving a file…
+            </figcaption>
+          </figure>
+
+          <figure className="fig-design-execution fig-design">
+            <img src={images['images/automation-design.png']} alt="Design" />
+            <figcaption>Design</figcaption>
+          </figure>
+          <figure className="fig-design-execution fig-execution">
+            <img
+              src={images['images/automation-execution.png']}
+              alt="Execution"
+            />
+            <figcaption>Execution</figcaption>
+          </figure>
+
+          <p>
+            After the first discussion with the team, I came up with the concept
+            that was based on how similar tasks (mostly one-direction data flow
+            with some logic) are handled in VFX industry: i. e. boxes connected
+            with wires.
+          </p>
+
+          <div className="feature feature-grey">
+            <figure className="gifs">
+              <div className="gifs-container">{gifs}</div>
+              {/* <figcaption>← Click to play</figcaption> */}
             </figure>
-            <p className="big">
+            <figcaption className="big">
               This concept was created in the first two days. We had an XML
               file, and I already had a good reference for the node-based
               systems (SideFX Houdini).
-            </p>
+            </figcaption>
           </div>
 
           <p>
@@ -68,12 +128,20 @@ export default function CasePw(props) {
             accepted by both the team and the client.
           </p>
 
-          <figure>
-            <img src={images['images/PW-workflow.png']} alt="Workflow Conept" />
-            <figcaption className="figc-bottom">
-              ↑ Initial workflow concept
+          <div className="feature feature-left-caption">
+            <figcaption className="big">
+              It looks like a space shuttle dashboard but it’s an interface for
+              saving a file…
             </figcaption>
-          </figure>
+            <figure>
+              <video
+                controls
+                src={videos['videos/automation-fly-concept.mp4']}
+                type="video/mp4"
+                playsInline
+              />
+            </figure>
+          </div>
 
           <div className="long-text">
             <p>
@@ -89,86 +157,52 @@ export default function CasePw(props) {
             </p>
           </div>
 
-          <figure>
-            <img src={images['images/PW-nodes-types.png']} alt="Node types" />
+          <div className="feature">
+            <figure>
+              <video
+                controls
+                src={videos['videos/automation-assets-concept.mp4']}
+                type="video/mp4"
+                playsInline
+              />
+            </figure>
             <figcaption className="big">
-              Node types: task function, data sources, publisher, notes, exits.
-              Input values are visible right away. Variables can be placed to
-              inputs by dragging and dropping.
+              It looks like a space shuttle dashboard but it’s an interface for
+              saving a file…
             </figcaption>
-          </figure>
+          </div>
 
           <p>
-            The data and execution flows are separated to ensure the exact order
-            of the computations and to enable error events handling. There’s a
-            special trigger node to configure the conditions for the job start
-            (and also chain them), and an exit node to handle the various
-            possible outcomes. There are also Data Source and Data Destination
-            node types to work with databases and a filesystem.
+            Some of the decisions were to be revisited, but the concept was
+            accepted by both the team and the client.
           </p>
 
-          <figure className="fig-properties">
-            <img
-              src={images['images/PW-properties-split.png']}
-              alt="Node types"
-            />
-            <figcaption className="figc-bottom">
-              ↑ Properties panel mirroring the i/o structure of the task
-              function. Items defined in the function’s decorator are read-only.
-            </figcaption>
-          </figure>
-
-          <figure className="fig-ribbon-icons">
-            <img src={images['images/PW-deploy-icon.svg']} alt="" />
-            <img src={images['images/PW-navigator.svg']} alt="" />
-            <img src={images['images/PW-edit-task.svg']} alt="" />
-            <img src={images['images/PW-add-data-source.svg']} alt="" />
-            <img src={images['images/PW-add-new-item.svg']} alt="" />
-            <figcaption className="figc-bottom">
-              ↑ Ribbon icons: Deploy, Navigator, Edit Function, Add Data Source,
-              and Add New Item
+          <figure>
+            <div className="two-figures">
+              <video
+                controls
+                loop
+                src={videos['videos/Lighting-POC-animation.mp4']}
+                type="video/mp4"
+                playsInline
+              />
+              <video
+                controls
+                loop
+                src={videos['videos/automation-light.mp4']}
+                type="video/mp4"
+                playsInline
+              />
+            </div>
+            <figcaption className="big">
+              It looks like a space shuttle dashboard but it’s an interface for
+              saving a file…
             </figcaption>
           </figure>
 
           <p>
-            The other tool is dedicated to running the created jobs in HPC (CUDA
-            GPUs) environment. It allows to install, to configure triggers, data
-            sources, and variables, and to run the jobs and see their results.
-          </p>
-
-          <figure className="fig-signoff">
-            <img src={images['images/PW-signoff.png']} alt="Job orchestrator" />
-            <figcaption className="figc-signoff-small figc-bottom">
-              ↑ Job orchestrator features the pivotable table for the job runs,
-              the interface for the signoff, and the results viewer
-            </figcaption>
-          </figure>
-
-          <figcaption className="figc-signoff">
-            ← Job orchestrator features the pivotable table for the job runs,
-            the interface for the signoff, and the results viewer
-          </figcaption>
-
-          <figure className="fig-run-details">
-            <img
-              src={images['images/PW-run-details.png']}
-              alt="Job run details"
-            />
-            <figcaption className="figc-run-details-small figc-bottom">
-              ↑ Job run details show both end results and the state of inputs
-              and outputs on each step
-            </figcaption>
-          </figure>
-          <figcaption className="figc-run-details">
-            → Job run details show both end results and the state of inputs and
-            outputs on each step
-          </figcaption>
-
-          <p>
-            This tool includes debugging and introspection features that allow
-            seeing the journal of execution for any job. Users can review each
-            step’s input and output values and track the execution on the graph
-            view.
+            Some of the decisions were to be revisited, but the concept was
+            accepted by both the team and the client.
           </p>
         </div>
       </section>
