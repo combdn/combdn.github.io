@@ -1,6 +1,5 @@
 import React from 'react';
 import uuid from 'uuid/v4';
-import balanceText from 'balance-text';
 import { navigate } from '@reach/router';
 
 import useFiles from './useFiles';
@@ -109,16 +108,16 @@ export default function CasePw(props) {
             with wires.
           </p>
 
-          <div className="feature feature-grey">
-            <figure className="gifs">
-              <div className="gifs-container">{gifs}</div>
-              {/* <figcaption>← Click to play</figcaption> */}
-            </figure>
+          <div className="feature feature-grey  feature-left-caption">
             <figcaption className="big">
               This concept was created in the first two days. We had an XML
               file, and I already had a good reference for the node-based
               systems (SideFX Houdini).
             </figcaption>
+            <figure className="gifs">
+              <div className="gifs-container">{gifs}</div>
+              {/* <figcaption>← Click to play</figcaption> */}
+            </figure>
           </div>
 
           <p>
@@ -126,11 +125,7 @@ export default function CasePw(props) {
             accepted by both the team and the client.
           </p>
 
-          <div className="feature feature-left-caption">
-            <figcaption className="big">
-              It looks like a space shuttle dashboard but it’s an interface for
-              saving a file…
-            </figcaption>
+          <div className="feature ">
             <figure>
               <video
                 controls
@@ -139,6 +134,10 @@ export default function CasePw(props) {
                 playsInline
               />
             </figure>
+            <figcaption className="big">
+              It looks like a space shuttle dashboard but it’s an interface for
+              saving a file…
+            </figcaption>
           </div>
 
           <div className="long-text">
@@ -155,7 +154,11 @@ export default function CasePw(props) {
             </p>
           </div>
 
-          <div className="feature">
+          <div className="feature feature-left-caption">
+            <figcaption className="big">
+              It looks like a space shuttle dashboard but it’s an interface for
+              saving a file…
+            </figcaption>
             <figure>
               <video
                 controls
@@ -164,10 +167,6 @@ export default function CasePw(props) {
                 playsInline
               />
             </figure>
-            <figcaption className="big">
-              It looks like a space shuttle dashboard but it’s an interface for
-              saving a file…
-            </figcaption>
           </div>
 
           <p>

@@ -8,15 +8,14 @@
   section.intro {
     color: white;
     position: relative;
-    // height: 66vh;
-    // max-height: 900px;
     background: center / cover no-repeat
       url('../assets/images/automation-backstage.png');
     display: flex;
     align-items: flex-end;
 
     .section-grid {
-      margin-top: 66vh;
+      margin-top: 70vh;
+      width: 100%;
     }
 
     .intro-on-black {
@@ -30,7 +29,7 @@
 
       h1 {
         margin-bottom: $grid-gap;
-        // max-width: 15em;
+        max-width: 15em;
       }
 
       .goal {
@@ -85,14 +84,6 @@
   .feature-grey {
     grid-auto-rows: min-content;
 
-    figure {
-      grid-column: 1 / 8;
-
-      @media screen and (max-width: 920px) {
-        grid-column: span 1;
-      }
-    }
-
     .gifs {
       overflow: hidden;
 
@@ -104,6 +95,7 @@
 
       .gifs-container {
         display: grid;
+        // gap: 18px;
         grid-template-columns: repeat(3, 1fr);
         border-radius: 8px;
         margin: 0 -1px -1px 0;
