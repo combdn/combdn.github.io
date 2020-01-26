@@ -6,6 +6,7 @@
   "dependencies": {
     "@ibm/plex": "^3.0.0",
     "@reach/router": "^1.2.1",
+    "balance-text": "^3.3.0",
     "detect-browser": "^4.2.0",
     "framer-motion": "^1.7.0",
     "gh-pages": "^2.0.1",

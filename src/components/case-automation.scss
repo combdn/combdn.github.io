@@ -1,20 +1,22 @@
-@import './case.scss';
-
 // Common styles are defined in the case.scss
 // These are only related to the specific case styling
+
+@import './case-variables.scss';
 
 .page-case.case-automation {
   // TODO: decide on height and parallax for the background
   section.intro {
     color: white;
     position: relative;
-    height: 66vh;
+    // height: 66vh;
+    // max-height: 900px;
     background: center / cover no-repeat
       url('../assets/images/automation-backstage.png');
+    display: flex;
+    align-items: flex-end;
 
     .section-grid {
-      position: absolute;
-      bottom: 0;
+      margin-top: 66vh;
     }
 
     .intro-on-black {
@@ -24,13 +26,31 @@
       margin-right: -($grid-gap-small);
       margin-bottom: $line-height * 2;
       padding: $grid-gap-small;
+      padding-bottom: $grid-gap;
 
       h1 {
         margin-bottom: $grid-gap;
+        // max-width: 15em;
       }
 
       .goal {
         margin-bottom: 0;
+      }
+    }
+
+    @media screen and (max-width: 505px) {
+      .intro-on-black {
+        margin-bottom: 0;
+      }
+
+      .section-grid {
+        margin-top: 55vh;
+        margin-bottom: 0;
+      }
+    }
+    @media screen and (min-height: 1000px) {
+      .section-grid {
+        margin-top: 30vh;
       }
     }
   }

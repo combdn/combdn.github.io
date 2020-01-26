@@ -1,6 +1,9 @@
 import React from 'react';
+import { navigate } from '@reach/router';
+
 import useFiles from './useFiles';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import Button from './button';
+
 import './case-pw.scss';
 
 export default function CasePw(props) {
@@ -8,6 +11,12 @@ export default function CasePw(props) {
 
   return (
     <article>
+      {/* Need to have the button here to establish its stlyle according to the intro's background. */}
+      <Button
+        label={'← Gallery'}
+        clickHandler={() => navigate('/')}
+        look="dark-outline"
+      />
       <section className="intro">
         <div className="section-grid">
           <figure style={{ marginBottom: 0 }}>

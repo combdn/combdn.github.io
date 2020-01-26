@@ -1,8 +1,13 @@
 import React from 'react';
 import uuid from 'uuid/v4';
+import balanceText from 'balance-text';
+import { navigate } from '@reach/router';
+
 import useFiles from './useFiles';
+import Button from './button';
 import AutomationGif from './automation-gif';
 
+import './case.scss';
 import './case-automation.scss';
 
 export default function CasePw(props) {
@@ -22,18 +27,6 @@ export default function CasePw(props) {
     gifPngPairs.push({ gif: images[key], png: images[pngKey] });
   });
 
-  let gifSources = Object.keys(images)
-    .filter(value => value.indexOf('automation-gifs') >= 0)
-    .reduce((result, value) => {
-      // [0] element is a string, then we create an Array
-      if (typeof result === 'string') {
-        return [images[result], images[value]];
-      } else {
-        result.push(images[value]);
-        return result;
-      }
-    });
-
   let gifs = [];
 
   let numberOfPairs = gifPngPairs.length;
@@ -51,6 +44,11 @@ export default function CasePw(props) {
 
   return (
     <article>
+      <Button
+        label={'← Gallery'}
+        clickHandler={() => navigate('/')}
+        look="light-bright"
+      />
       <section className="intro">
         <div className="section-grid">
           <div className="intro-on-black">

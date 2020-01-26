@@ -3,6 +3,8 @@ import { Router, Link, navigate } from '@reach/router';
 import Button from './button';
 import Footer from './footer';
 
+import './case.scss';
+
 // Import cases
 import CasePw from './case-pw';
 import CaseAutomation from './case-automation';
@@ -30,11 +32,6 @@ export default function Case(props) {
 
   return (
     <div className={'page-case' + wrapperClass}>
-      <Button
-        label={'← Gallery'}
-        clickHandler={() => navigate('/')}
-        look="dark-outline"
-      />
       {caseToShow}
       <Footer
         variant={'case'}

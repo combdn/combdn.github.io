@@ -53,8 +53,12 @@
 
   .highlight {
     position: relative;
-    $underline-color: rgba(255, 255, 255, 0.363);
-    background: linear-gradient($underline-color, $underline-color) /* Color */
-      left 0 bottom 0/ /* Position */ 100% 1px /* Size (width height)*/ no-repeat;
+    background: rgba($color: green, $alpha: 0.8);
+    border-radius: 4px;
+    padding: 0 4px;
+
+    // $underline-color: rgba(255, 255, 255, 0.363);
+    // background: linear-gradient($underline-color, $underline-color) /* Color */
+    //   left 0 bottom 0/ /* Position */ 100% 1px /* Size (width height)*/ no-repeat;
   }
 }

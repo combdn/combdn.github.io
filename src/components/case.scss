@@ -1,10 +1,5 @@
 @import '../variables.scss';
-
-$line-height: 26px;
-$small-line-height: 24px;
-$grid-gap: 36px;
-$grid-gap-small: $grid-gap / 1.5;
-$grid-gap-smallest: $grid-gap / 2;
+@import './case-variables.scss';
 
 .page-case {
   padding: 24px;
@@ -12,10 +7,13 @@ $grid-gap-smallest: $grid-gap / 2;
   background: white;
   font-weight: 400;
 
-  .button {
+  article > .button {
     position: absolute;
+    top: 24px;
+    left: 24px;
     left: calc(24px + env(safe-area-inset-left));
     // left: 24px;
+    z-index: 1;
   }
 
   // GRID
@@ -86,7 +84,7 @@ $grid-gap-smallest: $grid-gap / 2;
     @media screen and (max-width: 370px) {
       font-size: 16px;
       line-height: $small-line-height;
-      margin: $small-line-height auto;
+      // margin: $small-line-height auto;
     }
   }
 
@@ -174,12 +172,11 @@ $grid-gap-smallest: $grid-gap / 2;
 
   // The goal.
   .goal {
-    // grid-column: 3/11;
     grid-column: narrow-start/narrow-end;
     display: flex;
     font-size: 18px;
     max-width: 25em;
-    margin: 0 0 $line-height * 2;
+    margin: 0 0 $grid-gap;
   }
 
   .case__emoji {
@@ -213,6 +210,11 @@ $grid-gap-smallest: $grid-gap / 2;
 
       @media screen and (max-width: 920px) {
         column-gap: $grid-gap-small;
+      }
+
+      @media screen and (max-width: 505px) {
+        grid-template-columns: 1fr;
+        grid-gap: 24px;
       }
     }
   }
@@ -304,6 +306,10 @@ $grid-gap-smallest: $grid-gap / 2;
 
       figcaption {
         text-align: right;
+
+        @media screen and (max-width: 920px) {
+          text-align: left;
+        }
       }
     }
   }

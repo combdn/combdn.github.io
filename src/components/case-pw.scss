@@ -1,7 +1,7 @@
-@import './case.scss';
-
 // Common styles are defined in the case.scss
 // These are only related to the specific case styling
+
+@import './case-variables.scss';
 
 .page-case.case-pw {
   section.intro {

@@ -19,6 +19,36 @@
   &.light {
     height: 30px;
     border: 1px solid rgba($color: white, $alpha: 0.15);
+
+    .label {
+      color: white;
+    }
+
+    &:hover {
+      background-color: rgba($color: white, $alpha: 0.2);
+    }
+
+    &.selected {
+      background-color: rgba($color: white, $alpha: 1);
+      color: #333;
+      font-weight: 400;
+      border: 1px solid rgba($color: white, $alpha: 0);
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 1);
+        border: 1px solid rgba($color: white, $alpha: 0);
+      }
+    }
+  }
+
+  &.light-bright {
+    height: 30px;
+    border: 1px solid rgba($color: white, $alpha: 0.45);
+
+    .label {
+      color: white;
+    }
+
     &:hover {
       background-color: rgba($color: white, $alpha: 0.2);
     }

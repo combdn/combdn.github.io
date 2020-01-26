@@ -16,6 +16,9 @@ export default function Button({
     case 'light':
       buttonClasses += ' light';
       break;
+    case 'light-bright':
+      buttonClasses += ' light-bright';
+      break;
     case 'dark':
       buttonClasses += ' dark';
       break;
