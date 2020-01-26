@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import uuid from 'uuid/v4';
 import { navigate } from '@reach/router';
 
@@ -10,34 +10,97 @@ import './case.scss';
 import './case-automation.scss';
 
 export default function CasePw(props) {
-  const { images, videos } = useFiles();
+  const { images, videos, texts } = useFiles();
+  const [gifs, setGifs] = useState([]);
 
-  // Find the gif keys in automation-gifs/ path.
-  let gifKeys = Object.keys(images).filter(
-    value => value.indexOf('.gif') >= 0 && value.indexOf('automation-gifs') >= 0
-  );
+  // // Find the gif keys in automation-gifs/ path.
+  // let gifKeys = Object.keys(images).filter(
+  //   value => value.indexOf('.gif') >= 0 && value.indexOf('automation-gifs') >= 0
+  // );
 
-  let gifPngPairs = [];
+  // let gifDataObjects = [];
 
-  // Create GIF/PNG pairs
-  // We assume that there's the 'cover' PNG with the same name.
-  gifKeys.forEach(key => {
-    let pngKey = key.replace(/\.gif/, '.png');
-    gifPngPairs.push({ gif: images[key], png: images[pngKey] });
-  });
+  // const getTxtFromFile = async path => {
+  //   let file = await fetch(path);
+  //   return file.text();
+  // };
 
-  let gifs = [];
+  // // Create GIF/PNG/TXT objects
+  // // We assume that there are PNG and TXT files with the same name.
+  // const getGifDataObjects = () => {
+  //   gifKeys.forEach(key => {
+  //     let pngKey = key.replace(/\.gif/, '.png');
+  //     let txtKey = key.replace(/\.gif/, '.txt');
+  //     getTxtFromFile(texts[txtKey]).then(result =>
+  //       gifDataObjects.push({
+  //         gif: images[key],
+  //         png: images[pngKey],
+  //         description: result
+  //       })
+  //     );
+  //   });
+  // };
 
-  let numberOfPairs = gifPngPairs.length;
-  gifPngPairs.forEach((pair, index) => {
-    gifs.push(
-      <AutomationGif
-        className="automation-gif"
-        gif={pair.gif}
-        png={pair.png}
-        key={uuid()}
-        style={{ zIndex: `${numberOfPairs - index}` }}
-      />
+  // let numberOfPairs = gifDataObjects.length;
+
+  // gifDataObjects.forEach((dataObject, index) => {
+  //   console.log(dataObject.description);
+  //   gifs.push(
+  //     <AutomationGif
+  //       className="automation-gif"
+  //       gif={dataObject.gif}
+  //       png={dataObject.png}
+  //       description={dataObject.description}
+  //       key={uuid()}
+  //       // style={{ zIndex: `${numberOfPairs - index}` }}
+  //     />
+  //   );
+  // });
+
+  const createGifs = async () => {
+    let gifComponents = [];
+
+    let gifKeys = Object.keys(images).filter(
+      value =>
+        value.indexOf('.gif') >= 0 && value.indexOf('automation-gifs') >= 0
+    );
+
+    // debugger;
+    const getTxtFromFile = async path => {
+      let file = await fetch(path);
+      return file.text();
+    };
+
+    let createComponent = async key => {
+      let txtKey = key.replace(/\.gif/, '.txt');
+      let description = await getTxtFromFile(texts[txtKey]);
+
+      return (
+        <AutomationGif
+          className="automation-gif"
+          gif={images[key]}
+          png={images[key.replace(/\.gif/, '.png')]}
+          description={description}
+          key={uuid()}
+          // style={{ zIndex: `${numberOfPairs - index}` }}
+        />
+      );
+    };
+
+    gifKeys.forEach(async key =>
+      gifComponents.push(await createComponent(key))
+    );
+
+    return gifComponents;
+  };
+
+  useEffect(() => {
+    createGifs().then(
+      result => {
+        console.log(result);
+        setGifs(result);
+      },
+      [gifs]
     );
   });
 
@@ -116,6 +179,60 @@ export default function CasePw(props) {
             </figcaption>
             <figure className="gifs">
               <div className="gifs-container">{gifs}</div>
+              {/* <div className="gifs-container">
+                <AutomationGif
+                  className="automation-gif"
+                  gif={images['images/automation-gifs/01-Ball-And-Door.gif']}
+                  png={images['images/automation-gifs/01-Ball-And-Door.png']}
+                />
+                <AutomationGif
+                  className="automation-gif"
+                  gif={images['images/automation-gifs/02-Drill-Up.gif']}
+                  png={images['images/automation-gifs/02-Drill-Up.png']}
+                />
+                <AutomationGif
+                  className="automation-gif"
+                  gif={images['images/automation-gifs/03-Doors.gif']}
+                  png={images['images/automation-gifs/03-Doors.png']}
+                />
+                <AutomationGif
+                  className="automation-gif"
+                  gif={
+                    images['images/automation-gifs/04-Grouping-n-Drilldown.gif']
+                  }
+                  png={
+                    images['images/automation-gifs/04-Grouping-n-Drilldown.png']
+                  }
+                />
+                <AutomationGif
+                  className="automation-gif"
+                  gif={images['images/automation-gifs/05-Sync.gif']}
+                  png={images['images/automation-gifs/05-Sync.png']}
+                />
+                <AutomationGif
+                  className="automation-gif"
+                  gif={
+                    images[
+                      'images/automation-gifs/06-Fixed-And-Floating-Start.gif'
+                    ]
+                  }
+                  png={
+                    images[
+                      'images/automation-gifs/06-Fixed-And-Floating-Start.png'
+                    ]
+                  }
+                />
+                <AutomationGif
+                  className="automation-gif"
+                  gif={images['images/automation-gifs/07-Speed-Change.gif']}
+                  png={images['images/automation-gifs/07-Speed-Change.png']}
+                />
+                <AutomationGif
+                  className="automation-gif"
+                  gif={images['images/automation-gifs/08-Mapping-To-Knob.gif']}
+                  png={images['images/automation-gifs/08-Mapping-To-Knob.png']}
+                />
+              </div> */}
               {/* <figcaption>← Click to play</figcaption> */}
             </figure>
           </div>

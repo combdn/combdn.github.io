@@ -86,29 +86,41 @@
 
     .gifs {
       overflow: hidden;
+      border-radius: 0;
 
       // Bring outline on top and make it darker
       &:after {
         z-index: 10000;
-        box-shadow: inset 0 0 0 1px rgba($color: #000000, $alpha: 0.4);
+        // box-shadow: inset 0 0 0 1px rgba($color: #000000, $alpha: 0.4);
+        box-shadow: none;
       }
 
       .gifs-container {
         display: grid;
-        // gap: 18px;
+        gap: 24px;
         grid-template-columns: repeat(3, 1fr);
-        border-radius: 8px;
-        margin: 0 -1px -1px 0;
+        // border-radius: 8px;
+        // margin: 0 -1px -1px 0;
 
         .automation-gif {
-          border-right: 1px solid;
-          border-bottom: 1px solid;
-          margin: 0 -1px -1px 0;
-          border-color: rgba($color: #000000, $alpha: 0.4);
-        }
+          border-radius: 8px;
+          overflow: hidden;
+          position: relative;
+          // border-right: 1px solid;
+          // border-bottom: 1px solid;
+          // margin: 0 -1px -1px 0;
+          // border-color: rgba($color: #000000, $alpha: 0.4);
 
-        img {
-          border-radius: 0;
+          &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            box-shadow: inset 0 0 0 1px rgba($color: #000000, $alpha: 0.2);
+          }
         }
       }
     }
