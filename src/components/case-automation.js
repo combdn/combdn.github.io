@@ -11,98 +11,76 @@ import './case-automation.scss';
 
 export default function CasePw(props) {
   const { images, videos, texts } = useFiles();
-  const [gifs, setGifs] = useState([]);
+  const [gifsData, setGifsData] = useState([]);
+  const [gifsLoaded, setGifsLoaded] = useState(false);
 
-  // // Find the gif keys in automation-gifs/ path.
-  // let gifKeys = Object.keys(images).filter(
-  //   value => value.indexOf('.gif') >= 0 && value.indexOf('automation-gifs') >= 0
-  // );
+  // Asynchronosely creates the array of objects with gif data.
+  // Each object has paths for GIF and PNG, and also
+  // fetches the description from the text file with the same name.
+  const createGifDataObjects = async () => {
+    let gifDataObjects = [];
 
-  // let gifDataObjects = [];
-
-  // const getTxtFromFile = async path => {
-  //   let file = await fetch(path);
-  //   return file.text();
-  // };
-
-  // // Create GIF/PNG/TXT objects
-  // // We assume that there are PNG and TXT files with the same name.
-  // const getGifDataObjects = () => {
-  //   gifKeys.forEach(key => {
-  //     let pngKey = key.replace(/\.gif/, '.png');
-  //     let txtKey = key.replace(/\.gif/, '.txt');
-  //     getTxtFromFile(texts[txtKey]).then(result =>
-  //       gifDataObjects.push({
-  //         gif: images[key],
-  //         png: images[pngKey],
-  //         description: result
-  //       })
-  //     );
-  //   });
-  // };
-
-  // let numberOfPairs = gifDataObjects.length;
-
-  // gifDataObjects.forEach((dataObject, index) => {
-  //   console.log(dataObject.description);
-  //   gifs.push(
-  //     <AutomationGif
-  //       className="automation-gif"
-  //       gif={dataObject.gif}
-  //       png={dataObject.png}
-  //       description={dataObject.description}
-  //       key={uuid()}
-  //       // style={{ zIndex: `${numberOfPairs - index}` }}
-  //     />
-  //   );
-  // });
-
-  const createGifs = async () => {
-    let gifComponents = [];
-
+    // Filter the keys with 'automation-gifs' and '.gif' extension
     let gifKeys = Object.keys(images).filter(
       value =>
         value.indexOf('.gif') >= 0 && value.indexOf('automation-gifs') >= 0
     );
 
-    // debugger;
     const getTxtFromFile = async path => {
       let file = await fetch(path);
       return file.text();
     };
 
-    let createComponent = async key => {
+    let createGifDataObject = async key => {
       let txtKey = key.replace(/\.gif/, '.txt');
+      // Prepare the description
       let description = await getTxtFromFile(texts[txtKey]);
 
-      return (
-        <AutomationGif
-          className="automation-gif"
-          gif={images[key]}
-          png={images[key.replace(/\.gif/, '.png')]}
-          description={description}
-          key={uuid()}
-          // style={{ zIndex: `${numberOfPairs - index}` }}
-        />
-      );
+      return {
+        className: 'automation-gif',
+        gif: images[key],
+        png: images[key.replace(/\.gif/, '.png')],
+        description: description,
+        key: uuid()
+        // style: {{ zIndex: `${numberOfPairs - index}` }}
+      };
     };
 
-    gifKeys.forEach(async key =>
-      gifComponents.push(await createComponent(key))
-    );
+    for (const key of gifKeys) {
+      let nextObject = await createGifDataObject(key);
+      gifDataObjects.push(nextObject);
+    }
 
-    return gifComponents;
+    return gifDataObjects;
   };
 
+  // Fetch data once
   useEffect(() => {
-    createGifs().then(
-      result => {
-        console.log(result);
-        setGifs(result);
-      },
-      [gifs]
-    );
-  });
+    let asyncRun = async () => {
+      let dataObjects = await createGifDataObjects();
+      setGifsData(dataObjects);
+      setGifsLoaded(true);
+    };
+    asyncRun();
+  }, []);
+
+  // Prepare the array of components for the gif gallery.
+  let gifs = [];
+
+  if (gifsLoaded) {
+    for (const object of gifsData) {
+      gifs.push(
+        <AutomationGif
+          gif={object.gif}
+          png={object.png}
+          description={object.description}
+          className={'automation-gif'}
+          // style={object.gif}
+          key={uuid()}
+        />
+      );
+    }
+  }
 
   return (
     <article>
