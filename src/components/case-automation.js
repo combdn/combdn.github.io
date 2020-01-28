@@ -129,6 +129,12 @@ export default function CasePw(props) {
               saving a file…
             </figcaption>
           </figure>
+          <p>
+            After the first discussion with the team, I came up with the concept
+            that was based on how similar tasks (mostly one-direction data flow
+            with some logic) are handled in VFX industry: i. e. boxes connected
+            with wires.
+          </p>
 
           <figure className="fig-design-execution fig-design">
             <img src={images['images/automation-design.png']} alt="Design" />
@@ -156,62 +162,15 @@ export default function CasePw(props) {
               systems (SideFX Houdini).
             </figcaption>
             <figure className="gifs">
-              <div className="gifs-container">{gifs}</div>
-              {/* <div className="gifs-container">
-                <AutomationGif
-                  className="automation-gif"
-                  gif={images['images/automation-gifs/01-Ball-And-Door.gif']}
-                  png={images['images/automation-gifs/01-Ball-And-Door.png']}
-                />
-                <AutomationGif
-                  className="automation-gif"
-                  gif={images['images/automation-gifs/02-Drill-Up.gif']}
-                  png={images['images/automation-gifs/02-Drill-Up.png']}
-                />
-                <AutomationGif
-                  className="automation-gif"
-                  gif={images['images/automation-gifs/03-Doors.gif']}
-                  png={images['images/automation-gifs/03-Doors.png']}
-                />
-                <AutomationGif
-                  className="automation-gif"
-                  gif={
-                    images['images/automation-gifs/04-Grouping-n-Drilldown.gif']
-                  }
-                  png={
-                    images['images/automation-gifs/04-Grouping-n-Drilldown.png']
-                  }
-                />
-                <AutomationGif
-                  className="automation-gif"
-                  gif={images['images/automation-gifs/05-Sync.gif']}
-                  png={images['images/automation-gifs/05-Sync.png']}
-                />
-                <AutomationGif
-                  className="automation-gif"
-                  gif={
-                    images[
-                      'images/automation-gifs/06-Fixed-And-Floating-Start.gif'
-                    ]
-                  }
-                  png={
-                    images[
-                      'images/automation-gifs/06-Fixed-And-Floating-Start.png'
-                    ]
-                  }
-                />
-                <AutomationGif
-                  className="automation-gif"
-                  gif={images['images/automation-gifs/07-Speed-Change.gif']}
-                  png={images['images/automation-gifs/07-Speed-Change.png']}
-                />
-                <AutomationGif
-                  className="automation-gif"
-                  gif={images['images/automation-gifs/08-Mapping-To-Knob.gif']}
-                  png={images['images/automation-gifs/08-Mapping-To-Knob.png']}
-                />
-              </div> */}
-              {/* <figcaption>← Click to play</figcaption> */}
+              <div className="gifs-container">
+                {gifs}
+                {/* '↑ Click' or '↑ Tap' is chosen based on the media querry. */}
+                <figcaption className="figc-gifs-in-grid">
+                  <span className="click-touch">
+                    the pictures to play the demos
+                  </span>
+                </figcaption>
+              </div>
             </figure>
           </div>
 

@@ -27,10 +27,12 @@ export default function AutomationGif({
     <div className={cssClass} style={style} onClick={togglePlay}>
       <img src={gif} className="gif" alt="" />
       <img src={png} className="png" alt="" />
+      <div className="description">{description}</div>
       <div className="overlay">
-        <PlayButton />
-        <div className="description">{description}</div>
+        {/* <PlayButton /> */}
+        <div className="play-button" />
       </div>
     </div>
   );
+  // return <div className="test">Test</div>;
 }
