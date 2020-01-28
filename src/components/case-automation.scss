@@ -85,30 +85,52 @@
     grid-auto-rows: min-content;
 
     .gifs {
-      overflow: hidden;
+      border-radius: 0;
 
-      // Bring outline on top and make it darker
+      // Remove the outline
       &:after {
-        z-index: 10000;
-        box-shadow: inset 0 0 0 1px rgba($color: #000000, $alpha: 0.4);
+        box-shadow: none;
+      }
+
+      .figc-gifs-in-grid {
+        // grid-column: 1 / -1;
+        grid-column: span 1;
+        margin-top: 0;
+
+        span.click-touch:before {
+          content: '↑ Click ';
+
+          @media (hover: none) {
+            content: '↑ Tap ';
+          }
+        }
+      }
+
+      .figc-gifs-out-grid {
+        display: none;
       }
 
       .gifs-container {
         display: grid;
-        // gap: 18px;
-        grid-template-columns: repeat(3, 1fr);
-        border-radius: 8px;
-        margin: 0 -1px -1px 0;
+        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
 
         .automation-gif {
-          border-right: 1px solid;
-          border-bottom: 1px solid;
-          margin: 0 -1px -1px 0;
-          border-color: rgba($color: #000000, $alpha: 0.4);
-        }
+          border-radius: 8px;
+          overflow: hidden;
+          position: relative;
 
-        img {
-          border-radius: 0;
+          &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            box-shadow: inset 0 0 0 1px rgba($color: #000000, $alpha: 0.2);
+            pointer-events: none;
+          }
         }
       }
     }

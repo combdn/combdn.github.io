@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import uuid from 'uuid/v4';
 import { navigate } from '@reach/router';
 
@@ -10,36 +10,77 @@ import './case.scss';
 import './case-automation.scss';
 
 export default function CasePw(props) {
-  const { images, videos } = useFiles();
+  const { images, videos, texts } = useFiles();
+  const [gifsData, setGifsData] = useState([]);
+  const [gifsLoaded, setGifsLoaded] = useState(false);
 
-  // Find the gif keys in automation-gifs/ path.
-  let gifKeys = Object.keys(images).filter(
-    value => value.indexOf('.gif') >= 0 && value.indexOf('automation-gifs') >= 0
-  );
+  // Asynchronosely creates the array of objects with gif data.
+  // Each object has paths for GIF and PNG, and also
+  // fetches the description from the text file with the same name.
+  const createGifDataObjects = async () => {
+    let gifDataObjects = [];
 
-  let gifPngPairs = [];
+    // Filter the keys with 'automation-gifs' and '.gif' extension
+    let gifKeys = Object.keys(images).filter(
+      value =>
+        value.indexOf('.gif') >= 0 && value.indexOf('automation-gifs') >= 0
+    );
 
-  // Create GIF/PNG pairs
-  // We assume that there's the 'cover' PNG with the same name.
-  gifKeys.forEach(key => {
-    let pngKey = key.replace(/\.gif/, '.png');
-    gifPngPairs.push({ gif: images[key], png: images[pngKey] });
-  });
+    const getTxtFromFile = async path => {
+      let file = await fetch(path);
+      return file.text();
+    };
 
+    let createGifDataObject = async key => {
+      let txtKey = key.replace(/\.gif/, '.txt');
+      // Prepare the description
+      let description = await getTxtFromFile(texts[txtKey]);
+
+      return {
+        className: 'automation-gif',
+        gif: images[key],
+        png: images[key.replace(/\.gif/, '.png')],
+        description: description,
+        key: uuid()
+        // style: {{ zIndex: `${numberOfPairs - index}` }}
+      };
+    };
+
+    for (const key of gifKeys) {
+      let nextObject = await createGifDataObject(key);
+      gifDataObjects.push(nextObject);
+    }
+
+    return gifDataObjects;
+  };
+
+  // Fetch data once
+  useEffect(() => {
+    let asyncRun = async () => {
+      let dataObjects = await createGifDataObjects();
+      setGifsData(dataObjects);
+      setGifsLoaded(true);
+    };
+    asyncRun();
+  }, []);
+
+  // Prepare the array of components for the gif gallery.
   let gifs = [];
 
-  let numberOfPairs = gifPngPairs.length;
-  gifPngPairs.forEach((pair, index) => {
-    gifs.push(
-      <AutomationGif
-        className="automation-gif"
-        gif={pair.gif}
-        png={pair.png}
-        key={uuid()}
-        style={{ zIndex: `${numberOfPairs - index}` }}
-      />
-    );
-  });
+  if (gifsLoaded) {
+    for (const object of gifsData) {
+      gifs.push(
+        <AutomationGif
+          gif={object.gif}
+          png={object.png}
+          description={object.description}
+          className={'automation-gif'}
+          // style={object.gif}
+          key={uuid()}
+        />
+      );
+    }
+  }
 
   return (
     <article>
@@ -88,6 +129,12 @@ export default function CasePw(props) {
               saving a file…
             </figcaption>
           </figure>
+          <p>
+            After the first discussion with the team, I came up with the concept
+            that was based on how similar tasks (mostly one-direction data flow
+            with some logic) are handled in VFX industry: i. e. boxes connected
+            with wires.
+          </p>
 
           <figure className="fig-design-execution fig-design">
             <img src={images['images/automation-design.png']} alt="Design" />
@@ -115,8 +162,15 @@ export default function CasePw(props) {
               systems (SideFX Houdini).
             </figcaption>
             <figure className="gifs">
-              <div className="gifs-container">{gifs}</div>
-              {/* <figcaption>← Click to play</figcaption> */}
+              <div className="gifs-container">
+                {gifs}
+                {/* '↑ Click' or '↑ Tap' is chosen based on the media querry. */}
+                <figcaption className="figc-gifs-in-grid">
+                  <span className="click-touch">
+                    the pictures to play the demos
+                  </span>
+                </figcaption>
+              </div>
             </figure>
           </div>
 
