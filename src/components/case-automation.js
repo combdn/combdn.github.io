@@ -166,8 +166,8 @@ export default function CasePw(props) {
                 {gifs}
                 {/* '↑ Click' or '↑ Tap' is chosen based on the media querry. */}
                 <figcaption className="figc-gifs-in-grid">
-                  <span className="click-touch">
-                    the pictures to play the demos
+                  <span>
+                    ↑ Play any of the demos to see the principle in action
                   </span>
                 </figcaption>
               </div>
@@ -179,11 +179,13 @@ export default function CasePw(props) {
             accepted by both the team and the client.
           </p>
 
+          {/* TODO: add video posters. (No previews on iOS.) */}
           <div className="feature ">
             <figure>
               <video
                 controls
                 src={videos['videos/automation-fly-concept.mp4']}
+                poster={images['videos/automation-fly-concept-poster.png']}
                 type="video/mp4"
                 playsInline
               />
@@ -217,6 +219,7 @@ export default function CasePw(props) {
               <video
                 controls
                 src={videos['videos/automation-assets-concept.mp4']}
+                poster={images['videos/automation-assets-concept-poster.png']}
                 type="video/mp4"
                 playsInline
               />
@@ -228,28 +231,32 @@ export default function CasePw(props) {
             accepted by both the team and the client.
           </p>
 
-          <figure>
-            <div className="two-figures">
+          <div className="two-figures">
+            <figure>
               <video
                 controls
                 loop
                 src={videos['videos/Lighting-POC-animation.mp4']}
+                poster={images['videos/Lighting-POC-animation-poster.png']}
                 type="video/mp4"
                 playsInline
               />
+            </figure>
+            <figure>
               <video
                 controls
                 loop
                 src={videos['videos/automation-light.mp4']}
+                poster={images['videos/automation-light-poster.png']}
                 type="video/mp4"
                 playsInline
               />
-            </div>
+            </figure>
             <figcaption className="big">
               It looks like a space shuttle dashboard but it’s an interface for
               saving a file…
             </figcaption>
-          </figure>
+          </div>
 
           <p>
             Some of the decisions were to be revisited, but the concept was

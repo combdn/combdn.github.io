@@ -190,32 +190,46 @@
 
   // Figure
   figure {
-    grid-column: wide-start/wide-end;
-    // margin: 0 0 $line-height / 2;
+    grid-column: wide-start / wide-end;
     margin: 0;
 
     // Need that to make grid element size fit its content.
     line-height: 0;
+  }
 
-    // Two side by side images
-    .two-figures {
-      display: grid;
-      grid-gap: $grid-gap;
-      grid-template-columns: 1fr 1fr;
-      align-items: stretch;
+  // Two side by side images
+  .two-figures {
+    grid-column: wide-start / wide-end;
+    display: grid;
+    column-gap: $grid-gap;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
 
-      video {
-        background-color: black;
-      }
+    figure {
+      // FIXME: transfere this clipping container style to other videos 'figure' conatiners
+      // FIXME: vertical video placement inside
+      grid-column: auto;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: black;
+    }
 
-      @media screen and (max-width: 920px) {
-        column-gap: $grid-gap-small;
-      }
+    figcaption {
+      grid-column: 1 / -1;
+    }
 
-      @media screen and (max-width: 505px) {
-        grid-template-columns: 1fr;
-        grid-gap: 24px;
-      }
+    video {
+      object-fit: cover;
+      border-radius: 0;
+    }
+
+    @media screen and (max-width: 920px) {
+      column-gap: $grid-gap-small;
+    }
+
+    @media screen and (max-width: 505px) {
+      grid-template-columns: 1fr;
+      grid-gap: 24px;
     }
   }
 
