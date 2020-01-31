@@ -14,8 +14,12 @@
     align-items: flex-end;
 
     .section-grid {
-      margin-top: 70vh;
+      margin-top: 50vh;
       width: 100%;
+
+      @media screen and (min-height: 800px) {
+        margin-top: 40vh;
+      }
     }
 
     .intro-on-black {
@@ -40,16 +44,6 @@
     @media screen and (max-width: 505px) {
       .intro-on-black {
         margin-bottom: 0;
-      }
-
-      .section-grid {
-        margin-top: 55vh;
-        margin-bottom: 0;
-      }
-    }
-    @media screen and (min-height: 1000px) {
-      .section-grid {
-        margin-top: 30vh;
       }
     }
   }
