@@ -40,7 +40,7 @@ function Gallery({ dataToShow }) {
 
   // Add "Show all" button
   return (
-    <div className="gallery">
+    <div className="works-gallery">
       <Filter />
       <div className="grid">{works}</div>
       <WorkInfo />
