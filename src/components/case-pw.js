@@ -59,6 +59,7 @@ export default function CasePw(props) {
               <video
                 controls
                 src={videos['videos/PW-concept.mp4']}
+                poster={images['videos/PW-concept-poster.png']}
                 type="video/mp4"
                 playsInline
               />
