@@ -249,6 +249,7 @@ export default function CasePw(props) {
             </figure>
             <figure>
               <video
+                className="smaller"
                 controls
                 loop
                 src={videos['videos/automation-light.mp4']}

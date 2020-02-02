@@ -7,6 +7,10 @@
   background: white;
   font-weight: 400;
 
+  a {
+    color: $link-color-dark;
+  }
+
   article > .button {
     position: absolute;
     top: 24px;
@@ -192,9 +196,16 @@
   figure {
     grid-column: wide-start / wide-end;
     margin: 0;
+    border-radius: 8px;
+    overflow: hidden;
 
     // Need that to make grid element size fit its content.
     line-height: 0;
+
+    video {
+      object-fit: cover;
+      border-radius: 0;
+    }
   }
 
   // Two side by side images
@@ -206,21 +217,20 @@
     align-items: stretch;
 
     figure {
-      // FIXME: transfere this clipping container style to other videos 'figure' conatiners
-      // FIXME: vertical video placement inside
       grid-column: auto;
-      border-radius: 8px;
-      overflow: hidden;
+      // border-radius: 8px;
+      // overflow: hidden;
       background-color: black;
+      display: grid;
+      align-items: stretch;
+
+      .smaller {
+        // object-fit: contain;
+      }
     }
 
     figcaption {
       grid-column: 1 / -1;
-    }
-
-    video {
-      object-fit: cover;
-      border-radius: 0;
     }
 
     @media screen and (max-width: 920px) {
@@ -229,7 +239,11 @@
 
     @media screen and (max-width: 505px) {
       grid-template-columns: 1fr;
-      grid-gap: 24px;
+      gap: 24px;
+
+      figcaption.big {
+        margin-top: 0;
+      }
     }
   }
 

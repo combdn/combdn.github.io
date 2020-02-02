@@ -43,19 +43,19 @@
     grid-column: span 3;
     display: grid;
     grid-template-columns: repeat(3, minmax(24px, 1fr));
-    grid-gap: 20px;
+    gap: 20px;
     align-content: start;
     img {
       border-radius: 0;
     }
 
     @media screen and (max-width: 920px) {
-      grid-gap: 10px;
+      gap: 10px;
     }
 
     @media screen and (max-width: 505px) {
       grid-column: span 2;
-      grid-gap: 5vw;
+      gap: 5vw;
     }
 
     figcaption {
