@@ -167,7 +167,12 @@ export default function CasePw(props) {
                 {/* '↑ Click' or '↑ Tap' is chosen based on the media querry. */}
                 <figcaption className="figc-gifs-in-grid">
                   <span>
-                    ↑ Play any of the demos to see the principle in action
+                    ↑ Play any of the demos to see the principle in action.
+                    (Visualizations by{' '}
+                    <a href="https://www.facebook.com/olegpetro.babii">
+                      Oleg-Petro Babii
+                    </a>
+                    )
                   </span>
                 </figcaption>
               </div>
