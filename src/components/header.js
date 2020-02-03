@@ -1,9 +1,14 @@
 import React from 'react';
 import { Link } from '@reach/router';
 
+import useFiles from './useFiles';
+
 import './header.scss';
 
 export default function Header() {
+  let { images } = useFiles();
+
+  console.log(images);
   return (
     <div className="header__intro">
       <div className="contacts">
@@ -40,7 +45,7 @@ export default function Header() {
           .
         </p>
         <p>
-          <span className="highlight">
+          <span>
             I’ve managed to write cases about{' '}
             <Link to="/case/pw"> the risk calculation tool</Link> , and{' '}
             <Link to="/case/automation">reinventing the stage automation</Link>{' '}
@@ -49,6 +54,94 @@ export default function Header() {
           But if you want to know more, we could discuss any of my works
           further. Just <a href="mailto:combdn@gmail.com">drop me a line.</a>
         </p>
+      </div>
+
+      <div className="cases">
+        <h2>Case Studies</h2>
+        <div className="thumbnails">
+          <div className="thumbnail">
+            <div className="icon">
+              <img
+                src={images['images/case-thumbnails/pw.png']}
+                alt="Risk Calculation Tool"
+              />
+            </div>
+            <div className="name">Risk Calculation Tool</div>
+          </div>
+          <div className="thumbnail">
+            <div className="icon">
+              <img
+                src={images['images/case-thumbnails/automation.png']}
+                alt="Reinventing the Stage Automation"
+              />
+            </div>
+            <div className="name">Reinventing the Stage Automation</div>
+          </div>
+          <div className="thumbnail under-construction">
+            <div className="icon">
+              <img
+                src={images['images/case-thumbnails/industrial-monitoring.png']}
+                alt="Industrial Monitoring"
+              />
+            </div>
+            <div className="name">Industrial Monitoring</div>
+          </div>
+
+          {/* <div className="thumbnail under-construction">
+            <div className="icon">
+              <img
+                src={images['images/case-thumbnails/industrial-monitoring.png']}
+                alt="Industrial Monitoring"
+              />
+            </div>
+            <div className="name">Industrial Monitoring</div>
+          </div>
+          <div className="thumbnail under-construction">
+            <div className="icon">
+              <img
+                src={images['images/case-thumbnails/industrial-monitoring.png']}
+                alt="Industrial Monitoring"
+              />
+            </div>
+            <div className="name">Industrial Monitoring</div>
+          </div>
+          <div className="thumbnail under-construction">
+            <div className="icon">
+              <img
+                src={images['images/case-thumbnails/industrial-monitoring.png']}
+                alt="Industrial Monitoring"
+              />
+            </div>
+            <div className="name">Industrial Monitoring</div>
+          </div>
+          <div className="thumbnail under-construction">
+            <div className="icon">
+              <img
+                src={images['images/case-thumbnails/industrial-monitoring.png']}
+                alt="Industrial Monitoring"
+              />
+            </div>
+            <div className="name">Industrial Monitoring</div>
+          </div>
+          <div className="thumbnail under-construction">
+            <div className="icon">
+              <img
+                src={images['images/case-thumbnails/industrial-monitoring.png']}
+                alt="Industrial Monitoring"
+              />
+            </div>
+            <div className="name">Industrial Monitoring</div>
+          </div>
+          <div className="thumbnail under-construction">
+            <div className="icon">
+              <img
+                src={images['images/case-thumbnails/industrial-monitoring.png']}
+                alt="Industrial Monitoring"
+              />
+            </div>
+            <div className="name">Industrial Monitoring</div>
+          </div> */}
+        </div>
       </div>
     </div>
   );

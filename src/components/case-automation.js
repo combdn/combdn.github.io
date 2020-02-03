@@ -184,7 +184,6 @@ export default function CasePw(props) {
             accepted by both the team and the client.
           </p>
 
-          {/* TODO: add video posters. (No previews on iOS.) */}
           <div className="feature ">
             <figure>
               <video
