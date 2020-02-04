@@ -45,7 +45,7 @@ export default function Header() {
           .
         </p>
         <p>
-          If you want to know more just{' '}
+          If you want to know more,{' '}
           <a href="mailto:combdn@gmail.com">drop me a line.</a>
         </p>
       </div>

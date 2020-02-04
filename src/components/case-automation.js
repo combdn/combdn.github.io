@@ -101,9 +101,8 @@ export default function CasePw(props) {
                 </span>
               </div>
               <div>
-                <span className="first-word">Goal:</span> add two applications
-                to the insurance simulation suite. One — to visually build
-                simulation jobs, the other — to install and run them.
+                <span className="first-word">Goal:</span> Goal: find a new way
+                to design and control stage automation rigs.
               </div>
             </div>
           </div>

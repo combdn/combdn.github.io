@@ -76,7 +76,7 @@ export default [
       title: 'Properties Panel',
       project: 'Risk Management Solution',
       description:
-        'Task function can have a large set of output parameters. This design is focused on their nesting structure and reordering.'
+        'Task functions can have a large set of output parameters. This design is focused on their nesting structure and reordering.'
     },
     id: '66121a53-3409-437f-8f92-79dd2b6522bb'
   },
