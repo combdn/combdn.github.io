@@ -81,10 +81,19 @@ const gallerySlice = createSlice({
         state.selectedWorkId = '';
         state.selectedWorkCaseId = '';
       }
+    },
+    turnOffWorkSelection: (state, action) => {
+      state.selectedWorkId = '';
+      state.selectedWorkCaseId = '';
     }
   }
 });
 
-export const { toggleTag, showAll, toggleWorkSelection } = gallerySlice.actions;
+export const {
+  toggleTag,
+  showAll,
+  toggleWorkSelection,
+  turnOffWorkSelection
+} = gallerySlice.actions;
 
 export default gallerySlice.reducer;
