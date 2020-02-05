@@ -163,8 +163,8 @@ export default [
     type: 'video',
     class: 'cover-video',
     file: 'videos/Lighting-POC-animation.mp4',
-    caseId: 'stage-automation',
-    caseReady: false,
+    caseId: 'automation',
+    caseReady: true,
     tags: ['concept', 'complex', '3d'],
     info: {
       title: 'Driving the Lights With Objects',
@@ -179,8 +179,8 @@ export default [
     type: 'video',
     class: 'cover-video',
     file: 'videos/automation-fly-concept.mp4',
-    caseId: 'stage-automation',
-    caseReady: false,
+    caseId: 'automation',
+    caseReady: true,
     tags: ['concept', 'complex', '3d'],
     info: {
       title: 'The “Flight” Rig',
@@ -208,8 +208,8 @@ export default [
     type: 'video',
     class: 'cover-video',
     file: 'videos/automation-assets-concept.mp4',
-    caseId: 'stage-automation',
-    caseReady: false,
+    caseId: 'automation',
+    caseReady: true,
     info: {
       title: 'Stage Automation Assets',
       project: 'Stage Automation R&D',
@@ -237,8 +237,8 @@ export default [
     type: 'video',
     class: 'cover-video',
     file: 'videos/automation-light-small.mp4',
-    caseId: 'stage-automation',
-    caseReady: false,
+    caseId: 'automation',
+    caseReady: true,
     info: {
       title: 'Lights Attracted to the Object',
       project: 'Stage Automation R&D',

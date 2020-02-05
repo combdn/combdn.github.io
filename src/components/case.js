@@ -1,6 +1,6 @@
 import React from 'react';
 import { Router, Link, navigate } from '@reach/router';
-import Button from './button';
+
 import Footer from './footer';
 
 import './case.scss';
@@ -9,11 +9,11 @@ import './case.scss';
 import CasePw from './case-pw';
 import CaseAutomation from './case-automation';
 
-export default function Case(props) {
+export default function Case({ caseId }) {
   let caseToShow = {};
   let wrapperClass = ' case-';
 
-  switch (props.caseId) {
+  switch (caseId) {
     case 'pw':
       caseToShow = <CasePw />;
       wrapperClass += 'pw';
@@ -35,8 +35,10 @@ export default function Case(props) {
       {caseToShow}
       <Footer
         variant={'case'}
-        caseId={props.caseId}
-        navigator={() => navigate('/')}
+        caseId={caseId}
+        onHomeClick={() => {
+          navigate('/');
+        }}
       />
     </div>
   );
