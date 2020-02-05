@@ -11,8 +11,8 @@ export default function Footer(props) {
     return (
       <footer className="case-footer">
         <Button
-          label={'← Gallery'}
-          clickHandler={props.navigator}
+          label={'← Home'}
+          clickHandler={props.onHomeClick}
           look="dark-outline"
         />
         <p>

@@ -6,15 +6,17 @@ import Button from './button';
 
 import './case-pw.scss';
 
-export default function CasePw(props) {
+export default function CasePw() {
   const { images, videos } = useFiles();
 
   return (
     <article>
       {/* Need to have the button here to establish its stlyle according to the intro's background. */}
       <Button
-        label={'← Gallery'}
-        clickHandler={() => navigate('/')}
+        label={'← Home'}
+        clickHandler={() => {
+          navigate('/');
+        }}
         look="dark-outline"
       />
       <section className="intro">

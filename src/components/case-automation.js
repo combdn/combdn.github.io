@@ -85,8 +85,10 @@ export default function CasePw(props) {
   return (
     <article>
       <Button
-        label={'← Gallery'}
-        clickHandler={() => navigate('/')}
+        label={'← Home'}
+        clickHandler={() => {
+          navigate('/');
+        }}
         look="light-bright"
       />
       <section className="intro">
