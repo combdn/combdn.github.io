@@ -85,6 +85,10 @@
         [full-end wide-end narrow-end];
     }
 
+    @media screen and (max-width: 700px) {
+      line-height: $medium-line-height;
+    }
+
     @media screen and (max-width: 370px) {
       font-size: 16px;
       line-height: $small-line-height;
@@ -139,6 +143,14 @@
 
     p {
       margin-bottom: $line-height / 2;
+
+      @media screen and (max-width: 700px) {
+        margin-bottom: $medium-line-height / 2;
+      }
+
+      @media screen and (max-width: 370px) {
+        margin-bottom: $small-line-height / 2;
+      }
     }
 
     p:last-child {
@@ -154,7 +166,7 @@
 
     @media screen and (min-width: 1200px) {
       font-size: 28px;
-      line-height: $line-height * 1.8;
+      line-height: $line-height * 1.5;
     }
 
     @media screen and (max-width: 920px) {
@@ -175,6 +187,7 @@
   }
 
   // The goal.
+  // TODO: think about placing the title and the goal in two different columns
   .goal {
     grid-column: narrow-start/narrow-end;
     display: flex;
