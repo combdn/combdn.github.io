@@ -97,6 +97,7 @@ function WorkThumbnail({
         without affecting the selection frame. */}
         <div className="video-wrapper">
           <video
+            // TODO: Check if autoplay is enabled.
             autoPlay
             onCanPlayThrough={() => {
               setReadyToShow(true);

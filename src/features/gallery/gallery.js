@@ -40,7 +40,6 @@ function Gallery({ dataIdsToShow }) {
     work.tags.forEach(tag => tags.add(tag));
   }
 
-  // Add "Show all" button
   return (
     <div className="works-gallery">
       <h2>Works</h2>
