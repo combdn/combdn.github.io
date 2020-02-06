@@ -103,8 +103,8 @@ export default function CasePw(props) {
                 </span>
               </div>
               <div>
-                <span className="first-word">Goal:</span> Goal: find a new way
-                to design and control stage automation rigs.
+                <span className="first-word">Goal:</span> find a new way to
+                design and control stage automation rigs.
               </div>
             </div>
           </div>
