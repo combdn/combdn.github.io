@@ -11,6 +11,15 @@
   padding-right: calc(24px + env(safe-area-inset-right));
   margin: 0;
 
+  h2 {
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 0.225em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
   @media screen and (max-width: 530px) {
     padding: 18px;
   }

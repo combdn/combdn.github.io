@@ -12,7 +12,7 @@ export default function useFiles() {
 
   // Import images
   const imageFiles = importAll(
-    require.context('../assets/', true, /\.(png|jpe?g|svg)$/)
+    require.context('../assets/', true, /\.(png|jpe?g|svg|gif)$/)
   );
 
   // Import videos
@@ -20,5 +20,7 @@ export default function useFiles() {
     require.context('../assets/', true, /\.(mp4|mov)$/)
   );
 
-  return { images: imageFiles, videos: videoFiles };
+  const txtFiles = importAll(require.context('../assets/', true, /\.(txt)$/));
+
+  return { images: imageFiles, videos: videoFiles, texts: txtFiles };
 }

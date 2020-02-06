@@ -1,6 +1,9 @@
-@import './case.scss';
+// Common styles are defined in the case.scss
+// These are only related to the specific case styling
 
-.page-case {
+@import './case-variables.scss';
+
+.page-case.case-pw {
   section.intro {
     background: radial-gradient(50% 50% at 50% 50%, #f0f2f3, #d3d7db);
 
@@ -40,19 +43,19 @@
     grid-column: span 3;
     display: grid;
     grid-template-columns: repeat(3, minmax(24px, 1fr));
-    grid-gap: 20px;
+    gap: 20px;
     align-content: start;
     img {
       border-radius: 0;
     }
 
     @media screen and (max-width: 920px) {
-      grid-gap: 10px;
+      gap: 10px;
     }
 
     @media screen and (max-width: 505px) {
       grid-column: span 2;
-      grid-gap: 5vw;
+      gap: 5vw;
     }
 
     figcaption {

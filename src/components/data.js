@@ -76,7 +76,7 @@ export default [
       title: 'Properties Panel',
       project: 'Risk Management Solution',
       description:
-        'Task function can have a large set of output parameters. This design is focused on their nesting structure and reordering.'
+        'Task functions can have a large set of output parameters. This design is focused on their nesting structure and reordering.'
     },
     id: '66121a53-3409-437f-8f92-79dd2b6522bb'
   },
@@ -163,8 +163,8 @@ export default [
     type: 'video',
     class: 'cover-video',
     file: 'videos/Lighting-POC-animation.mp4',
-    caseId: 'stage-automation',
-    caseReady: false,
+    caseId: 'automation',
+    caseReady: true,
     tags: ['concept', 'complex', '3d'],
     info: {
       title: 'Driving the Lights With Objects',
@@ -179,8 +179,8 @@ export default [
     type: 'video',
     class: 'cover-video',
     file: 'videos/automation-fly-concept.mp4',
-    caseId: 'stage-automation',
-    caseReady: false,
+    caseId: 'automation',
+    caseReady: true,
     tags: ['concept', 'complex', '3d'],
     info: {
       title: 'The “Flight” Rig',
@@ -208,8 +208,8 @@ export default [
     type: 'video',
     class: 'cover-video',
     file: 'videos/automation-assets-concept.mp4',
-    caseId: 'stage-automation',
-    caseReady: false,
+    caseId: 'automation',
+    caseReady: true,
     info: {
       title: 'Stage Automation Assets',
       project: 'Stage Automation R&D',
@@ -237,13 +237,13 @@ export default [
     type: 'video',
     class: 'cover-video',
     file: 'videos/automation-light-small.mp4',
-    caseId: 'stage-automation',
-    caseReady: false,
+    caseId: 'automation',
+    caseReady: true,
     info: {
       title: 'Lights Attracted to the Object',
       project: 'Stage Automation R&D',
       description:
-        'Light driving concept demoing to activation of the lights array by positioning the object.'
+        'Light driving concept demoing the activation of the lights array by positioning the object.'
     },
     tags: ['concept', 'complex', '3d'],
     id: '959b2190-1a87-4733-9c45-6787fe34495d'
@@ -293,7 +293,7 @@ export default [
       title: 'AGNER Logo',
       project: 'Erlang Package Manager',
       description:
-        'AGNER is a shorthand for “A Giant Nebula of Erlang Repositories.” It also pays homage to the Danish statistician Agner Krarup Erlang. The logo reminds a nebula.'
+        'AGNER is a shorthand for “A Giant Nebula of Erlang Repositories.” It also pays homage to the Danish statistician Agner Krarup Erlang. The logo is reminiscent of a nebula.'
     },
     tags: ['look'],
     id: '51d5ee08-474b-4810-9eb7-cbf76b215758'
@@ -366,7 +366,7 @@ export default [
     file: 'images/patient-summary-cropped.png',
     info: {
       title: 'Patient’s Card',
-      project: 'Medical CRM',
+      project: 'Healthcare CRM',
       description: (
         <span>
           The card shows all of the patient’s metrics history on one screen.

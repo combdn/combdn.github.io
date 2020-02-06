@@ -1,0 +1,112 @@
+.gif-loop {
+  position: relative;
+  display: grid;
+  grid-template-rows: minmax(min-content, max-content);
+
+  img {
+    border-radius: 8px 8px 0 0;
+  }
+
+  .overlay {
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    align-items: center;
+    justify-items: center;
+    cursor: pointer;
+    transition: all 0.1s;
+
+    svg {
+      opacity: 0.9;
+      justify-self: center;
+      align-self: center;
+      margin-top: 12px;
+    }
+
+    .play-button {
+      width: 60px;
+      height: 40px;
+      margin-top: 5%;
+      background: rgba($color: white, $alpha: 0.85);
+      backdrop-filter: blur(8px);
+      mask-image: url(../assets/images/icons/controls/gif/play-button.svg);
+      mask-position: center;
+      mask-repeat: no-repeat;
+      box-shadow: 0 1px 0 0 black;
+    }
+  }
+
+  &.stop {
+    .gif {
+      display: none;
+    }
+  }
+
+  &.play {
+    .png {
+      display: none;
+    }
+
+    .overlay {
+      opacity: 0;
+      animation-name: pause-fade-out;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+
+      @media (hover: hover) {
+        opacity: 0;
+        // Safari doesn't switch the animation off
+        // so providing the 0-0 animation instead.
+        animation-name: zero-to-zero;
+        // animation: none;
+
+        &:hover {
+          opacity: 0;
+          animation-name: pause-fade-out;
+          animation-duration: 2s;
+          animation-fill-mode: forwards;
+        }
+      }
+
+      .play-button {
+        mask-image: url(../assets/images/icons/controls/gif/pause-button.svg);
+      }
+    }
+  }
+
+  @keyframes pause-fade-out {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes zero-to-zero {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  .description {
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    background: rgba($color: white, $alpha: 0.7);
+    border-radius: 0 0 8px 8px;
+  }
+}

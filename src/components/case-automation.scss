@@ -1,127 +1,70 @@
-@import './case.scss';
+// Common styles are defined in the case.scss
+// These are only related to the specific case styling
 
-.page-case {
+@import './case-variables.scss';
+
+.page-case.case-automation {
+  // TODO: decide on parallax for the background
   section.intro {
-    background: radial-gradient(50% 50% at 50% 50%, #f0f2f3, #d3d7db);
+    color: white;
+    position: relative;
+    background: center / cover no-repeat
+      url('../assets/images/automation-backstage.png');
+    display: flex;
+    align-items: flex-end;
 
-    .wires-illustration {
-      position: absolute;
+    .section-grid {
+      margin-top: 50vh;
       width: 100%;
-      height: 35vw;
-      max-height: 451px;
-      top: calc(100px + 10vw);
-      border-radius: 0;
-      z-index: 0;
 
-      @media screen and (min-width: 1400px) {
-        top: 240px;
+      @media screen and (min-height: 800px) {
+        margin-top: 40vh;
+      }
+    }
+
+    .intro-on-black {
+      grid-column: narrow-start/narrow-end;
+      background: black;
+      margin-left: -($grid-gap-small);
+      margin-right: -($grid-gap-small);
+      margin-bottom: $line-height * 2;
+      padding: $grid-gap-small;
+      padding-bottom: $grid-gap;
+
+      h1 {
+        margin-bottom: $grid-gap;
+        max-width: 15em;
       }
 
-      @media screen and (max-width: 670px) {
-        top: calc(130px + 10vw);
+      .goal {
+        margin-bottom: 0;
+      }
+    }
+
+    @media screen and (max-width: 505px) {
+      .intro-on-black {
+        margin-bottom: 0;
       }
     }
   }
 
-  .fig-properties {
-    grid-column-start: wide-start;
-    grid-column-end: span 7;
+  // Design VS Execution
 
-    @media screen and (max-width: 505px) {
-      grid-column: span 2;
-    }
-
-    img {
-      border-radius: 0;
-    }
-  }
-
-  .fig-ribbon-icons {
-    grid-column: span 3;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(24px, 1fr));
-    grid-gap: 20px;
-    align-content: start;
-    img {
-      border-radius: 0;
-    }
-
-    @media screen and (max-width: 920px) {
-      grid-gap: 10px;
-    }
-
-    @media screen and (max-width: 505px) {
-      grid-column: span 2;
-      grid-gap: 5vw;
-    }
-
+  .fig-design-execution {
     figcaption {
-      grid-column-start: span 3;
-
-      @media screen and (max-width: 505px) {
-        margin-top: 0;
-      }
+      font-style: italic;
+      font-weight: 300;
+      font-size: 18px;
+      text-align: center;
     }
   }
 
-  .fig-signoff {
-    grid-column: wide-start / 9;
-    grid-row: 10 / 15;
-    margin: 0;
-    border-radius: 0;
-  }
-  .figc-signoff {
-    grid-column: 9 / wide-end;
-    grid-row: 11 / 12;
-    max-width: 16em;
+  .fig-design {
+    grid-column: wide-start / middle;
   }
 
-  .fig-run-details {
-    grid-column: 5 / wide-end;
-    grid-row: 13 / 17;
-    margin: 0;
-    border-radius: 0;
-  }
-  .figc-run-details {
-    grid-column: wide-start / 5;
-    grid-row: 15 / 16;
-    justify-self: end;
-    align-self: end;
-    max-width: 16em;
-    // text-align: right;
-  }
-
-  @media screen and (max-width: 670px) {
-    .fig-run-details {
-      grid-column: 4 / wide-end;
-    }
-
-    .figc-run-details {
-      grid-column: wide-start / 4;
-    }
-  }
-
-  @media screen and (min-width: 561px) {
-    .figc-signoff-small,
-    .figc-run-details-small {
-      display: none;
-    }
-  }
-
-  @media screen and (max-width: 560px) {
-    .figc-signoff,
-    .figc-run-details {
-      display: none;
-    }
-
-    .fig-signoff,
-    .figc-signoff,
-    .fig-run-details,
-    .figc-run-details {
-      grid-column: wide-start / wide-end;
-      grid-row: auto;
-      max-width: 100%;
-    }
+  .fig-execution {
+    grid-column: middle / wide-end;
   }
 
   .grid-item {
@@ -129,5 +72,71 @@
     --row: inherit;
     grid-column: var(--col);
     grid-row: var(--row);
+  }
+
+  // Gifs
+  .feature-grey {
+    grid-auto-rows: min-content;
+
+    .gifs {
+      border-radius: 0;
+
+      // Remove the outline
+      &:after {
+        box-shadow: none;
+      }
+
+      .figc-gifs-in-grid {
+        // grid-column: 1 / -1;
+        grid-column: span 1;
+        margin-top: 0;
+
+        span.click-touch:before {
+          content: '↑ Click ';
+
+          @media (hover: none) {
+            content: '↑ Tap ';
+          }
+        }
+      }
+
+      .figc-gifs-out-grid {
+        display: none;
+      }
+
+      .gifs-container {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+
+        .automation-gif {
+          border-radius: 8px;
+          overflow: hidden;
+          position: relative;
+
+          &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            box-shadow: inset 0 0 0 1px rgba($color: #000000, $alpha: 0.2);
+            pointer-events: none;
+          }
+        }
+      }
+    }
+
+    p {
+      grid-column: 8 / 11;
+      align-self: start;
+
+      @media screen and (max-width: 920px) {
+        margin-top: $line-height / 2;
+        grid-column: span 1;
+      }
+    }
   }
 }

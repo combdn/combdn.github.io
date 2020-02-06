@@ -3,6 +3,7 @@
 .header__intro {
   display: flex;
   flex-direction: column;
+  align-items: center;
   font-size: 17px;
   line-height: 26px;
 
@@ -25,36 +26,48 @@
   }
 
   .intro {
-    margin: 91px auto;
+    margin: 91px 0 40px;
+    width: 100%;
     max-width: 36em;
   }
 
-  // .highlight {
-  //   position: relative;
-  //   z-index: 1;
-  //   display: inline-block;
-
-  //   a {
-  //     // color: $link-color-dark;
-  //   }
-
-  //   &:before {
-  //     position: absolute;
-  //     content: '';
-  //     width: 100%;
-  //     height: calc(100% - 4px);
-  //     border-bottom: 4px solid #1aff006b;
-  //     left: 0;
-  //     top: 0;
-  //     // background: rgba($color: #ffee00, $alpha: 0.1);
-  //     z-index: -1;
-  //   }
-  // }
-
   .highlight {
     position: relative;
-    $underline-color: rgba(255, 255, 255, 0.363);
-    background: linear-gradient($underline-color, $underline-color) /* Color */
-      left 0 bottom 0/ /* Position */ 100% 1px /* Size (width height)*/ no-repeat;
+    background: rgba($color: green, $alpha: 0.8);
+    border-radius: 4px;
+    padding: 0 4px;
+  }
+
+  // Cases
+  .cases {
+    width: 100%;
+    max-width: 36em;
+    margin-bottom: 60px;
+
+    .thumbnails {
+      // max-width: 36em;
+      display: grid;
+      gap: 32px;
+      grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+      justify-items: center;
+
+      @media screen and (max-width: 450px) {
+        grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+        gap: 24px;
+      }
+
+      @media screen and (max-width: 370px) {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 16px;
+      }
+
+      // display: flex;
+      // flex-direction: row;
+      // flex-wrap: wrap;
+      // // justify-content: space-between;
+      // justify-content: flex-start;
+
+      // width: 100000px;
+    }
   }
 }

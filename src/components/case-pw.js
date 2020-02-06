@@ -1,13 +1,24 @@
 import React from 'react';
+import { navigate } from '@reach/router';
+
 import useFiles from './useFiles';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import Button from './button';
+
 import './case-pw.scss';
 
-export default function CasePw(props) {
+export default function CasePw() {
   const { images, videos } = useFiles();
 
   return (
     <article>
+      {/* Need to have the button here to establish its stlyle according to the intro's background. */}
+      <Button
+        label={'← Home'}
+        clickHandler={() => {
+          navigate('/');
+        }}
+        look="dark-outline"
+      />
       <section className="intro">
         <div className="section-grid">
           <figure style={{ marginBottom: 0 }}>
@@ -45,22 +56,22 @@ export default function CasePw(props) {
             with wires.
           </p>
 
-          <div className="concept">
+          <div className="feature feature-grey">
             <figure>
               <video
-                className="test"
                 controls
                 src={videos['videos/PW-concept.mp4']}
+                poster={images['videos/PW-concept-poster.png']}
                 type="video/mp4"
                 playsInline
               />
               <div className="shadow" />
             </figure>
-            <p className="big">
+            <figcaption className="big">
               This concept was created in the first two days. We had an XML
               file, and I already had a good reference for the node-based
               systems (SideFX Houdini).
-            </p>
+            </figcaption>
           </div>
 
           <p>
@@ -132,8 +143,9 @@ export default function CasePw(props) {
 
           <p>
             The other tool is dedicated to running the created jobs in HPC (CUDA
-            GPUs) environment. It allows to install, to configure triggers, data
-            sources, and variables, and to run the jobs and see their results.
+            GPUs) environment. It allows installation and configuration of
+            triggers, data sources, and variables and to run the jobs and see
+            their results.
           </p>
 
           <figure className="fig-signoff">

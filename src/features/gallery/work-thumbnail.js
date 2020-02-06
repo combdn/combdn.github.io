@@ -97,7 +97,7 @@ function WorkThumbnail({
         without affecting the selection frame. */}
         <div className="video-wrapper">
           <video
-            // FIXME: enable temporary disabled autoplay
+            // TODO: Check if autoplay is enabled.
             autoPlay
             onCanPlayThrough={() => {
               setReadyToShow(true);

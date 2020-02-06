@@ -1,10 +1,5 @@
 @import '../variables.scss';
-
-$line-height: 26px;
-$small-line-height: 24px;
-$grid-gap: 36px;
-$grid-gap-small: $grid-gap / 1.5;
-$grid-gap-smallest: $grid-gap / 2;
+@import './case-variables.scss';
 
 .page-case {
   padding: 24px;
@@ -12,10 +7,17 @@ $grid-gap-smallest: $grid-gap / 2;
   background: white;
   font-weight: 400;
 
-  .button {
+  a {
+    color: $link-color-dark;
+  }
+
+  article > .button {
     position: absolute;
+    top: 24px;
+    left: 24px;
     left: calc(24px + env(safe-area-inset-left));
     // left: 24px;
+    z-index: 1;
   }
 
   // GRID
@@ -30,7 +32,9 @@ $grid-gap-smallest: $grid-gap / 2;
       [wide-start]
       repeat(2, minmax(24px, 1fr))
       [narrow-start]
-      repeat(6, minmax(24px, 1fr))
+      repeat(3, minmax(24px, 1fr))
+      [middle]
+      repeat(3, minmax(24px, 1fr))
       [narrow-end]
       repeat(2, minmax(24px, 1fr))
       [wide-end]
@@ -84,7 +88,7 @@ $grid-gap-smallest: $grid-gap / 2;
     @media screen and (max-width: 370px) {
       font-size: 16px;
       line-height: $small-line-height;
-      margin: $small-line-height auto;
+      // margin: $small-line-height auto;
     }
   }
 
@@ -119,6 +123,7 @@ $grid-gap-smallest: $grid-gap / 2;
     font-size: 36px;
     line-height: 42px;
     margin: 0;
+    // text-wrap: balance;
   }
 
   p {
@@ -132,8 +137,12 @@ $grid-gap-smallest: $grid-gap / 2;
   .long-text {
     grid-column: narrow-start/narrow-end;
 
-    & > p {
+    p {
       margin-bottom: $line-height / 2;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
     }
   }
 
@@ -167,12 +176,11 @@ $grid-gap-smallest: $grid-gap / 2;
 
   // The goal.
   .goal {
-    // grid-column: 3/11;
     grid-column: narrow-start/narrow-end;
     display: flex;
     font-size: 18px;
     max-width: 25em;
-    margin: 0 0 $line-height * 2;
+    margin: 0 0 $grid-gap;
   }
 
   .case__emoji {
@@ -186,12 +194,57 @@ $grid-gap-smallest: $grid-gap / 2;
 
   // Figure
   figure {
-    grid-column: wide-start/wide-end;
-    // margin: 0 0 $line-height / 2;
+    grid-column: wide-start / wide-end;
     margin: 0;
+    border-radius: 8px;
+    overflow: hidden;
 
     // Need that to make grid element size fit its content.
     line-height: 0;
+
+    video {
+      object-fit: cover;
+      border-radius: 0;
+    }
+  }
+
+  // Two side by side images
+  .two-figures {
+    grid-column: wide-start / wide-end;
+    display: grid;
+    column-gap: $grid-gap;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+
+    figure {
+      grid-column: auto;
+      // border-radius: 8px;
+      // overflow: hidden;
+      background-color: black;
+      display: grid;
+      align-items: stretch;
+
+      .smaller {
+        // object-fit: contain;
+      }
+    }
+
+    figcaption {
+      grid-column: 1 / -1;
+    }
+
+    @media screen and (max-width: 920px) {
+      column-gap: $grid-gap-small;
+    }
+
+    @media screen and (max-width: 505px) {
+      grid-template-columns: 1fr;
+      gap: 24px;
+
+      figcaption.big {
+        margin-top: 0;
+      }
+    }
   }
 
   figcaption {
@@ -210,25 +263,18 @@ $grid-gap-smallest: $grid-gap / 2;
     margin-top: $line-height / 2;
   }
 
-  // Concept
-  .concept {
+  // ---
+  // Default feature
+  // ---
+  .feature {
     position: relative;
     grid-column: wide-start/wide-end;
     column-gap: $grid-gap;
-    margin: -($grid-gap-small);
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: $grid-gap-small;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    background: #e6e8ea;
+    grid-template-columns: repeat(10, 1fr);
 
     @media screen and (max-width: 920px) {
       column-gap: $grid-gap-small;
-      margin-left: -($grid-gap-small);
-      margin-right: -($grid-gap-small);
-      padding: $grid-gap-small;
     }
 
     @media screen and (max-width: 920px) {
@@ -236,7 +282,7 @@ $grid-gap-smallest: $grid-gap / 2;
     }
 
     figure {
-      grid-column: 1 / 2;
+      grid-column: span 7;
       display: block;
       position: relative;
       margin: 0;
@@ -268,14 +314,46 @@ $grid-gap-smallest: $grid-gap / 2;
       background: white;
     }
 
-    p {
-      grid-column: 2 / 3;
+    figcaption {
+      margin-top: 0;
+      grid-column: span 3;
       // max-width: 18em;
 
       @media screen and (max-width: 920px) {
         margin-top: $line-height / 2;
         grid-column: span 1;
       }
+    }
+
+    &.feature-left-caption {
+      figure {
+        @media screen and (max-width: 920px) {
+          grid-row: -1;
+        }
+      }
+
+      figcaption {
+        // text-align: right;
+
+        @media screen and (max-width: 920px) {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  // Grey feature (adds background to the regular feature)
+  .feature-grey {
+    margin: -($grid-gap-small);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: $grid-gap-small;
+    background: #e6e8ea;
+
+    @media screen and (max-width: 920px) {
+      margin-left: -($grid-gap-small);
+      margin-right: -($grid-gap-small);
+      padding: $grid-gap-small;
     }
   }
 }

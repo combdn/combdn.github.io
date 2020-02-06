@@ -1,9 +1,14 @@
 import React from 'react';
 import { Link } from '@reach/router';
 
+import useFiles from './useFiles';
+import CaseThumbnail from './case-thumbnail';
+
 import './header.scss';
 
 export default function Header() {
+  let { images } = useFiles();
+
   return (
     <div className="header__intro">
       <div className="contacts">
@@ -40,13 +45,32 @@ export default function Header() {
           .
         </p>
         <p>
-          <span className="highlight">
-            I’ve only managed to write <Link to="/case/pw">one case</Link> so
-            far…
-          </span>{' '}
-          But if you’re interested, we could discuss any of them further. Just{' '}
+          If you want to know more,{' '}
           <a href="mailto:combdn@gmail.com">drop me a line.</a>
         </p>
+      </div>
+
+      <div className="cases">
+        <h2>Case Studies</h2>
+        <div className="thumbnails">
+          <CaseThumbnail
+            image={images['images/case-thumbnails/pw.png']}
+            name="Risk Calculation Tool"
+            underConstruction={false}
+            link={'/case/pw'}
+          />
+          <CaseThumbnail
+            image={images['images/case-thumbnails/automation.png']}
+            name="Reinventing the Stage Automation"
+            underConstruction={false}
+            link={'/case/automation'}
+          />
+          <CaseThumbnail
+            image={images['images/case-thumbnails/industrial-monitoring.png']}
+            name="Industrial Monitoring"
+            underConstruction={true}
+          />
+        </div>
       </div>
     </div>
   );

@@ -9,11 +9,13 @@ import FilterButton from './filter-button';
 
 import { toggleTag, toggleWorkSelection } from './gallerySlice';
 
+import data from '../../components/data';
+
 import './work-info.scss';
 import { format } from 'path';
 
 function WorkInfo({
-  dataToShow,
+  dataIdsToShow,
   selectedWorkId,
   toggleTag,
   toggleWorkSelection
@@ -22,6 +24,8 @@ function WorkInfo({
   if (selectedWorkId === '') {
     return <div />;
   }
+
+  const dataToShow = data.filter(work => dataIdsToShow.includes(work.id));
 
   let work = dataToShow.find(element => element.id === selectedWorkId);
 
@@ -87,7 +91,7 @@ function WorkInfo({
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  dataToShow: state.gallery.dataToShow,
+  dataIdsToShow: state.gallery.dataIdsToShow,
   selectedWorkId: state.gallery.selectedWorkId,
   selectedWorkProject: state.gallery.selectedWorkProject
 });
