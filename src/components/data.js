@@ -243,7 +243,7 @@ export default [
       title: 'Lights Attracted to the Object',
       project: 'Stage Automation R&D',
       description:
-        'Light driving concept demoing to activation of the lights array by positioning the object.'
+        'Light driving concept demoing the activation of the lights array by positioning the object.'
     },
     tags: ['concept', 'complex', '3d'],
     id: '959b2190-1a87-4733-9c45-6787fe34495d'
@@ -293,7 +293,7 @@ export default [
       title: 'AGNER Logo',
       project: 'Erlang Package Manager',
       description:
-        'AGNER is a shorthand for “A Giant Nebula of Erlang Repositories.” It also pays homage to the Danish statistician Agner Krarup Erlang. The logo reminds a nebula.'
+        'AGNER is a shorthand for “A Giant Nebula of Erlang Repositories.” It also pays homage to the Danish statistician Agner Krarup Erlang. The logo is reminiscent of a nebula.'
     },
     tags: ['look'],
     id: '51d5ee08-474b-4810-9eb7-cbf76b215758'
