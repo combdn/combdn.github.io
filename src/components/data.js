@@ -366,7 +366,7 @@ export default [
     file: 'images/patient-summary-cropped.png',
     info: {
       title: 'Patient’s Card',
-      project: 'Medical CRM',
+      project: 'Healthcare CRM',
       description: (
         <span>
           The card shows all of the patient’s metrics history on one screen.

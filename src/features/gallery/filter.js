@@ -5,8 +5,10 @@ import uuid from 'uuid/v4';
 import FilterButton from './filter-button';
 import { toggleTag, showAll } from './gallerySlice';
 
+import data from '../../components/data';
+
 const Filter = ({
-  dataToShow,
+  dataIdsToShow,
   availableTags,
   selectedTags,
   toggleTag,
@@ -14,6 +16,7 @@ const Filter = ({
 }) => {
   let filterButtons = [];
   let showAllActive = false;
+  const dataToShow = data.filter(work => dataIdsToShow.includes(work.id));
 
   // Add "Show All" button. (No tag, different type.)
   selectedTags.length === 0 ? (showAllActive = false) : (showAllActive = true);
@@ -52,7 +55,7 @@ const Filter = ({
 };
 
 const mapStateToProps = (state, ownProps) => ({
-  dataToShow: state.gallery.dataToShow,
+  dataIdsToShow: state.gallery.dataIdsToShow,
   availableTags: state.gallery.availableTags,
   selectedTags: state.gallery.selectedTags
 });

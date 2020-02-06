@@ -2,9 +2,15 @@ import { createSlice } from 'redux-starter-kit';
 
 import data from '../../components/data';
 
-const computeAvailableTags = data => {
+let dataIds = [];
+for (const object of data) {
+  dataIds.push(object.id);
+}
+
+const computeAvailableTags = dataIds => {
   let availableTags = new Set();
-  for (const work of data) {
+  let availableWorks = data.filter(work => dataIds.includes(work.id));
+  for (const work of availableWorks) {
     work.tags.forEach(tag => availableTags.add(tag));
   }
 
@@ -16,8 +22,10 @@ const computeAvailableTags = data => {
 const gallerySlice = createSlice({
   slice: 'gallery',
   initialState: {
-    dataToShow: data,
-    availableTags: computeAvailableTags(data),
+    // TODO: store only data ids in the state.
+    // (Or remove link from the Patient’s Card description. Or parse the string into React.)
+    dataIdsToShow: dataIds,
+    availableTags: computeAvailableTags(dataIds),
     selectedTags: [],
     selectedWorkId: '',
     selectedWorkCaseId: ''
@@ -37,36 +45,37 @@ const gallerySlice = createSlice({
         selectedTagsSet.add(tag);
       }
 
-      // Update dataToShow
+      // Update dataIdsToShow
       if (selectedTagsSet.length === 0) {
-        state.dataToShow = data;
+        state.dataIdsToShow = dataIds;
       } else {
-        state.dataToShow = data.filter(element => {
-          for (const selectedTag of selectedTagsSet) {
-            if (!element.tags.includes(selectedTag)) return false;
-          }
-          return true;
-        });
+        state.dataIdsToShow = data
+          .filter(element => {
+            for (const selectedTag of selectedTagsSet) {
+              if (!element.tags.includes(selectedTag)) return false;
+            }
+            return true;
+          })
+          .map(work => work.id);
       }
 
       // Convert the set back to array to store in the state
       state.selectedTags = [...selectedTagsSet];
-      state.availableTags = computeAvailableTags(state.dataToShow);
+      state.availableTags = computeAvailableTags(state.dataIdsToShow);
 
       // If some thumbnail is selected and it will be invisible
       // after filtering — discard selection
       if (state.selectedWorkId !== '') {
         if (
-          state.dataToShow.findIndex(work => work.id === state.selectedWorkId) <
-          0
+          state.dataIdsToShow.findIndex(id => id === state.selectedWorkId) < 0
         )
           state.selectedWorkId = '';
       }
     },
     showAll: (state, action) => {
-      state.dataToShow = data;
+      state.dataIdsToShow = dataIds;
       state.selectedTags = [];
-      state.availableTags = computeAvailableTags(data);
+      state.availableTags = computeAvailableTags(dataIds);
     },
     toggleWorkSelection: (state, action) => {
       // If nothing is selected or click was on different thumbnail

@@ -7,15 +7,17 @@ import Filter from './filter';
 import WorkThumbnail from './work-thumbnail';
 import WorkInfo from './work-info';
 
+import data from '../../components/data';
 import useFiles from '../../components/useFiles';
 
 import './gallery.scss';
 
 const { images, videos } = useFiles();
 
-function Gallery({ dataToShow }) {
+function Gallery({ dataIdsToShow }) {
   let works = [];
   let tags = new Set();
+  const dataToShow = data.filter(work => dataIdsToShow.includes(work.id));
 
   // Create thumbnails array
   for (const work of dataToShow) {
@@ -50,7 +52,7 @@ function Gallery({ dataToShow }) {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  dataToShow: state.gallery.dataToShow
+  dataIdsToShow: state.gallery.dataIdsToShow
 });
 
 export default connect(mapStateToProps)(Gallery);
