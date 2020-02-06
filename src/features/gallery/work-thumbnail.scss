@@ -1,14 +1,10 @@
 .works-gallery {
-  .work-thumbnail__project-highlight {
-    outline: 2px solid red;
-    outline-offset: 4px;
-  }
-
   .wrapper {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     padding: 8px;
+    cursor: pointer;
     //animation: 0.1s ease-out 0s 1 appear;
 
     .loader {
