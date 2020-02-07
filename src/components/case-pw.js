@@ -1,5 +1,5 @@
 import React from 'react';
-import { navigate } from '@reach/router';
+import { useHistory } from 'react-router-dom';
 
 import useFiles from './useFiles';
 import Button from './button';
@@ -9,13 +9,15 @@ import './case-pw.scss';
 export default function CasePw() {
   const { images, videos } = useFiles();
 
+  let history = useHistory();
+
   return (
     <article>
       {/* Need to have the button here to establish its stlyle according to the intro's background. */}
       <Button
         label={'← Home'}
         clickHandler={() => {
-          navigate('/');
+          history.push('/');
         }}
         look="dark-outline"
       />

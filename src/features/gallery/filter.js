@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import uuid from 'uuid/v4';
 
@@ -62,7 +63,9 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = { toggleTag, showAll };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Filter);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Filter)
+);

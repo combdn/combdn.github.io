@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { toggleWorkSelection } from './gallerySlice';
 
-// import loader from '../../assets/images/icons/loader.svg';
+import { ReactComponent as Loader } from '../../assets/images/icons/loader.svg';
 
 import './work-thumbnail.scss';
 
@@ -42,24 +42,7 @@ function WorkThumbnail({
   }
 
   // Loader SVG
-  let loader = (
-    <svg
-      width="50"
-      height="26"
-      viewBox="0 0 50 26"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        opacity="0.3"
-        d="M1 25V7C1 3.68629 3.68629 1 7 1V1C10.3137 1 13 3.68629 13 7V19C13 22.3137 15.6863 25 19 25V25C22.3137 25 25 22.3137 25 19V7C25 3.68629 27.6863 1 31 1V1C34.3137 1 37 3.68629 37 7V19C37 22.3137 39.6863 25 43 25V25C46.3137 25 49 22.3137 49 19V1"
-        stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-    </svg>
-  );
+  let loader = <Loader />;
 
   // Return image
   if (type === 'image') {
@@ -121,7 +104,9 @@ const mapStateToProps = (state, ownprops) => ({
 
 const mapDispatchToProps = { toggleWorkSelection };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(WorkThumbnail);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(WorkThumbnail)
+);

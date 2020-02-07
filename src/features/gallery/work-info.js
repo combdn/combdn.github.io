@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { navigate } from '@reach/router';
-import { Link } from '@reach/router';
+import { useHistory, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import uuid from 'uuid/v4';
 
@@ -20,6 +19,8 @@ function WorkInfo({
   toggleTag,
   toggleWorkSelection
 }) {
+  let history = useHistory();
+
   // If object is empty return the empty div
   if (selectedWorkId === '') {
     return <div />;
@@ -81,7 +82,7 @@ function WorkInfo({
             look={'dark'}
             label={'Read the Case'}
             additionalClasses={'case-button'}
-            clickHandler={() => navigate('/case/' + caseId)}
+            clickHandler={() => history.push('/case/' + caseId)}
           />
           <div className="info-tags">{infoTags}</div>
         </div>
@@ -98,7 +99,9 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = { toggleTag, toggleWorkSelection };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(WorkInfo);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(WorkInfo)
+);
