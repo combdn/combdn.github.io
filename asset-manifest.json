@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.84cc951a.chunk.css",
-    "main.js": "/static/js/main.a3e24947.chunk.js",
-    "main.js.map": "/static/js/main.a3e24947.chunk.js.map",
+    "main.js": "/static/js/main.e23fa3d5.chunk.js",
+    "main.js.map": "/static/js/main.e23fa3d5.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.5a18fb77.js",
     "runtime-main.js.map": "/static/js/runtime-main.5a18fb77.js.map",
-    "static/css/2.db5b1de2.chunk.css": "/static/css/2.db5b1de2.chunk.css",
-    "static/js/2.407c65ba.chunk.js": "/static/js/2.407c65ba.chunk.js",
-    "static/js/2.407c65ba.chunk.js.map": "/static/js/2.407c65ba.chunk.js.map",
+    "static/css/2.9b2a9837.chunk.css": "/static/css/2.9b2a9837.chunk.css",
+    "static/js/2.13176281.chunk.js": "/static/js/2.13176281.chunk.js",
+    "static/js/2.13176281.chunk.js.map": "/static/js/2.13176281.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.8598a7b29a0d370d4196fcc55167a161.js": "/precache-manifest.8598a7b29a0d370d4196fcc55167a161.js",
+    "precache-manifest.8fca972e182d449941affffaa3332d2f.js": "/precache-manifest.8fca972e182d449941affffaa3332d2f.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/2.db5b1de2.chunk.css.map": "/static/css/2.db5b1de2.chunk.css.map",
+    "static/css/2.9b2a9837.chunk.css.map": "/static/css/2.9b2a9837.chunk.css.map",
     "static/css/main.84cc951a.chunk.css.map": "/static/css/main.84cc951a.chunk.css.map",
-    "static/js/2.407c65ba.chunk.js.LICENSE": "/static/js/2.407c65ba.chunk.js.LICENSE",
+    "static/js/2.13176281.chunk.js.LICENSE": "/static/js/2.13176281.chunk.js.LICENSE",
     "static/media/01-Ball-And-Door.gif": "/static/media/01-Ball-And-Door.164f9789.gif",
     "static/media/01-Ball-And-Door.txt": "/static/media/01-Ball-And-Door.5b4c98f4.txt",
     "static/media/02-Drill-Up.gif": "/static/media/02-Drill-Up.270f0a6a.gif",
@@ -68,7 +68,6 @@
     "static/media/archmock-icon.png": "/static/media/archmock-icon.1a88a2ac.png",
     "static/media/automation-assets-concept-poster.png": "/static/media/automation-assets-concept-poster.f03fed72.png",
     "static/media/automation-assets-concept.mp4": "/static/media/automation-assets-concept.c3da2736.mp4",
-    "static/media/automation-backstage.png": "/static/media/automation-backstage.bd728b86.png",
     "static/media/case-automation.scss": "/static/media/automation-backstage.fb8676ce.jpg",
     "static/media/automation-execution.png": "/static/media/automation-execution.d55cfb55.png",
     "static/media/automation-fly-concept-poster.png": "/static/media/automation-fly-concept-poster.868c0e54.png",
@@ -88,7 +87,7 @@
     "static/media/industrial-monitoring.png": "/static/media/industrial-monitoring.7af4b7b0.png",
     "static/media/keepa-logo-dribbble.png": "/static/media/keepa-logo-dribbble.0ccf7a35.png",
     "static/media/latency-discovery.mp4": "/static/media/latency-discovery.3d651faa.mp4",
-    "static/media/loader.svg": "/static/media/loader.8f2411f8.svg",
+    "static/media/loader.svg": "/static/media/loader.d59beda0.svg",
     "static/media/patient-summary-cropped.png": "/static/media/patient-summary-cropped.9bdd7c45.png",
     "static/media/automation-gif.scss": "/static/media/play-button.da05aa43.svg",
     "static/media/pw.png": "/static/media/pw.d04d1b50.png",
@@ -102,9 +101,9 @@
   },
   "entrypoints": [
     "static/js/runtime-main.5a18fb77.js",
-    "static/css/2.db5b1de2.chunk.css",
-    "static/js/2.407c65ba.chunk.js",
+    "static/css/2.9b2a9837.chunk.css",
+    "static/js/2.13176281.chunk.js",
     "static/css/main.84cc951a.chunk.css",
-    "static/js/main.a3e24947.chunk.js"
+    "static/js/main.e23fa3d5.chunk.js"
   ]
 }
