@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from '@reach/router';
 
 import useFiles from './useFiles';
 import CaseThumbnail from './case-thumbnail';

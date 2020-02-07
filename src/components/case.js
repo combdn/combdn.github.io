@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Link, navigate } from '@reach/router';
+import { useHistory, useParams } from 'react-router-dom';
 
 import Footer from './footer';
 
@@ -9,9 +9,12 @@ import './case.scss';
 import CasePw from './case-pw';
 import CaseAutomation from './case-automation';
 
-export default function Case({ caseId }) {
+export default function Case() {
   let caseToShow = {};
   let wrapperClass = ' case-';
+
+  let { caseId } = useParams();
+  let history = useHistory();
 
   switch (caseId) {
     case 'pw':
@@ -37,7 +40,7 @@ export default function Case({ caseId }) {
         variant={'case'}
         caseId={caseId}
         onHomeClick={() => {
-          navigate('/');
+          history.push('/');
         }}
       />
     </div>

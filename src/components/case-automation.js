@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import uuid from 'uuid/v4';
-import { navigate } from '@reach/router';
+import { useHistory } from 'react-router-dom';
 
 import useFiles from './useFiles';
 import Button from './button';
@@ -13,6 +13,8 @@ export default function CasePw(props) {
   const { images, videos, texts } = useFiles();
   const [gifsData, setGifsData] = useState([]);
   const [gifsLoaded, setGifsLoaded] = useState(false);
+
+  let history = useHistory();
 
   // Asynchronosely creates the array of objects with gif data.
   // Each object has paths for GIF and PNG, and also
@@ -87,7 +89,7 @@ export default function CasePw(props) {
       <Button
         label={'← Home'}
         clickHandler={() => {
-          navigate('/');
+          history.push('/');
         }}
         look="light-bright"
       />

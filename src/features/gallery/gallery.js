@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import uuid from 'uuid/v4';
 
@@ -54,4 +55,4 @@ const mapStateToProps = (state, ownProps) => ({
   dataIdsToShow: state.gallery.dataIdsToShow
 });
 
-export default connect(mapStateToProps)(Gallery);
+export default withRouter(connect(mapStateToProps)(Gallery));
