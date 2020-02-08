@@ -145,7 +145,7 @@ export default function CasePw() {
 
           <p>
             The other tool is dedicated to running the created jobs in HPC (CUDA
-            GPUs) environment. It allows installation and configuration of
+            GPUs) environment. It allows user to install and to configure
             triggers, data sources, and variables and to run the jobs and see
             their results.
           </p>

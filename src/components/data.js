@@ -170,7 +170,7 @@ export default [
       title: 'Driving the Lights With Objects',
       project: 'Stage Automation R&D',
       description:
-        'The concept for light array driving with a meta-ball while controlling the fall-off function. (Made in Houdini.)'
+        'The concept for array driving with a meta-ball while controlling the fall-off function. (Made in Houdini.)'
     },
     id: 'd81be583-4bf9-4af8-9ba0-b26813b40541'
   },
@@ -243,7 +243,7 @@ export default [
       title: 'Lights Attracted to the Object',
       project: 'Stage Automation R&D',
       description:
-        'Light driving concept demoing the activation of the lights array by positioning the object.'
+        'Light control concept that demonstrates the activation of an array by object positioning.'
     },
     tags: ['concept', 'complex', '3d'],
     id: '959b2190-1a87-4733-9c45-6787fe34495d'
