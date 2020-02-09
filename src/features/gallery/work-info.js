@@ -23,7 +23,7 @@ function WorkInfo({
 
   // If object is empty return the empty div
   if (selectedWorkId === '') {
-    return <div />;
+    return <div className="work-info__root empty" />;
   }
 
   const dataToShow = data.filter(work => dataIdsToShow.includes(work.id));
@@ -34,7 +34,7 @@ function WorkInfo({
 
   // Return the empty div if there is no info for the work
   if (info === undefined) {
-    return <div />;
+    return <div className="work-info__root empty" />;
   }
 
   const infoTags = [];

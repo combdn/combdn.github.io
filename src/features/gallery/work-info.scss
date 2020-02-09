@@ -9,6 +9,13 @@
   justify-content: center;
   z-index: 10;
   pointer-events: none;
+  // transform: translateY(0);
+  // transition: all 0.15s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+  // will-change: transform;
+
+  // &.empty {
+  //   transform: translateY(300px);
+  // }
 
   a {
     color: $link-color-dark;
@@ -91,5 +98,17 @@
     top: 12px;
     right: 12px;
     margin: 0;
+  }
+}
+
+@keyframes appear {
+  0% {
+    transform: translateY(300px);
+  }
+  2% {
+    transform: translateY(300px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
