@@ -122,7 +122,7 @@ export default [
       title: 'Orchestrator',
       project: 'Risk Management Solution',
       description:
-        'The Windows app to install, run, and debug jobs in full-fledged environments.'
+        'The Windows app to install, run, and debug risk calculation jobs in HPC environments.'
     },
     id: '157fb8f5-3619-440b-8d76-9d7022acf240'
   },
