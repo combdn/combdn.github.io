@@ -383,6 +383,19 @@ export default [
     id: '3c52b1b5-41eb-45ac-b681-187b4e704d8b'
   },
   {
+    wrapperClass: 'tall-big contain-white',
+    type: 'video',
+    file: 'videos/Modulz-challenge.mp4',
+    tags: ['look', 'concept'],
+    info: {
+      title: 'Notifications Panel',
+      project: 'Design Challenge',
+      description:
+        'The challenge was to design a generic notifications panel for a project management tool like Trello, Asana, Notion, Linear, or something similar (desktop).'
+    },
+    id: '7BD7CD9A-CA89-4A1B-97FD-7F4D99B99802'
+  },
+  {
     wrapperClass: 'medium',
     type: 'image',
     class: 'center',
