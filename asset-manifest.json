@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.be0b7424.chunk.css",
-    "main.js": "/static/js/main.618e3229.chunk.js",
-    "main.js.map": "/static/js/main.618e3229.chunk.js.map",
+    "main.css": "/static/css/main.8df130fe.chunk.css",
+    "main.js": "/static/js/main.5e01d302.chunk.js",
+    "main.js.map": "/static/js/main.5e01d302.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.5a18fb77.js",
     "runtime-main.js.map": "/static/js/runtime-main.5a18fb77.js.map",
     "static/css/2.9b2a9837.chunk.css": "/static/css/2.9b2a9837.chunk.css",
-    "static/js/2.509dde0a.chunk.js": "/static/js/2.509dde0a.chunk.js",
-    "static/js/2.509dde0a.chunk.js.map": "/static/js/2.509dde0a.chunk.js.map",
+    "static/js/2.208ff7eb.chunk.js": "/static/js/2.208ff7eb.chunk.js",
+    "static/js/2.208ff7eb.chunk.js.map": "/static/js/2.208ff7eb.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.454305b8335ee0b8941dbb43d907c3a3.js": "/precache-manifest.454305b8335ee0b8941dbb43d907c3a3.js",
+    "precache-manifest.a26b04d00b8dea9fc4ac9aef1349afb0.js": "/precache-manifest.a26b04d00b8dea9fc4ac9aef1349afb0.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.9b2a9837.chunk.css.map": "/static/css/2.9b2a9837.chunk.css.map",
-    "static/css/main.be0b7424.chunk.css.map": "/static/css/main.be0b7424.chunk.css.map",
-    "static/js/2.509dde0a.chunk.js.LICENSE": "/static/js/2.509dde0a.chunk.js.LICENSE",
+    "static/css/main.8df130fe.chunk.css.map": "/static/css/main.8df130fe.chunk.css.map",
+    "static/js/2.208ff7eb.chunk.js.LICENSE": "/static/js/2.208ff7eb.chunk.js.LICENSE",
     "static/media/01-Ball-And-Door.gif": "/static/media/01-Ball-And-Door.164f9789.gif",
     "static/media/01-Ball-And-Door.txt": "/static/media/01-Ball-And-Door.5b4c98f4.txt",
     "static/media/02-Drill-Up.gif": "/static/media/02-Drill-Up.270f0a6a.gif",
@@ -39,6 +39,9 @@
     "static/media/App.scss": "/static/media/IBMPlexSans-ThinItalic.c69191a1.woff2",
     "static/media/Lighting-POC-animation-poster.png": "/static/media/Lighting-POC-animation-poster.291c76af.png",
     "static/media/Lighting-POC-animation.mp4": "/static/media/Lighting-POC-animation.fb1fd8b2.mp4",
+    "static/media/Modulz-challenge-portfolio-hover.png": "/static/media/Modulz-challenge-portfolio-hover.2d5cae05.png",
+    "static/media/Modulz-challenge-portfolio-start.png": "/static/media/Modulz-challenge-portfolio-start.a9a0477d.png",
+    "static/media/Modulz-challenge.mp4": "/static/media/Modulz-challenge.5aed0096.mp4",
     "static/media/Navarik-mockup-map-no-browser.png": "/static/media/Navarik-mockup-map-no-browser.ec57722f.png",
     "static/media/Navarik-mockup-map-transparent.png": "/static/media/Navarik-mockup-map-transparent.817f0355.png",
     "static/media/Navarik-mockup-map.png": "/static/media/Navarik-mockup-map.78356a2f.png",
@@ -102,8 +105,8 @@
   "entrypoints": [
     "static/js/runtime-main.5a18fb77.js",
     "static/css/2.9b2a9837.chunk.css",
-    "static/js/2.509dde0a.chunk.js",
-    "static/css/main.be0b7424.chunk.css",
-    "static/js/main.618e3229.chunk.js"
+    "static/js/2.208ff7eb.chunk.js",
+    "static/css/main.8df130fe.chunk.css",
+    "static/js/main.5e01d302.chunk.js"
   ]
 }

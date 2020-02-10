@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ac094ac45d82104d56365e25229dc04f",
+    "revision": "eca59b54856d6d6c95ce17750d854ebf",
     "url": "/index.html"
   },
   {
-    "revision": "8e7b1396924bc0c4812f",
+    "revision": "4f635930a2949b631371",
     "url": "/static/css/2.9b2a9837.chunk.css"
   },
   {
-    "revision": "9a265f798922b9ca0d26",
-    "url": "/static/css/main.be0b7424.chunk.css"
+    "revision": "4bcb34044eec6dcfb85d",
+    "url": "/static/css/main.8df130fe.chunk.css"
   },
   {
-    "revision": "8e7b1396924bc0c4812f",
-    "url": "/static/js/2.509dde0a.chunk.js"
+    "revision": "4f635930a2949b631371",
+    "url": "/static/js/2.208ff7eb.chunk.js"
   },
   {
     "revision": "d0bae136b3ef495e6884a628eb775665",
-    "url": "/static/js/2.509dde0a.chunk.js.LICENSE"
+    "url": "/static/js/2.208ff7eb.chunk.js.LICENSE"
   },
   {
-    "revision": "9a265f798922b9ca0d26",
-    "url": "/static/js/main.618e3229.chunk.js"
+    "revision": "4bcb34044eec6dcfb85d",
+    "url": "/static/js/main.5e01d302.chunk.js"
   },
   {
     "revision": "149b54320754c52ee69e",
@@ -634,6 +634,18 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "fb1fd8b2d33f2f32a7d2fdb9159b5610",
     "url": "/static/media/Lighting-POC-animation.fb1fd8b2.mp4"
+  },
+  {
+    "revision": "2d5cae058c0e2b431dd239c76f6a1405",
+    "url": "/static/media/Modulz-challenge-portfolio-hover.2d5cae05.png"
+  },
+  {
+    "revision": "a9a0477d8dbc5e9127999e2fce0162b9",
+    "url": "/static/media/Modulz-challenge-portfolio-start.a9a0477d.png"
+  },
+  {
+    "revision": "5aed00960a31ab38f9d553f0028ecae6",
+    "url": "/static/media/Modulz-challenge.5aed0096.mp4"
   },
   {
     "revision": "ec57722ffb904c5abd5f73acf6cca9c5",
