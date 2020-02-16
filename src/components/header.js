@@ -26,7 +26,13 @@ export default function Header() {
       <div className="intro">
         <p>
           Hi, I'm Valery. I’m obsessed with software user interfaces. (I
-          literally have 321 items in my “Applications” folder right now.)
+          literally have 321 items in my “Applications” folder right now.) And,
+          during my lifetime, I humbly hope to create an interface of equal
+          importance to the Arabic numerals{' '}
+          <span role="img" aria-label="smile">
+            😁
+          </span>
+          . (Or, at least, take part in the creation of one.)
         </p>
         <p>
           ↓These are some bits of my works. Some are simple and obvious{' '}
@@ -34,14 +40,14 @@ export default function Header() {
             🍰
           </span>
           , and others are complex{' '}
-          <span role="img" aria-label="piece of cake">
+          <span role="img" aria-label="mind blown">
             🤯
           </span>
           , some of them are quick proofs of concepts{' '}
-          <span role="img" aria-label="piece of cake">
+          <span role="img" aria-label="a pencil">
             ✏️
           </span>
-          .
+          , but I suppose you can tell that I like to work on unusual stuff.
         </p>
         <p>
           If you want to know more,{' '}

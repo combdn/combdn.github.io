@@ -225,6 +225,15 @@
     }
   }
 
+  .contain-black {
+    img,
+    video {
+      object-fit: contain;
+      object-position: top;
+      background-color: black;
+    }
+  }
+
   //
   // Animations
   //
