@@ -8,7 +8,7 @@
   .grid {
     margin: -8px;
     display: grid;
-    gap: 8px; // 24 - 16 of the thumbnail padding
+    gap: 48px; // 24 - 16 of the thumbnail padding
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     grid-auto-rows: 56px;
     grid-auto-columns: 100px;

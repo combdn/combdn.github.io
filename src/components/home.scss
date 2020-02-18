@@ -1,9 +1,11 @@
+@import '../variables.scss';
+
 .page-home {
-  background-color: #4d4e4f;
+  background-color: white;
   //-webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
-  font-weight: 300;
-  color: white;
+  font-weight: 400;
+  color: $text-color-dark;
   line-height: 24px;
   letter-spacing: 0.02em;
   padding: 24px;

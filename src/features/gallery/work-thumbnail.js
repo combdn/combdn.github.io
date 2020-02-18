@@ -16,7 +16,10 @@ function WorkThumbnail({
   caseId,
   selectedWorkId,
   toggleWorkSelection,
-  selectedWorkCaseId
+  selectedWorkCaseId,
+  title,
+  description,
+  project
 }) {
   const [readyToShow, setReadyToShow] = useState(false);
 
@@ -44,6 +47,15 @@ function WorkThumbnail({
   // Loader SVG
   let loader = <Loader />;
 
+  // Info block
+  let infoBlock = (
+    <div className="info-block">
+      <h3>{title}</h3>
+      <div className="description">{description}</div>
+      <div className="project">{project}</div>
+    </div>
+  );
+
   // Return image
   if (type === 'image') {
     return (
@@ -62,6 +74,7 @@ function WorkThumbnail({
           className={workClass}
           src={file}
         />
+        {infoBlock}
       </div>
     );
   }
@@ -81,7 +94,7 @@ function WorkThumbnail({
         <div className="video-wrapper">
           <video
             // TODO: Check if autoplay is enabled.
-            autoPlay
+            // autoPlay
             onCanPlayThrough={() => {
               setReadyToShow(true);
             }}
@@ -92,6 +105,7 @@ function WorkThumbnail({
             src={file}
           />
         </div>
+        {infoBlock}
       </div>
     );
   }

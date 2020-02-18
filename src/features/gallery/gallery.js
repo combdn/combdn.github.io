@@ -33,6 +33,9 @@ function Gallery({ dataIdsToShow }) {
         file={work.type === 'image' ? images[work.file] : videos[work.file]}
         workClass={work.class}
         caseId={work.caseId}
+        title={work.info.title}
+        description={work.info.description}
+        project={work.info.project}
       />
     );
 

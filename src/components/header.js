@@ -25,10 +25,10 @@ export default function Header() {
 
       <div className="intro">
         <p>
-          Hi, I'm Valery. I’m obsessed with software user interfaces. (I
-          literally have 321 items in my “Applications” folder right now.) And,
-          during my lifetime, I humbly hope to create an interface of equal
-          importance to the Arabic numerals{' '}
+          <span>Hi, I'm Valery Sibikovsky.</span> I’m obsessed with software
+          user interfaces. (I literally have 321 items in my “Applications”
+          folder right now.) And, during my lifetime, I humbly hope to create an
+          interface of equal importance to the Arabic numerals{' '}
           <span role="img" aria-label="smile">
             😁
           </span>
