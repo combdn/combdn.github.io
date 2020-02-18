@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Masonry from 'react-masonry-component';
 import uuid from 'uuid/v4';
 
 // Components
@@ -48,7 +49,9 @@ function Gallery({ dataIdsToShow }) {
     <div className="works-gallery">
       <h2>Works</h2>
       <Filter />
-      <div className="grid">{works}</div>
+      <Masonry className="grid" options={{ gutter: 24, columnWidth: 100 }}>
+        {works}
+      </Masonry>
       <WorkInfo />
     </div>
   );

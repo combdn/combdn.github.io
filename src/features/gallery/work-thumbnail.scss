@@ -5,6 +5,8 @@
     // display: grid;
     // grid-template-columns: 1fr;
     // grid-template-rows: 2fr 1fr;
+    // background-color: grey;
+    margin-bottom: 48px;
 
     cursor: pointer;
     filter: blur(0);
@@ -135,8 +137,7 @@
   // Individual cases
 
   .small {
-    grid-column: span 1;
-    grid-row: span 3;
+    width: 100px;
 
     img,
     video {
@@ -150,13 +151,11 @@
   }
 
   .medium {
-    grid-column: span 2;
-    grid-row: span 5;
+    width: 200px;
   }
 
   .wide {
-    grid-column: span 2;
-    grid-row: span 4;
+    width: 300px;
 
     @media screen and (max-width: 370px) {
       grid-row: span 5;
@@ -164,33 +163,27 @@
   }
 
   .tall {
-    grid-column: span 1;
-    grid-row: span 7;
+    width: 200px;
   }
 
   .big {
-    grid-column: span 2;
-    grid-row: span 8;
+    width: 400px;
   }
 
   .wide-big {
-    grid-column: span 4;
-    grid-row: span 7;
+    width: 500px;
 
     @media screen and (max-width: 370px) {
-      grid-column: span 2;
-      grid-row: span 6;
+      width: 400px;
     }
   }
 
   .tall-big {
-    grid-column: span 2;
-    grid-row: span 13;
+    width: 200px;
   }
 
   .tall-big-phone {
-    grid-column: span 2;
-    grid-row: span 9;
+    width: 200px;
   }
 
   .video-shadow > .video-wrapper {
@@ -199,6 +192,13 @@
   }
 
   .info-block {
+    margin-top: 12px;
+
+    h3,
+    .description {
+      margin: 0 0 6px;
+    }
+
     h3 {
       font-weight: 500;
       font-size: 18px;
