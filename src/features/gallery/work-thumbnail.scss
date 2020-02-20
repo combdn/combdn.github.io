@@ -1,12 +1,13 @@
 @import '../../variables.scss';
 
 .works-gallery {
+  $grid-row: 48px;
   .wrapper {
     // display: grid;
     // grid-template-columns: 1fr;
     // grid-template-rows: 2fr 1fr;
+    margin-bottom: 24px;
 
-    cursor: pointer;
     filter: blur(0);
     opacity: 1;
     // transition: opacity 0.2s, filter 0.2s;
@@ -94,9 +95,23 @@
     //   filter: blur(4px);
     // }
 
-    .video-wrapper {
-      grid-column: 1 / 2;
-      grid-row: 1 / 3; // 3 is magic number. Don't know why video has a smaller height while spanning 3 rows...
+    .video-wrapper,
+    .img-wrapper {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-shadow: inset 0 0 0 1px rgba($color: black, $alpha: 0.1);
+        border-radius: 4px;
+      }
     }
 
     img,
@@ -105,8 +120,8 @@
       grid-row: 1 / 2;
       position: relative;
       width: 100%;
-      border-radius: 4px;
       transition: all 0.5s ease-in-out;
+      display: block;
     }
 
     img {
@@ -136,11 +151,11 @@
 
   .small {
     grid-column: span 1;
-    grid-row: span 3;
+    grid-row: span 4;
 
     img,
     video {
-      box-shadow: none;
+      height: calc(2 * #{$grid-row});
     }
 
     .description,
@@ -151,46 +166,82 @@
 
   .medium {
     grid-column: span 2;
-    grid-row: span 5;
+    grid-row: span 9;
+
+    img,
+    video {
+      height: calc(#{$grid-row} * 5);
+    }
   }
 
   .wide {
     grid-column: span 2;
-    grid-row: span 4;
+    grid-row: span 7;
 
     @media screen and (max-width: 370px) {
       grid-row: span 5;
+    }
+
+    img,
+    video {
+      height: calc(4 * #{$grid-row});
+    }
+  }
+
+  .wide-big {
+    grid-column: span 4;
+    grid-row: span 12;
+
+    @media screen and (max-width: 370px) {
+      grid-column: span 2;
+      grid-row: span 6;
+    }
+
+    img,
+    video {
+      // object-position: top;
+      height: calc(9 * #{$grid-row});
+    }
+  }
+
+  .big {
+    grid-column: span 2;
+    grid-row: span 8;
+
+    img,
+    video {
+      height: calc(5 * #{$grid-row});
     }
   }
 
   .tall {
     grid-column: span 1;
     grid-row: span 7;
-  }
 
-  .big {
-    grid-column: span 2;
-    grid-row: span 8;
-  }
-
-  .wide-big {
-    grid-column: span 4;
-    grid-row: span 7;
-
-    @media screen and (max-width: 370px) {
-      grid-column: span 2;
-      grid-row: span 6;
+    img,
+    video {
+      height: calc(4 * #{$grid-row});
     }
   }
 
   .tall-big {
     grid-column: span 2;
-    grid-row: span 13;
+    grid-row: span 24;
+
+    img,
+    video {
+      height: calc(20 * #{$grid-row});
+    }
   }
 
   .tall-big-phone {
     grid-column: span 2;
-    grid-row: span 9;
+    grid-row: span 12;
+
+    img,
+    video {
+      height: calc(9 * #{$grid-row});
+    }
   }
 
   .video-shadow > .video-wrapper {
@@ -199,6 +250,13 @@
   }
 
   .info-block {
+    margin-top: 16px;
+
+    h3,
+    .description {
+      margin: 0 0 8px;
+    }
+
     h3 {
       font-weight: 500;
       font-size: 18px;
@@ -220,34 +278,44 @@
     }
   }
 
+  .small {
+    .info-block {
+      h3 {
+        font-size: 16px;
+      }
+    }
+  }
+
   //
   // Special cases
   //
   .daily-motion {
-    mask-image: url(../../assets/videos/daily-mail-concept-mask-rgb.png);
-    mask-size: contain;
-    mask-position: center;
+    video {
+      mask-image: url(../../assets/videos/daily-mail-concept-mask-rgb.png);
+      mask-size: contain;
+      mask-position: center;
+    }
   }
 
   .latency {
-    position: relative;
-    padding: 9px;
+    //   position: relative;
+    //   padding: 9px;
 
-    .video-wrapper {
-      z-index: 1;
-    }
+    //   .video-wrapper {
+    //     z-index: 1;
+    //   }
 
-    &:after {
-      z-index: 0;
-      content: '';
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      width: calc(100% - 16px);
-      height: calc(100% - 16px);
-      background-color: white;
-      border-radius: 10px;
-    }
+    //   &:after {
+    //     z-index: 0;
+    //     content: '';
+    //     position: absolute;
+    //     top: 8px;
+    //     left: 8px;
+    //     width: calc(100% - 16px);
+    //     height: calc(100% - 16px);
+    //     background-color: white;
+    //     border-radius: 10px;
+    //   }
   }
 
   .selected.latency:after {
@@ -262,13 +330,27 @@
     width: 100%;
   }
 
+  //
+  // Disable outline for icons and other cases
+
+  .small,
+  .daily-motion,
+  .no-frame {
+    .img-wrapper,
+    .video-wrapper {
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  //
   // white container for the screenshot ↓
 
   .contain-white {
     img,
     video {
       object-fit: contain;
-      object-position: top;
       background-color: white;
     }
   }
@@ -277,14 +359,40 @@
     img,
     video {
       object-fit: contain;
-      object-position: top;
       background-color: black;
     }
   }
 
   //
-  // Animations
+  // Positioning of the img and video
+
+  .top {
+    img,
+    video {
+      object-position: top;
+      mask-position: top;
+    }
+  }
+
+  .top-left {
+    img,
+    video {
+      object-position: top left;
+      mask-position: top left;
+    }
+  }
+
+  .top-right {
+    img,
+    video {
+      object-position: top right;
+      mask-position: top right;
+    }
+  }
+
   //
+  // Animations
+
   @keyframes slideInFromLeft {
     0% {
       transform: translateX(-100%);

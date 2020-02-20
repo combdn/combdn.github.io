@@ -40,7 +40,7 @@ export default function Footer(props) {
       </p>
       <p>
         <a className="social-icon" href="https://twitter.com/combdn">
-          <img src={twitterIcon} alt="Twitter" />
+          <img src={twitterIconBlue} alt="Twitter" />
         </a>
       </p>
     </footer>

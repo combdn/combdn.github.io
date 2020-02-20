@@ -10,9 +10,9 @@ import React from 'react';
 
 export default [
   {
-    wrapperClass: 'tall-big-phone video-shadow',
+    wrapperClass: 'tall-big-phone video-shadow daily-motion',
     type: 'video',
-    class: 'daily-motion',
+
     file: 'videos/daily-mail-concept.mp4',
     info: {
       title: 'Daily Mail App Concept',
@@ -23,7 +23,7 @@ export default [
     id: '10592916-c265-4302-ab29-76d78b2d7d26'
   },
   {
-    wrapperClass: 'wide-big',
+    wrapperClass: 'wide-big top-right',
     type: 'image',
     file: 'images/QiVisor-HR.png',
     tags: ['look', 'data visualization', 'complex'],
@@ -66,7 +66,7 @@ export default [
     id: 'e5514cc4-aa22-427b-a2e6-d622ad4ef568'
   },
   {
-    wrapperClass: 'tall-big',
+    wrapperClass: 'tall-big top',
     type: 'image',
     file: 'images/PW-properties.png',
     caseId: 'pw',
@@ -111,7 +111,7 @@ export default [
   //   id: '9697fa40-1ce4-4835-8709-0ba17b31b794'
   // },
   {
-    wrapperClass: 'wide-big',
+    wrapperClass: 'wide-big top-left',
     type: 'image',
     class: '',
     file: 'images/PW-signoff-cropped.png',
@@ -143,7 +143,7 @@ export default [
     id: 'd43844e6-1f0f-4eb5-9b0e-fe9631b57c31'
   },
   {
-    wrapperClass: 'wide-big',
+    wrapperClass: 'wide-big top-left',
     type: 'image',
     class: '',
     file: 'images/PW-job-editing-cropped.png',
@@ -191,7 +191,7 @@ export default [
     id: 'd421494c-8df8-4966-a455-113491de4bb8'
   },
   {
-    wrapperClass: 'wide-big',
+    wrapperClass: 'wide-big top',
     type: 'image',
     file: 'images/Navarik-mockup-map-no-browser.png',
     tags: ['concept', 'complex'],
@@ -220,7 +220,7 @@ export default [
     id: 'f552c810-38af-4699-86d5-73c34449146d'
   },
   {
-    wrapperClass: 'wide-big',
+    wrapperClass: 'wide-big top',
     type: 'image',
     file: 'images/supply-chain-risk-concept-v1.png',
     info: {
@@ -348,7 +348,7 @@ export default [
     id: 'fcbe31a7-0fa7-4b6e-bebf-8612b6e818b6'
   },
   {
-    wrapperClass: 'wide-big latency',
+    wrapperClass: 'wide-big latency contain-white',
     type: 'video',
     file: 'videos/latency-discovery.mp4',
     info: {
@@ -383,7 +383,7 @@ export default [
     id: '3c52b1b5-41eb-45ac-b681-187b4e704d8b'
   },
   {
-    wrapperClass: 'tall-big contain-white',
+    wrapperClass: 'tall-big contain-white top',
     type: 'video',
     file: 'videos/Modulz-challenge.mp4',
     tags: ['look', 'concept'],
@@ -396,7 +396,7 @@ export default [
     id: '7BD7CD9A-CA89-4A1B-97FD-7F4D99B99802'
   },
   {
-    wrapperClass: 'medium',
+    wrapperClass: 'medium no-frame',
     type: 'image',
     class: 'center',
     file: 'images/effect-doplera-cd-look.png',

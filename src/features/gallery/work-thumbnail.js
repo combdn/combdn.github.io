@@ -61,19 +61,21 @@ function WorkThumbnail({
     return (
       <div
         className={wrapperClasses}
-        onClick={() =>
-          toggleWorkSelection({ id: identificator, caseId: caseId })
-        }
+        // onClick={() =>
+        //   toggleWorkSelection({ id: identificator, caseId: caseId })
+        // }
       >
         <div className="loader">{loader}</div>
-        <img
-          onLoad={() => {
-            setReadyToShow(true);
-          }}
-          alt=""
-          className={workClass}
-          src={file}
-        />
+        <div className="img-wrapper">
+          <img
+            onLoad={() => {
+              setReadyToShow(true);
+            }}
+            alt=""
+            className={workClass}
+            src={file}
+          />
+        </div>
         {infoBlock}
       </div>
     );
@@ -84,9 +86,9 @@ function WorkThumbnail({
     return (
       <div
         className={wrapperClasses}
-        onClick={() =>
-          toggleWorkSelection({ id: identificator, caseId: caseId })
-        }
+        // onClick={() =>
+        //   toggleWorkSelection({ id: identificator, caseId: caseId })
+        // }
       >
         <div className="loader">{loader}</div>
         {/* Need this wrapper to apply the shadow to the masked videos
