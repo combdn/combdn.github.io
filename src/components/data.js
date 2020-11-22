@@ -214,7 +214,7 @@ export default [
       title: 'Stage Automation Assets',
       project: 'Stage Automation R&D',
       description:
-        'The concept is demonstrating the parametric stage automation asset (i. e. sliding LED screens). The main idea is to allow a quick stage design and cueing with the help of reusable components. (Made in Houdini.)'
+        'The concept is demonstrating the reusable parametric stage automation asset (i. e. sliding LED screens). Made in Houdini.'
     },
     tags: ['concept', 'complex', '3d'],
     id: 'f552c810-38af-4699-86d5-73c34449146d'
@@ -227,7 +227,7 @@ export default [
       title: 'Supply Chain Risks',
       project: 'Presales',
       description:
-        'The concept I made as a part of our sales pitch for the major network equipment supplier. Its intent was to find a new way to explicate the supply chain risk visually by showing how and where it forms.'
+        'The concept’s intent was to find a new way to explicate the supply chain risk visually by showing how and where it forms.'
     },
     tags: ['concept', 'data visualization'],
     id: 'dd797c60-7304-46dd-b502-0d112aa5a5b1'
@@ -242,8 +242,7 @@ export default [
     info: {
       title: 'Lights Attracted to the Object',
       project: 'Stage Automation R&D',
-      description:
-        'Light control concept that demonstrates the activation of an array by object positioning.'
+      description: 'Activation of an array by object positioning (concept).'
     },
     tags: ['concept', 'complex', '3d'],
     id: '959b2190-1a87-4733-9c45-6787fe34495d'
@@ -277,7 +276,7 @@ export default [
     class: 'center',
     file: 'images/videos@3x.png',
     info: {
-      title: '“Videos” Icon',
+      title: 'Videos Icon',
       project: 'Unreleased Social Network',
       description:
         'Made for the social network startup. Somewhat resembles the look of the YouTube player of that era.'
@@ -293,7 +292,7 @@ export default [
       title: 'AGNER Logo',
       project: 'Erlang Package Manager',
       description:
-        'AGNER is a shorthand for “A Giant Nebula of Erlang Repositories.” It also pays homage to the Danish statistician Agner Krarup Erlang. The logo is reminiscent of a nebula.'
+        'A Giant Nebula of Erlang Repositories. Also in honor of Agner Krarup Erlang.'
     },
     tags: ['look'],
     id: '51d5ee08-474b-4810-9eb7-cbf76b215758'
@@ -315,7 +314,7 @@ export default [
     type: 'image',
     file: 'images/keepa-logo-dribbble.png',
     info: {
-      title: '“Keepa” Lettering',
+      title: 'Keepa Lettering',
       description:
         'The lettering for the Keepa design studio owned by my friends. Made for fun.'
     },
@@ -329,7 +328,7 @@ export default [
     info: {
       title: 'Yawn Logo',
       description:
-        'The logo for the property search engine. The “Y” letter resembles the palatine uvula, which you may have a chance to observe in the mouth of a yawning person.'
+        'The logo for the property search engine. The “Y” letter resembles the open mouth of a yawning person.'
     },
     tags: ['look', 'lettering', 'typography'],
     id: '70b3bba4-3388-4e79-b754-a79e109c57bd'
@@ -340,7 +339,7 @@ export default [
     class: 'center',
     file: 'images/3dLutCreator-Icon-no-bg.png',
     info: {
-      title: '“3D Lut Creator” Logo Concept',
+      title: '3D Lut Creator Logo',
       description:
         'The concept resembles the 3D color space grid, which is one of the main features of the app.'
     },
@@ -370,8 +369,7 @@ export default [
       description: (
         <span>
           The card shows all of the patient’s metrics history on one screen.
-          Each graph is a variation on the Edward Tufte’s “sparkline” with the
-          (most important) last five days expanded into the table. (Thanks to{' '}
+          (Thanks to{' '}
           <a href="https://www.linkedin.com/in/victor-hotskivskyy-848876a3">
             Victor Hotskivskyy
           </a>{' '}

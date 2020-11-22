@@ -96,7 +96,7 @@ function WorkThumbnail({
         <div className="video-wrapper">
           <video
             // TODO: Check if autoplay is enabled.
-            // autoPlay
+            autoPlay
             onCanPlayThrough={() => {
               setReadyToShow(true);
             }}
