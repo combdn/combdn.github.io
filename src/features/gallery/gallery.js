@@ -13,9 +13,8 @@ import useFiles from '../../components/useFiles';
 
 import './gallery.scss';
 
-const { images, videos } = useFiles();
-
 function Gallery({ dataIdsToShow }) {
+  const { images, videos } = useFiles();
   let works = [];
   let tags = new Set();
   const dataToShow = data.filter(work => dataIdsToShow.includes(work.id));
