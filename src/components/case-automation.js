@@ -16,7 +16,7 @@ export default function CasePw(props) {
 
   let history = useHistory();
 
-  // Asynchronosely creates the array of objects with gif data.
+  // Asynchronousely creates the array of objects with gif data.
   // Each object has paths for GIF and PNG, and also
   // fetches the description from the text file with the same name.
   const createGifDataObjects = async () => {

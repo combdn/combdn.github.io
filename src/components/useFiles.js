@@ -5,7 +5,7 @@ export default function useFiles() {
   function importAll(context) {
     let files = {};
     context.keys().forEach(item => {
-      files[item.replace('./', '')] = context(item);
+      files[item.replace('./', '')] = context(item).default;
     });
     return files;
   }
