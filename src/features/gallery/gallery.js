@@ -42,7 +42,7 @@ function Gallery({ dataIdsToShow }) {
 
   return (
     <div className="works-gallery">
-      <h2>Works</h2>
+      <h2>Pictures</h2>
       <Filter />
       <div className="grid">{works}</div>
       <WorkInfo />

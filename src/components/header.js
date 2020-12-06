@@ -24,34 +24,21 @@ export default function Header() {
       </div>
 
       <div className="intro">
+        <header>
+          <h1>
+            Hi!{' '}
+            <span role="img" aria-label="Waving hand">
+              👋
+            </span>{' '}
+            I’m Valery Sibikovsky,
+          </h1>
+          <p>a human interface designer.</p>
+        </header>
         <p>
-          Hi, I'm Valery. I’m obsessed with software user interfaces. (I
-          literally have 321 items in my “Applications” folder right now.) And,
-          during my lifetime, I humbly hope to create an interface of equal
-          importance to the Arabic numerals{' '}
-          <span role="img" aria-label="smile">
-            😁
-          </span>
-          . (Or, at least, take part in the creation of one.)
-        </p>
-        <p>
-          ↓These are some bits of my works. Some are simple and obvious{' '}
-          <span role="img" aria-label="piece of cake">
-            🍰
-          </span>
-          , and others are complex{' '}
-          <span role="img" aria-label="mind blown">
-            🤯
-          </span>
-          , some of them are quick proofs of concepts{' '}
-          <span role="img" aria-label="a pencil">
-            ✏️
-          </span>
-          , but I suppose you can tell that I like to work on unusual stuff.
-        </p>
-        <p>
-          If you want to know more,{' '}
-          <a href="mailto:combdn@gmail.com">drop me a line.</a>
+          I have worked on software for stage automation, actuaries, industrial
+          monitoring, aircraft inspection, etc. It was fun, but now I want my
+          work to change people’s lives in a big way. Or, at least, in a small
+          way but on a huge scale.
         </p>
       </div>
 

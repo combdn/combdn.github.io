@@ -28,13 +28,13 @@ export default function Footer(props) {
   }
   return (
     <footer className="home-footer">
-      <p>
+      {/* <p>
         If you ask designers for help, and they look at you like this →{' '}
         <span role="img" aria-label="grinning face with a sweat drop">
           😅
         </span>
         , it&nbsp;is the sign that it may be interesting&nbsp;for&nbsp;me.
-      </p>
+      </p> */}
       <p>
         <a href="mailto:combdn@gmail.com">combdn@gmail.com </a>
       </p>

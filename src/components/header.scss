@@ -29,6 +29,28 @@
     margin: 91px 0 40px;
     width: 100%;
     max-width: 36em;
+
+    p {
+      margin: 14px 0;
+    }
+
+    header {
+      line-height: 22px;
+
+      h1 {
+        font-weight: 600;
+        font-size: 17px;
+        // line-height: 100%;
+        /* or 17px */
+
+        letter-spacing: 0.015em;
+        margin: 0;
+      }
+      p {
+        opacity: 0.5;
+        margin: 0;
+      }
+    }
   }
 
   .highlight {
