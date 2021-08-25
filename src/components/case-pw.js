@@ -81,7 +81,7 @@ export default function CasePw() {
             accepted by both the team and the client.
           </p>
 
-          <figure>
+          <figure className="fig-workflow">
             <img src={images['images/PW-workflow.png']} alt="Workflow Conept" />
             <figcaption className="figc-bottom">
               ↑ Initial workflow concept
