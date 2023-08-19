@@ -15,9 +15,7 @@ export default function Header() {
           <a href="mailto:combdn@gmail.com">combdn@gmail.com</a>
         </div>
         <div className="contact">
-          <a
-            href={process.env.PUBLIC_URL + 'Valery-Sibikovsky--resume-v003.pdf'}
-          >
+          <a href={process.env.PUBLIC_URL + 'Valery-Sibikovsky--resume-v4.pdf'}>
             Résumé
           </a>
         </div>
