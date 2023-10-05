@@ -17,7 +17,7 @@
     "react-redux": "^7.1.1",
     "react-responsive-carousel": "^3.1.50",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "4.0.0",
+    "react-scripts": "5.0.1",
     "redux-starter-kit": "^0.7.0",
     "uuid": "^3.3.2"
   },
